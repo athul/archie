@@ -1,0 +1,34 @@
+<div class="content">
+	{{ if .Site.Params.Avatar }}
+		<div class="avatar">
+			<a href="{{ .Site.BaseURL }}">
+				<img src="{{ .Site.Params.Avatar }}" alt="{{ .Site.Title }}" />
+			</a>
+		</div>
+	{{ end }}
+	<header>
+	<div class="logo"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+	</header>
+	<div class="site-description">
+		{{- if isset .Site.Params "subtitle" -}}
+		<p>{{ .Site.Params.Subtitle | markdownify }}</p>
+		{{- end -}}
+		<nav class="nav social">
+			<ul class="flat">
+				{{- range $index, $key := .Site.Params.Social -}}
+					<li class="soc"><a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a></li>
+				{{- end -}}
+			</ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			{{ range .Site.Menus.main }}
+			<li>
+				<a href="{{ .URL }}">{{ .Name }}</a>
+			</li>
+			{{ end }}
+		</ul>
+	</nav>
+</div>

@@ -1,0 +1,10 @@
+{{ define "main" }}
+<main class="list">
+{{ range .Pages.ByPublishDate.Reverse }}
+  <section class="list-item">
+    <a href="{{ .RelPermalink }}"><h1 class="title">{{ .Title }}</h1></a>
+	</section>
+  {{ end }}
+  </main>
+
+{{ end }}

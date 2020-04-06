@@ -1,0 +1,36 @@
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	{{- $title := ( .Title ) -}}
+	{{- $siteTitle := ( .Site.Title ) -}}
+	{{- if .IsHome -}}
+		<title>{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }}- {{ .Site.Params.Subtitle }}{{ end }} </title>
+	{{- else -}}
+		<title>{{ $title }} - {{ $siteTitle }}</title>
+	{{- end -}}
+
+	{{- if isset .Site.Params "favicon" -}}
+		<link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
+	{{- end -}}
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{{ with .OutputFormats.Get "rss" -}}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+
+	{{- template "_internal/opengraph.html" . -}}
+	{{- template "_internal/twitter_cards.html" . -}}
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
+
+
+	{{ if and (isset .Site.Params "social") (isset .Site.Params "feathericonscdn") (eq .Site.Params.featherIconsCDN true) -}}
+		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	{{- else if (isset .Site.Params "social") -}}
+		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+	{{ end }}
+		<script src="{{ .Site.BaseURL }}js/main.js"></script>
+	{{- if isset .Site.Params "customjs" -}}
+		{{- range .Site.Params.customJS }}<script src="{{ $.Site.BaseURL }}{{ . }}"></script>{{- end }}
+	{{- end }}
+</head>

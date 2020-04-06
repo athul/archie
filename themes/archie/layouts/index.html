@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+{{ partial "header.html" . }}
+<body>
+	<div class="container wrapper">
+		{{ partial "head.html" . }}
+<body>
+<main class="list">
+  {{ range first 10 .Data.Pages }}
+  <section class="list-item">
+    <h1 class="title">{{ .Title }}</h1>
+	</section>
+  {{ end }}
+  </main>
+</body>
+	</div>
+	{{ partial "footer.html" . }}
+</body>
+</html>
