@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+{{ partial "header.html" . }}
+<body>
+	<div class="content">
+		{{ partial "head.html" . }}
+<main>
+<article>
+		<div class="title">
+			<h1 class="title">{{ .Title }}</h1>
+			<div class="meta">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+		</div>
+		<div>
+			{{ if isset .Params "tldr" }}
+						<div class="tldr">
+							<strong>tl;dr:</strong>
+							{{ .Params.tldr }}
+  						</div>{{ end }}
+		</div>
+
+		<section class="body">
+			{{ .Content }}
+		</section>
+
+		<div class="post-tags">
+			{{ if ne .Type "page" }}
+				{{ if gt .Params.tags 0 }}
+					<nav class="nav tags">
+							<ul class="flat">
+								{{ range .Params.tags }}
+								<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+								{{ end }}
+							</ul>
+					</nav>
+				{{ end }}
+			{{ end }}
+		</div>
+		{{- $.Scratch.Set "isDisqus" true -}}
+	
+	{{ partial "footer.html" . }}
+	</div>
+</body>
+</html>
