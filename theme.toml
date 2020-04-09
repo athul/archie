@@ -3,9 +3,9 @@
 
 name = "Archie"
 license = "MIT"
-licenselink = "https://github.com/athul/archie-theme/blob/master/LICENSE"
+licenselink = "https://github.com/athul/archie/blob/master/LICENSE"
 description = ""
-homepage = "https://github.com/athul/archie-theme"
+homepage = "https://github.com/athul/archie"
 tags = ["blog","simple","responsive","minimal","tags","personal","clean","shortcodes"]
 features = ["blog", "Clean and minimal", "Responsive", "Syntax highlighting",]
 min_version = "0.41"

@@ -26,7 +26,7 @@
 			{{ if ne .Type "page" }}
 				{{ if gt .Params.tags 0 }}
 					<nav class="nav tags">
-							<ul class="flat">
+							<ul class="tags">
 								{{ range .Params.tags }}
 								<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
 								{{ end }}
@@ -35,7 +35,7 @@
 				{{ end }}
 			{{ end }}
 		</div>
-		{{- $.Scratch.Set "isDisqus" true -}}
+		
 	
 	{{ partial "footer.html" . }}
 	</div>

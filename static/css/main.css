@@ -1,6 +1,8 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap');
 /* Markdown */
 html {
-    
   color: #232333;
   font-family: 'Roboto Mono', monospace;
   font-size: 15px;
@@ -32,18 +34,18 @@ h5::before { color: red; content: '##### '; }
 h6::before { color: red; content: '###### '; }
 
 p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'IBM Plex Sans', sans-serif;
   line-height: 1.5;
 }
 
 hr {
   border: 0;
-  border-top: 3px solid palevioletred;
+  border-top: 3px dotted rebeccapurple;
   margin: 1em 0;
 }
 
 blockquote {
-  border-left: 3px solid lime;
+  border-left: 3px solid rebeccapurple;
   color: #737373;
   margin: 0;
   padding-left: 1em;
@@ -161,7 +163,7 @@ footer {
 }
 
 time {
-  color: #757575;
+  color: grey;
 }
 
 /* Posts */
@@ -199,17 +201,15 @@ article .title {
   margin-bottom: 2em;
 }
 
-/* Expander */
-
 /* Callout */
 .callout {
-  background-color: springgreen;
+  background-color: dodgerblue;
   color: #fff;
   padding: 1em;
 }
 
 .callout p {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
   margin: 0;
 }
 
@@ -219,10 +219,16 @@ article .title {
 
 .callout a:hover {
   background-color: #fff;
-  color: springgreen;
+  color: dodgerblue;
 }
 
 .site-description {
 display: flex;
 justify-content: space-between;
+}
+.tags li::before{
+  content: "🏷 ";
+}
+.tags a{
+  border-bottom: 3px solid blue; 
 }

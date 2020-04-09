@@ -20,7 +20,9 @@
 
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
-<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
 	{{- range .Site.Params.customJS }}
 	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
 	<script src="{{ . }}"></script>
