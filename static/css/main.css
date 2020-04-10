@@ -1,5 +1,4 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=IBM+Plex+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap');
 /* Markdown */
 html {
@@ -231,4 +230,11 @@ justify-content: space-between;
 }
 .tags a{
   border-bottom: 3px solid blue; 
+}
+svg{
+  max-height: 15px;
+}
+footer a:hover{
+  background-color: hotpink;
+  color: white;
 }

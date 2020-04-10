@@ -1,0 +1,12 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Archie"
+theme="archie"
+
+[params]
+	subtitle = "Minimal and Crisp blog theme for hugo [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/vividvilla/ezhil"

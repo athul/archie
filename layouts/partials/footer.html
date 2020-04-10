@@ -1,7 +1,12 @@
 <footer>
-<a href="https://github.com/athul">GitHub</a> |
-	{{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/athul/archie-theme">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+{{- range $index, $key := .Site.Params.Social -}}
+<a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>|
+{{- end -}}
+	{{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 {{ if not .Site.IsServer }}
 {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
+<script>
+      feather.replace()
+    </script>
