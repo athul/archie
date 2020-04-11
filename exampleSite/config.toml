@@ -1,12 +1,26 @@
-baseURL = "http://example.org/"
+baseURL = "https://athul.github.io/archie/"
 languageCode = "en-us"
 title = "Archie"
 theme="archie"
-
+copyright = "© Athul"
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 [params]
-	subtitle = "Minimal and Crisp blog theme for hugo [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
+	featherIconsCDN=true
+	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
 
 [[params.social]]
-name = "Github"
+name = "GitHub"
 icon = "github"
-url = "https://github.com/vividvilla/ezhil"
+url = "https://github.com/athul/archie"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://github.com/athulcajay/"
+
+[[params.social]]
+name = "GitLab"
+icon = "gitlab"
+url = "https://gitlab.com/athul/"

@@ -1,6 +1,12 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap');
 /* Markdown */
+:root{
+--maincolor: red;
+--bordercl:rebeccapurple;
+--callouctcolor:dodgerblue;
+--hovercolor:navy;
+}
 html {
   color: #232333;
   font-family: 'Roboto Mono', monospace;
@@ -16,7 +22,7 @@ body{
 }
 
 ::selection {
-  background: red;
+  background: var(--maincolor);
   color: #fff;
 }
 
@@ -25,12 +31,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2em;
 }
 
-h1::before { color: red; content: '# '; }
-h2::before { color: red; content: '## '; }
-h3::before { color: red; content: '### '; }
-h4::before { color: red; content: '#### '; }
-h5::before { color: red; content: '##### '; }
-h6::before { color: red; content: '###### '; }
+h1::before { color: var(--maincolor); content: '# '; }
+h2::before { color: var(--maincolor); content: '## '; }
+h3::before { color: var(--maincolor); content: '### '; }
+h4::before { color: var(--maincolor); content: '#### '; }
+h5::before { color: var(--maincolor); content: '##### '; }
+h6::before { color: var(--maincolor); content: '###### '; }
 
 p {
   font-family: 'IBM Plex Sans', sans-serif;
@@ -39,24 +45,24 @@ p {
 
 hr {
   border: 0;
-  border-top: 3px dotted rebeccapurple;
+  border-top: 3px dotted var(--bordercl);
   margin: 1em 0;
 }
 
 blockquote {
-  border-left: 3px solid rebeccapurple;
+  border-left: 3px solid var(--bordercl);
   color: #737373;
   margin: 0;
   padding-left: 1em;
 }
 
 a {
-  border-bottom: 3px solid red;
+  border-bottom: 3px solid var(--maincolor);
   color: inherit;
   text-decoration: none;
 }
 a:hover {
-  background-color: navy;
+    background-color: var(--hovercolor);
   color: #fff;
 }
 
@@ -171,38 +177,9 @@ article .title {
 }
 
 
-/* Lists */
-.list {
-  margin-top: 2em;
-}
-
-.list .title a {
-  border: none;
-}
-
-.list .description a {
-  border-bottom: none;
-  color: springgreen;
-}
-.list .description a:hover {
-  color: #fff;
-}
-
-.list h1 {
-  margin-bottom: 0;
-}
-
-.list p {
-  margin: 0;
-}
-
-.list-item {
-  margin-bottom: 2em;
-}
-
 /* Callout */
 .callout {
-  background-color: dodgerblue;
+  background-color: var(--callouctcolor);
   color: #fff;
   padding: 1em;
 }
@@ -218,7 +195,7 @@ article .title {
 
 .callout a:hover {
   background-color: #fff;
-  color: dodgerblue;
+  color: var(--callouctcolor);
 }
 
 .site-description {
@@ -234,7 +211,7 @@ justify-content: space-between;
 svg{
   max-height: 15px;
 }
-footer a:hover{
+.soc:hover{
   background-color: hotpink;
   color: white;
 }
