@@ -26,18 +26,6 @@ body{
   color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 1.2rem;
-  margin-top: 2em;
-}
-
-h1::before { color: var(--maincolor); content: '# '; }
-h2::before { color: var(--maincolor); content: '## '; }
-h3::before { color: var(--maincolor); content: '### '; }
-h4::before { color: var(--maincolor); content: '#### '; }
-h5::before { color: var(--maincolor); content: '##### '; }
-h6::before { color: var(--maincolor); content: '###### '; }
-
 p {
   font-family: 'IBM Plex Sans', sans-serif;
   line-height: 1.5;
@@ -156,6 +144,17 @@ header {
 header .main {
   font-size: 1.5rem;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.2rem;
+  margin-top: 2em;
+}
+
+h1::before { color: var(--maincolor); content: '# '; }
+h2::before { color: var(--maincolor); content: '## '; }
+h3::before { color: var(--maincolor); content: '### '; }
+h4::before { color: var(--maincolor); content: '#### '; }
+h5::before { color: var(--maincolor); content: '##### '; }
+h6::before { color: var(--maincolor); content: '###### '; }
 
 /* Footer */
 footer {
@@ -214,4 +213,12 @@ svg{
 .soc:hover{
   background-color: hotpink;
   color: white;
+}
+time .draft-label{
+    color: #3700ff;
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-left: 6px;
+    background-color: #f9f2f4;
 }
