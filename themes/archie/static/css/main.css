@@ -214,8 +214,8 @@ svg{
   background-color: hotpink;
   color: white;
 }
-time .draft-label{
-    color: #3700ff;
+.draft-label{ 
+    color: var(--bordercl);
     text-decoration: none;
     padding: 2px 4px;
     border-radius: 4px;
