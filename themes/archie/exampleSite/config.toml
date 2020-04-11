@@ -1,0 +1,22 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Archie"
+theme="archie"
+[params]
+	featherIconsCDN=true
+	subtitle = "Minimal and Crisp blog theme for hugo [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/athul/archie"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://github.com/athulcajay/"
+
+[[params.social]]
+name = "GitLab"
+icon = "gitlab"
+url = "https://gitlab.com/athul/"
