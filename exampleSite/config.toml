@@ -1,4 +1,4 @@
-baseURL = "https://athul.github.io/archie/"
+baseURL = "https://example.com"
 languageCode = "en-us"
 title = "Archie"
 theme="archie"
