@@ -62,7 +62,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  background-color: var(--hovercolor);
+    background-color: var(--hovercolor);
   color: #fff;
 }
 
