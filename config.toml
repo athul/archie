@@ -3,7 +3,9 @@ languageCode = "en-us"
 title = "Archie"
 theme="archie"
 copyright = "© Athul"
-
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 [params]
 	featherIconsCDN=true
 	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
