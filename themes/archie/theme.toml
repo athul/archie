@@ -3,19 +3,13 @@
 
 name = "Archie"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/athul/archie/blob/master/LICENSE"
 description = ""
-homepage = "http://example.com/"
-tags = []
-features = []
+homepage = "https://github.com/athul/archie"
+tags = ["blog","simple","responsive","minimal","tags","personal","clean","shortcodes"]
+features = ["blog", "Clean and minimal", "Responsive", "Syntax highlighting",]
 min_version = "0.41"
 
 [author]
-  name = ""
-  homepage = ""
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Athul Cyriac Ajay"
+  homepage = "https://github.com/athul"

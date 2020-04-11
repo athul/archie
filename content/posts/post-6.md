@@ -30,3 +30,7 @@ description: Here is a demo of all shortcodes available in Hugo.
 ## Instagram
 
 {{< instagram BWNjjyYFxVx >}}
+
+## Callouts
+
+{{< callout emoji="⚡️" text="I guess this works" >}}

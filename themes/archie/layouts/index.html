@@ -2,18 +2,36 @@
 <html>
 {{ partial "header.html" . }}
 <body>
-	<div class="container wrapper">
 		{{ partial "head.html" . }}
-<body>
-<main class="list">
-  {{ range first 10 .Data.Pages }}
-  <section class="list-item">
-    <h1 class="title">{{ .Title }}</h1>
-	</section>
-  {{ end }}
-  </main>
-</body>
+    	
+			<main class="list">
+      <div class="site-description">
+		{{- if isset .Site.Params "subtitle" -}}
+		<p>{{ .Site.Params.Subtitle | markdownify }}</p>
+		{{- end -}}
 	</div>
-	{{ partial "footer.html" . }}
+				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
+				{{ range $paginator.Pages }}
+				<section class="list-item">
+					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
+					<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+					<br><span class="description">
+						{{ if isset .Params "description" }}
+						{{ .Description }}
+						{{ else }}
+						{{ .Summary }}&hellip;
+						{{ end }}
+					</span><br/>
+					<a href="{{ .RelPermalink }}">Read more ⟶</a>
+				</section>
+				{{ end }}
+				{{ template "partials/paginator.html" . }}
+			</main>
+			{{ partial "footer.html" . }}
+		</div>
+		
+	</div>
+	
 </body>
 </html>

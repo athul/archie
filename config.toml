@@ -2,3 +2,21 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Archie"
 theme="archie"
+copyright = "© Athul"
+[params]
+	featherIconsCDN=true
+	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/athul/archie"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://github.com/athulcajay/"
+[[params.social]]
+name = "Twitter"
+icon = "gitlab"
+url = "https://gitlab.com/athul/"
