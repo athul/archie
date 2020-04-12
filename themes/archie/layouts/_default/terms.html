@@ -22,9 +22,10 @@
 			<a style="font-size: {{ $size }}rem;" href="{{ $.Site.LanguagePrefix | absURL }}{{ $data.Plural }}/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
 		{{ end }}
 		</div>
-	</div>
-
+	
+<hr>
 	{{ partial "footer.html" . }}
+	</div>
 </body>
 
 </html>

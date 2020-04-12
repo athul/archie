@@ -1,4 +1,4 @@
-baseURL = "https://athul.github.io/archie/"
+baseURL = "https://example.com"
 languageCode = "en-us"
 title = "Archie"
 theme="archie"
@@ -24,3 +24,22 @@ url = "https://github.com/athulcajay/"
 name = "GitLab"
 icon = "gitlab"
 url = "https://gitlab.com/athul/"
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
