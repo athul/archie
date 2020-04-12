@@ -205,7 +205,10 @@ justify-content: space-between;
   content: "🏷 ";
 }
 .tags a{
-  border-bottom: 3px solid blue; 
+  border-bottom: 3px solid var(--maincolor); 
+}
+.tags a:hover{
+  color: var(--hovercolor); 
 }
 svg{
   max-height: 15px;
