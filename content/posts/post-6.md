@@ -1,6 +1,6 @@
 ---
 title: "Hugo shortcodes"
-date: 2018-03-18T12:13:36+05:30
+date: 2020-04-15T12:13:36+05:30
 description: Here is a demo of all shortcodes available in Hugo.
 ---
 

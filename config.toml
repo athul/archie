@@ -6,6 +6,7 @@ copyright = "© Athul"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
+paginate=3
 [params]
 	mode="auto"
 	featherIconsCDN=true

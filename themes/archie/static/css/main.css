@@ -209,7 +209,8 @@ justify-content: space-between;
   border-bottom: 3px solid var(--maincolor); 
 }
 .tags a:hover{
-  color: var(--hovercolor); 
+  color:white;
+  background-color: var(--hovercolor); 
 }
 svg{
   max-height: 15px;
