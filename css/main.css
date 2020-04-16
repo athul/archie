@@ -6,6 +6,7 @@
 --bordercl:rebeccapurple;
 --callouctcolor:dodgerblue;
 --hovercolor:navy;
+--darkMaincolor: #50fa7b;
 }
 html {
   color: #232333;
@@ -51,7 +52,7 @@ a {
 }
 a:hover {
     background-color: var(--hovercolor);
-  color: #fff;
+    color: #fff;
 }
 
 ul {
