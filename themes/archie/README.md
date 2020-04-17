@@ -8,11 +8,12 @@ Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 [Check the Demo](https://athul.github.io/archie/) hosted on GitHub Pages :smile:
 
 ![](/images/theme.png)
-
+![](/images/archie-dark.png)
 ## Feature
 - Google Analytics Script
 - Callouts
 - Tags
+- Auto Dark Mode(based on system theme)
 - tl:dr; frontamatter
 
 ## Installation
@@ -26,15 +27,18 @@ Edit the `config.toml` file with `theme="archie"`
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
 ## Writing Posts
-Create a new `.md` file in the *content/post* folder
+Create a new `.md` file in the *content/posts* folder
 ```yml
 ---
 title: Title of the post
 description:
 date:
 tldr: (optional)
+draft: true/false (optional)
+tags: [tag names] (optional)
 ---
 ```
 
 ## Credits
-Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License   
+Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License 
+Inspired by design of blog.jse.li
