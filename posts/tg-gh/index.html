@@ -1,22 +1,28 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Telegram Bot for GitHub Actions - Archie</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property=og:title content="Telegram Bot for  GitHub Actions"><meta property=og:description content="Make a Telegram bot with Node.js and use it with GitHub Actions for sending notifications to you about the repo."><meta property=og:type content=article><meta property=og:url content=https://athul.github.io/archie/posts/tg-gh/><meta property=article:published_time content=2020-04-01T00:00:00+00:00><meta property=article:modified_time content=2020-04-01T00:00:00+00:00><meta name=twitter:card content=summary><meta name=twitter:title content="Telegram Bot for  GitHub Actions"><meta name=twitter:description content="Make a Telegram bot with Node.js and use it with GitHub Actions for sending notifications to you about the repo."><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://athul.github.io/archie/css/main.css><link rel=stylesheet type=text/css href=https://athul.github.io/archie/css/dark.css media="(prefers-color-scheme: dark)"></head><body><div class=content><div class=content><header><div class=main><a href=https://athul.github.io/archie/>Archie</a></div><nav><a href=/archie/>Home</a>
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Telegram Bot for GitHub Actions - Archie</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:title" content="Telegram Bot for  GitHub Actions"><meta property="og:description" content="Make a Telegram bot with Node.js and use it with GitHub Actions for sending notifications to you about the repo."><meta property="og:type" content="article"><meta property="og:url" content="https://athul.github.io/archie/posts/tg-gh/"><meta property="article:published_time" content="2020-04-01T00:00:00+00:00"><meta property="article:modified_time" content="2020-04-01T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Telegram Bot for  GitHub Actions"><meta name=twitter:description content="Make a Telegram bot with Node.js and use it with GitHub Actions for sending notifications to you about the repo."><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://athul.github.io/archie/css/main.css><link rel=stylesheet type=text/css href=https://athul.github.io/archie/css/dark.css media="(prefers-color-scheme: dark)"></head><body><div class=content><div class=content><header><div class=main><a href=https://athul.github.io/archie/>Archie</a></div><nav><a href=/archie/>Home</a>
 <a href=/archie/posts>All posts</a>
 <a href=/archie/about>About</a>
 <a href=/archie/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>Telegram Bot for GitHub Actions</h1><div class=meta>Posted on Apr 1, 2020</div></div><div><div class=tldr><strong>tl;dr:</strong>
-Making GitHub Actions with Js Code</div></div><section class=body><h2 id=telegram>Telegram</h2><p><a href=https://telegram.org/>Telegram</a> is a cloud-based mobile and desktop messaging app with a focus on security and speed. It is free to use and extensively hackable. It also has a good bot support system. The API is also easy to implement and has many wrappers for building bots with the API.</p><h2 id=github-actions>GitHub Actions</h2><p><a href=https://github.com/features/actions>GitHub Actions</a> is a CI/CD runtime for your GitHub repository. You can run almost anything from scripts to docker containers. You can build, test and deploy your code with GitHub Actions. All these actions are called workflows and workflows differ in the job they&rsquo;re doing. These maybe test workflows, build ones or deployment ones. You can find all the actions on GitHub in the <a href="https://github.com/marketplace?type=actions">marketplace</a></p><h2 id=building-the-bot>Building the Bot</h2><h3 id=prerequisites>Prerequisites</h3><ul><li>Basic JavaScript Knowledge</li><li>Basic GitHub Knowledge</li><li>Telegram Account<br></li></ul><blockquote><p>There are templates for building actions. Here we&rsquo;re gonna start from scratch</p></blockquote><h3 id=environment-setup>Environment Setup</h3><ul><li><strong>Node</strong>, You can download node from their <a href=https://nodejs.org/en/download/>website</a></li><li>NPM comes with node, so you don&rsquo;t have to worry about it.</li><li><p>Initialize the Project</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ git init <span style=color:#75715e>## initialize a new git repository for version management</span>
+Making GitHub Actions with Js Code</div></div><section class=body><h2 id=telegram>Telegram</h2><p><a href=https://telegram.org/>Telegram</a> is a cloud-based mobile and desktop messaging app with a focus on security and speed. It is free to use and extensively hackable. It also has a good bot support system. The API is also easy to implement and has many wrappers for building bots with the API.</p><h2 id=github-actions>GitHub Actions</h2><p><a href=https://github.com/features/actions>GitHub Actions</a> is a CI/CD runtime for your GitHub repository. You can run almost anything from scripts to docker containers. You can build, test and deploy your code with GitHub Actions. All these actions are called workflows and workflows differ in the job they&rsquo;re doing. These maybe test workflows, build ones or deployment ones. You can find all the actions on GitHub in the <a href="https://github.com/marketplace?type=actions">marketplace</a></p><h2 id=building-the-bot>Building the Bot</h2><h3 id=prerequisites>Prerequisites</h3><ul><li>Basic JavaScript Knowledge</li><li>Basic GitHub Knowledge</li><li>Telegram Account</li></ul><blockquote><p>There are templates for building actions. Here we&rsquo;re gonna start from scratch</p></blockquote><h3 id=environment-setup>Environment Setup</h3><ul><li><strong>Node</strong>, You can download node from their <a href=https://nodejs.org/en/download/>website</a></li><li>NPM comes with node, so you don&rsquo;t have to worry about it.</li><li>Initialize the Project</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ git init <span style=color:#75715e>## initialize a new git repository for version management</span>
 ---
-$ npm init</code></pre></div></li><li><p><strong>dotenv</strong>, Dotenv can be downloaded via</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ npm i dotenv
+$ npm init
+</code></pre></div><ul><li><strong>dotenv</strong>, Dotenv can be downloaded via</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ npm i dotenv
 ---
-$ yarn add dotenv</code></pre></div></li><li><p><strong>node-telegram-bot-api</strong>, node-telegram-bot-api is a simple wrapper for building telegram bots. You can download it via</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ npm i node-telegram-bot-api
+$ yarn add dotenv
+</code></pre></div><ul><li><strong>node-telegram-bot-api</strong>, node-telegram-bot-api is a simple wrapper for building telegram bots. You can download it via</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ npm i node-telegram-bot-api
 ---
-$ yarn add node-telegram-bot-api</code></pre></div></li><li><p><strong>@zeit/ncc</strong>, NCC is a Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, GCC-style. It&rsquo;s a dev dependency and can be downloaded</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>yarn add --dev @zeit/ncc
+$ yarn add node-telegram-bot-api
+</code></pre></div><ul><li><strong>@zeit/ncc</strong>, NCC is a Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, GCC-style. It&rsquo;s a dev dependency and can be downloaded</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>yarn add --dev @zeit/ncc
 ---
-npm i -D @zeit/ncc</code></pre></div></li></ul><h4 id=folder-structure>Folder Structure</h4><p>The <code>dist</code> folder will be automatically created. <code>action.yml</code> will be made</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>.
+npm i -D @zeit/ncc
+</code></pre></div><h4 id=folder-structure>Folder Structure</h4><p>The <code>dist</code> folder will be automatically created. <code>action.yml</code> will be made</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>.
 ├── dist
 │   └── index.js
 ├── index.js
 ├── action.yml
 ├── README.md
-└── package.json</pre></div><ul><li><code>index.js</code> is the file we&rsquo;re defining the bot</li><li><code>action.yml</code> is the file we&rsquo;ll define the action and it&rsquo;s behaviours</li></ul><h2 id=making-the-bot>Making the Bot</h2><p>We need to get an API bot token from telegram. For that Go to Telegram and Search for <code>Botfather</code>. It&rsquo;s a bot.
+└── package.json
+
+</code></pre></div><ul><li><code>index.js</code> is the file we&rsquo;re defining the bot</li><li><code>action.yml</code> is the file we&rsquo;ll define the action and it&rsquo;s behaviours</li></ul><h2 id=making-the-bot>Making the Bot</h2><p>We need to get an API bot token from telegram. For that Go to Telegram and Search for <code>Botfather</code>. It&rsquo;s a bot.
 <img src=bfather.png alt>
 Create a new bot with the <code>/newbot</code> command and get the API key. We&rsquo;ll need that, also talk to <code>jsondump</code> bot and get your chat id. The output may be like this, so</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
   <span style=color:#f92672>&#34;update_id&#34;</span>: <span style=color:#ae81ff>143943779</span>,
@@ -38,8 +44,10 @@ Create a new bot with the <code>/newbot</code> command and get the API key. We&r
     <span style=color:#f92672>&#34;date&#34;</span>: <span style=color:#ae81ff>1584119424</span>,
     <span style=color:#f92672>&#34;text&#34;</span>: <span style=color:#e6db74>&#34;message&#34;</span>
   }
-}</code></pre></div><p>This will be needed for further use and We need to add it to the repo secrets which can be found in the repo settings. Be careful to add it as <code>token</code> and <code>chat</code> like as shown below
-<img src=scr.png alt></p><h3 id=writing-the-action-and-building-the-bot>Writing the Action and Building the Bot</h3><p>Fire up the terminal/cmd and make a new folder. Install the dependencies. Run the following command</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ touch index.js action.yml</code></pre></div><p>Open your favourite text editor within the folder or with the file. We&rsquo;ll define the bot in <code>index.js</code></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javaScript data-lang=javaScript><span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;dotenv&#34;</span>).<span style=color:#a6e22e>config</span>
+}
+</code></pre></div><p>This will be needed for further use and We need to add it to the repo secrets which can be found in the repo settings. Be careful to add it as <code>token</code> and <code>chat</code> like as shown below
+<img src=scr.png alt></p><h3 id=writing-the-action-and-building-the-bot>Writing the Action and Building the Bot</h3><p>Fire up the terminal/cmd and make a new folder. Install the dependencies. Run the following command</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ touch index.js action.yml
+</code></pre></div><p>Open your favourite text editor within the folder or with the file. We&rsquo;ll define the bot in <code>index.js</code></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javaScript data-lang=javaScript><span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;dotenv&#34;</span>).<span style=color:#a6e22e>config</span>
 <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>Bot</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;node-telegram-bot-api&#39;</span>);
 <span style=color:#66d9ef>const</span> {
     <span style=color:#a6e22e>INPUT_STATUS</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>ipstatus</span>,
@@ -116,72 +124,77 @@ Create a new bot with the <code>/newbot</code> command and get the API key. We&r
     }
 }
 </code></pre></div><p>In these lines of code, we&rsquo;re just initializing a switch statement for the responses. We&rsquo;re also declaring an anonymous function to use the switch responses via a function later. We&rsquo;re using all the defined variables in the switch. You can check the <a href=https://help.github.com/en/actions/reference/events-that-trigger-workflows>trigger Events</a> to get how the event is triggered and what keyword should be used.</p><p>Now for the last part of the Js file, we just take the response from the switch and assign it to a constant. Then we use the <code>sendMessage</code> function of the <code>node-telegram-bot-api</code> to send the message to the bot with the chatid and the output as the arguments.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>output</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>evresp</span>(<span style=color:#a6e22e>ghevent</span>)
-</code></pre></div><p>bot.sendMessage(chatid,output,{parse_mode : &ldquo;Markdown&rdquo;})</p><h2 id=compiling-and-minifying-the-js-code>Compiling and Minifying the Js code</h2><p>Since we have installed <code>@zeit/ncc</code> and this is used for the making the whole program with all the APIs to a single file and we need to use NCC for that. We just need to run</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>yarn run ncc build index.js -C -m -o dist</code></pre></div><p>or you might wanna add the following to you <code>package.json</code> file, and run <code>npm run test</code> to compile and minify the code.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=color:#e6db74>&#34;scripts&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
+</code></pre></div><p>bot.sendMessage(chatid,output,{parse_mode : &ldquo;Markdown&rdquo;})</p><h2 id=compiling-and-minifying-the-js-code>Compiling and Minifying the Js code</h2><p>Since we have installed <code>@zeit/ncc</code> and this is used for the making the whole program with all the APIs to a single file and we need to use NCC for that. We just need to run</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>yarn run ncc build index.js -C -m -o dist
+</code></pre></div><p>or you might wanna add the following to you <code>package.json</code> file, and run <code>npm run test</code> to compile and minify the code.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=color:#e6db74>&#34;scripts&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
     <span style=color:#f92672>&#34;test&#34;</span>: <span style=color:#e6db74>&#34;ncc build index.js -C -m -o dist&#34;</span>
-  }<span style=color:#960050;background-color:#1e0010>,</span></code></pre></div><p>This will create a <code>dist</code> folder with and <code>index.js</code> file which contains the compiled code.</p><h2 id=making-it-a-valid-action>Making it a valid action</h2><p>For making this Js file a valid action, we need to add an <code>action.yml</code> file. The action.yml for this action is like this</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>name: <span style=color:#e6db74>&#39;Action Name&#39;</span>
-description: <span style=color:#e6db74>&#39;Action Descreption&#39;</span>
-author: <span style=color:#e6db74>&#39;&lt;author name&gt;&#39;</span>
-inputs: 
-  chat:
-    description: <span style=color:#e6db74>&#39;Chat to send: chat id or @channel_name&#39;</span>
-    required: <span style=color:#66d9ef>true</span>
-  token:
-    description: <span style=color:#e6db74>&#39;Telegram Bot token&#39;</span>
-    required: <span style=color:#66d9ef>true</span>
-  status:
-    description: <span style=color:#e6db74>&#39;Job status&#39;</span>
-    required: <span style=color:#66d9ef>true</span>
-  iu_title: 
-    description: <span style=color:#e6db74>&#39;Issue Title&#39;</span>
-    default: ${{ github.event.issue.title }}
-  iu_num:
-    description: <span style=color:#e6db74>&#39;Issue Number&#39;</span>
-    default: ${{ github.event.issue.number }}
-  iu_actor: 
-    description: <span style=color:#e6db74>&#39;Issue Triggerer&#39;</span>
-    default: ${{ github.event.issue.user.login }}
-  iu_com:
-    description: <span style=color:#e6db74>&#39;Issue Comment&#39;</span>
-    default: ${{github.event.comment.body}}
-  pr_state:
-    description: <span style=color:#e6db74>&#39;State of the PR&#39;</span>
-    default: ${{ github.event.action }}
-  pr_num:
-    description: <span style=color:#e6db74>&#39;PR Number&#39;</span>
-    default: ${{ github.event.number }}
-  pr_title:
-    description: <span style=color:#e6db74>&#39;Title of the PR&#39;</span>
-    default: ${{ github.event.pull_request.title }}
-  pr_body:
-    description: <span style=color:#e6db74>&#39;Body/Contents of the PR&#39;</span>
-    default: ${{ github.event.pull_request.body }}
-runs:
-  using: <span style=color:#e6db74>&#34;node12&#34;</span>
-  main: <span style=color:#e6db74>&#34;dist/index.js&#34;</span>
-branding:
-  icon: <span style=color:#e6db74>&#39;repeat&#39;</span>  
-  color: <span style=color:#e6db74>&#39;green&#39;</span></code></pre></div><p>Here we&rsquo;re defining the Input variables to be loaded for the action in GitHub&rsquo;s runtime environemt. All these <code>default</code> data are taken from the response of the webhooks which are send by GitHub when a trigger event is occured. You can find out more in the <a href=https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context>Action Documentation Here</a>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>runs:
-  using: <span style=color:#e6db74>&#34;node12&#34;</span>
-  main: <span style=color:#e6db74>&#34;dist/index.js&#34;</span></code></pre></div><p>Here we are defining that this is a node action and should run in an environment with node, and the file which should be run, here the <code>index.js</code> file in the <code>dist</code> folder. That should do it. Create a new commit and push it to a repo. <strong>Create a new tag</strong> and this action will appear in the <a href="https://github.com/marketplace?type=actions">marketplace</a>.</p><h3 id=defining-a-workflow-to-test-your-action>Defining a workflow to test your action</h3><p>GitHub Action workflows are defined using the <code>.yml</code> syntax. Here is an example of a sample workflow for this action</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>name: &lt;Workflow Name<span style=color:#e6db74>&gt;
+  }<span style=color:#960050;background-color:#1e0010>,</span>
+</code></pre></div><p>This will create a <code>dist</code> folder with and <code>index.js</code> file which contains the compiled code.</p><h2 id=making-it-a-valid-action>Making it a valid action</h2><p>For making this Js file a valid action, we need to add an <code>action.yml</code> file. The action.yml for this action is like this</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#66d9ef>name</span>: <span style=color:#e6db74>&#39;Action Name&#39;</span>
+<span style=color:#66d9ef>description</span>: <span style=color:#e6db74>&#39;Action Descreption&#39;</span>
+<span style=color:#66d9ef>author</span>: <span style=color:#e6db74>&#39;&lt;author name&gt;&#39;</span>
+<span style=color:#66d9ef>inputs</span>: 
+  <span style=color:#66d9ef>chat</span>:
+    <span style=color:#66d9ef>description: &#39;Chat to send</span>: chat id or @channel_name<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    required: true
+</span><span style=color:#e6db74>  token:
+</span><span style=color:#e6db74>    description: &#39;</span>Telegram Bot token<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    required: true
+</span><span style=color:#e6db74>  status:
+</span><span style=color:#e6db74>    description: &#39;</span>Job status<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    required: true
+</span><span style=color:#e6db74>  iu_title: 
+</span><span style=color:#e6db74>    description: &#39;</span>Issue Title<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    default: ${{ github.event.issue.title }}
+</span><span style=color:#e6db74>  iu_num:
+</span><span style=color:#e6db74>    description: &#39;</span>Issue Number<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    default: ${{ github.event.issue.number }}
+</span><span style=color:#e6db74>  iu_actor: 
+</span><span style=color:#e6db74>    description: &#39;</span>Issue Triggerer<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    default: ${{ github.event.issue.user.login }}
+</span><span style=color:#e6db74>  iu_com:
+</span><span style=color:#e6db74>    description: &#39;</span>Issue Comment<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    default: ${{github.event.comment.body}}
+</span><span style=color:#e6db74>  pr_state:
+</span><span style=color:#e6db74>    description: &#39;</span>State of the PR<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    default: ${{ github.event.action }}
+</span><span style=color:#e6db74>  pr_num:
+</span><span style=color:#e6db74>    description: &#39;</span>PR Number<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    default: ${{ github.event.number }}
+</span><span style=color:#e6db74>  pr_title:
+</span><span style=color:#e6db74>    description: &#39;</span>Title of the PR<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    default: ${{ github.event.pull_request.title }}
+</span><span style=color:#e6db74>  pr_body:
+</span><span style=color:#e6db74>    description: &#39;</span>Body/Contents of the PR<span style=color:#e6db74>&#39;
+</span><span style=color:#e6db74>    default: ${{ github.event.pull_request.body }}
+</span><span style=color:#e6db74>runs:
+</span><span style=color:#e6db74>  using: &#34;node12&#34;
+</span><span style=color:#e6db74>  main: &#34;dist/index.js&#34;
+</span><span style=color:#e6db74>branding:
+</span><span style=color:#e6db74>  icon: &#39;</span>repeat<span style=color:#e6db74>&#39;  
+</span><span style=color:#e6db74>  color: &#39;</span>green&#39;
+</code></pre></div><p>Here we&rsquo;re defining the Input variables to be loaded for the action in GitHub&rsquo;s runtime environemt. All these <code>default</code> data are taken from the response of the webhooks which are send by GitHub when a trigger event is occured. You can find out more in the <a href=https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context>Action Documentation Here</a>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#66d9ef>runs</span>:
+  <span style=color:#66d9ef>using</span>: <span style=color:#e6db74>&#34;node12&#34;</span>
+  <span style=color:#66d9ef>main</span>: <span style=color:#e6db74>&#34;dist/index.js&#34;</span>
+</code></pre></div><p>Here we are defining that this is a node action and should run in an environment with node, and the file which should be run, here the <code>index.js</code> file in the <code>dist</code> folder. That should do it. Create a new commit and push it to a repo. <strong>Create a new tag</strong> and this action will appear in the <a href="https://github.com/marketplace?type=actions">marketplace</a>.</p><h3 id=defining-a-workflow-to-test-your-action>Defining a workflow to test your action</h3><p>GitHub Action workflows are defined using the <code>.yml</code> syntax. Here is an example of a sample workflow for this action</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#66d9ef>name</span>: &lt;Workflow Name<span style=color:#e6db74>&gt;
 </span><span style=color:#e6db74>
 </span><span style=color:#e6db74>on:</span>
-  push:
-  pull_request:
-    types: [opened, closed]
-  issues:
-    types: [opened, closed, reopened]
-jobs:
-  build:
-    runs-on: ubuntu-latest
+  <span style=color:#66d9ef>push</span>:
+  <span style=color:#66d9ef>pull_request</span>:
+    <span style=color:#66d9ef>types</span>: [opened, closed]
+  <span style=color:#66d9ef>issues</span>:
+    <span style=color:#66d9ef>types</span>: [opened, closed, reopened]
+<span style=color:#66d9ef>jobs</span>:
+  <span style=color:#66d9ef>build</span>:
+    <span style=color:#66d9ef>runs-on</span>: ubuntu-latest
 
-    steps:
-      - name: &lt;AnyName<span style=color:#e6db74>&gt;
+    <span style=color:#66d9ef>steps</span>:
+      - <span style=color:#66d9ef>name</span>: &lt;AnyName<span style=color:#e6db74>&gt;
 </span><span style=color:#e6db74>        uses: &lt;username&gt;/&lt;repo&gt;@master</span>
-        if: always()
-        with:
-          chat: ${{ secrets.chat }}
-          token: ${{ secrets.token }}
-          status: ${{ job.status }}</code></pre></div><p>The Complete code for the bot is</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>//Initializing dotenv and the bot
+        <span style=color:#66d9ef>if</span>: always()
+        <span style=color:#66d9ef>with</span>:
+          <span style=color:#66d9ef>chat</span>: ${{ secrets.chat }}
+          <span style=color:#66d9ef>token</span>: ${{ secrets.token }}
+          <span style=color:#66d9ef>status</span>: ${{ job.status }}
+</code></pre></div><p>The Complete code for the bot is</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>//Initializing dotenv and the bot
 </span><span style=color:#75715e></span><span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;dotenv&#34;</span>).<span style=color:#a6e22e>config</span>
 <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>Bot</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;node-telegram-bot-api&#39;</span>);
 <span style=color:#75715e>// aliasing the environment variables 
