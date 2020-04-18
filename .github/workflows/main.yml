@@ -10,18 +10,16 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master
-
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2.2.0
+      uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.58.3'
-
+          hugo-version: '0.67.1'
     - name: Build
-      run: hugo --gc --minify --cleanDestinationDir
-
+      run: hugo --minify
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2.4.0
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./public
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_branch: gh-pages
+        publish_dir: ./public
+        
