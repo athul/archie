@@ -5,7 +5,7 @@ Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 
 ## Demo
 
-[Check the Demo](https://athul.github.io/archie/) hosted on GitHub Pages :smile:
+[Check the Demo](https://athul.github.io/archie/) hosted on GitHub Pages :smile: . You can find the source code to that in the `site` branch of this repository
 
 ![](/images/theme.png)
 ![](/images/archie-dark.png)
@@ -42,3 +42,65 @@ tags: [tag names] (optional)
 ## Credits
 Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License 
 Inspired by design of blog.jse.li
+
+----
+
+## Config of the Demo Site
+
+```toml
+baseURL = "https://athul.github.io/archie/"
+languageCode = "en-us"
+title = "Archie"
+theme="archie"
+copyright = "© Athul"
+# Code Highlight
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+paginate=3 # articles per page
+
+[params]
+	mode="auto" # color-mode → light,dark or auto
+	featherIconsCDN=true
+	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+
+# Social Tags
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/athul/archie"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://github.com/athulcajay/"
+
+[[params.social]]
+name = "GitLab"
+icon = "gitlab"
+url = "https://gitlab.com/athul/"
+
+# Main menu Items
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+```
