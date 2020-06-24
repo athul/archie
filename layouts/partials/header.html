@@ -4,7 +4,7 @@
 	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
 	{{- if .IsHome -}}
-	<title>{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }}- {{ .Site.Params.Subtitle }}{{ end }} </title>
+	<title>{{ $siteTitle }} | Home </title>
 	{{- else -}}
 	<title>{{ $title }} - {{ $siteTitle }}</title>
 	{{- end -}}
@@ -14,10 +14,16 @@
 	{{- end -}}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="{{ $title }} | {{ $siteTitle }}" />
+	<meta name="twitter:title" content="{{ $title }} | {{ $siteTitle }}" />
+	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
+	<meta itemprop="name" content="{{ $title }} | {{ $siteTitle }}" />
+	<meta name="application-name" content="{{ $title }} | {{ $siteTitle }}" />
+	<meta property="og:site_name" content="{{ .Site.Params.sitename }}" />
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
-
+	<meta name="description" content="{{ $.Param "description" }}">
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
 	{{ if and (isset .Site.Params "social") (isset .Site.Params "feathericonscdn") (eq .Site.Params.featherIconsCDN true) -}}
