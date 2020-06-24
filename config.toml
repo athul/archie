@@ -6,8 +6,10 @@ copyright = "© Athul"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-paginate=3
+paginate=4
 [params]
+	favicon="https://img.icons8.com/officel/16/000000/chevron-right.png"
+	og_image="https://raw.githubusercontent.com/athul/archie/master/images/archie-dark.png"
 	mode="auto"
 	featherIconsCDN=true
 	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
