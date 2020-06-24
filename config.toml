@@ -13,6 +13,7 @@ paginate=4
 	mode="auto"
 	featherIconsCDN=true
 	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+	description = "Archie is a Minimal and Clean theme for Hugo"
 
 [[params.social]]
 name = "GitHub"
