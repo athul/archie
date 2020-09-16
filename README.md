@@ -75,7 +75,7 @@ url = "https://github.com/athul/archie"
 [[params.social]]
 name = "Twitter"
 icon = "twitter"
-url = "https://github.com/athulcajay/"
+url = "https://twitter.com/athulcajay/"
 
 [[params.social]]
 name = "GitLab"
