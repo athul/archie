@@ -8,7 +8,7 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 [params]
 	mode="auto"
-	featherIconsCDN=true
+	useCDN=false
 	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
 
 [[params.social]]

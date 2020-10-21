@@ -62,7 +62,7 @@ paginate=3 # articles per page
 
 [params]
 	mode="auto" # color-mode → light,dark or auto
-	featherIconsCDN=true
+	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
 	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
 
 # Social Tags
@@ -75,7 +75,7 @@ url = "https://github.com/athul/archie"
 [[params.social]]
 name = "Twitter"
 icon = "twitter"
-url = "https://github.com/athulcajay/"
+url = "https://twitter.com/athulcajay/"
 
 [[params.social]]
 name = "GitLab"
