@@ -6,5 +6,13 @@
 		{{ range .Site.Menus.main }}
 		<a href="{{ .URL }}">{{ .Name }}</a>
 		{{ end }}
+
+		<div class="toggle-switch">
+			<input type="checkbox" id="chkTest" name="chkTest" onchange="toggleDarkMain()">
+			<label for="chkTest">
+			  	<span class="toggle-track"></span>
+			 	<span>Dark mode</span> 
+			</label>
+		  </div>
 	</nav>
 </header>
