@@ -52,7 +52,7 @@
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
 		{{ range .Site.Params.customCSS }}
-		<link rel="stylesheet" type="text/css" ref="{{ . | relURL }}">
+		<link rel="stylesheet" type="text/css" href="{{ . | relURL }}">
 		{{ end }}
 	{{- end -}}
 	{{- range .Site.Params.customJS }}
