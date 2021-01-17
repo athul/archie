@@ -15,18 +15,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta property="og:description" content="{{ .Params.description }}" />
-	<meta name="twitter:description" content="{{ .Params.description }}" />
-	<meta name="description" content="{{ $.Param "description" }}" />
-	<meta name="description" content="{{ $.Params.description }}" />
-
-	<meta property="og:title" content="{{ $title }} | {{ $siteTitle }}" />
-	<meta name="twitter:title" content="{{ $title }} | {{ $siteTitle }}" />
-
 	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
-	<meta itemprop="name" content="{{ $title }} | {{ $siteTitle }}" />
-	<meta name="application-name" content="{{ $title }} | {{ $siteTitle }}" />
-	<meta property="og:site_name" content="{{ .Site.Params.sitename }}" />
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
