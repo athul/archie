@@ -6,7 +6,7 @@
 	{{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 {{ if not .Site.IsServer }}
-{{ template "_internal/google_analytics_async.html" . }}
+<noscript><img src="https://shynet-aca.herokuapp.com/ingress/114f2e7e-a05a-4eed-ae8b-a392c2f973c2/pixel.gif"></noscript> <script src="https://shynet-aca.herokuapp.com/ingress/114f2e7e-a05a-4eed-ae8b-a392c2f973c2/script.js"></script>
 {{ end }}
 
 {{- if (isset .Site.Params "social") -}}
