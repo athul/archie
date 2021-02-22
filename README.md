@@ -1,11 +1,11 @@
 # Archie - Hugo theme
 Archie is a minimal and clean theme for hugo with a markdown-ish UI.
 
-Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
+Forked from [Archie)](https://github.com/athul/archie)
 
 ## Demo
 
-[Check the Demo](https://athul.github.io/archie/) hosted on GitHub Pages :smile: . You can find the source code to that in the `site` branch of this repository
+[Check the Archie Demo](https://athul.github.io/archie/) hosted on GitHub Pages :smile: . You can find the source code to that in the `site` branch of this repository
 
 ![](/images/theme.png)
 ![](/images/archie-dark.png)
@@ -14,6 +14,7 @@ Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 - Callouts
 - Tags
 - Auto Dark Mode(based on system theme)
+- Network Visualization using Vis.js
 - tl:dr; frontamatter
 
 ## Installation
@@ -40,7 +41,7 @@ tags: [tag names] (optional)
 ```
 
 ## Credits
-Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License 
+Forked from [Archie)](https://github.com/athul/archie) which itself is forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License 
 Inspired by design of blog.jse.li
 
 ----
