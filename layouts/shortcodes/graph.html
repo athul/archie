@@ -1,0 +1,65 @@
+
+<figure>
+<div id="{{ .Get 0 }}" class="graph"></div>  
+<figcaption>{{ .Get 1 }}</figcaption>
+</figure>
+<script type="text/javascript">
+    // create a network
+	var container = document.getElementById('{{ .Get 0 | safeJS}}');
+    // Inner content of shortcode
+    {{ replace .Inner "\n " "" | safeJS }}
+
+
+    // provide the data in the vis format
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || 
+    document.querySelector("meta[name=darkmode]") !== null && document.querySelector("meta[name=darkmode]").content === "true") {
+
+        var options = {
+    nodes: {
+        color: {
+            border: '#FFFFFF',
+            background: '#202124',
+            highlight: {
+                border: '#50fa7b',
+                background: '#202124'
+            }
+        },
+        font: {
+            color: '#FFFFFF'
+	}
+    },
+interaction: {
+multiselect: true
+	}
+
+}
+
+		
+	}else{
+
+	var options = {
+    nodes: {
+        color: {
+            border: '#232333',
+            background: '#FFFFFF',
+            highlight: {
+                border: '#FF0000',
+                background: '#FFFFFF'
+            }
+        }
+    },
+interaction: {
+multiselect: true
+        }
+
+}
+	}
+    // initialize your network!
+    var network = new vis.Network(container, data, options);
+</script>

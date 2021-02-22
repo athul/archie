@@ -15,6 +15,8 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
 	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
@@ -37,6 +39,10 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
 		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/dark.css" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
+	{{ end }}
+
+        {{- if (eq .Site.Params.mode "dark") -}}
+                <meta name="darkmode" content="true">
 	{{ end }}
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
