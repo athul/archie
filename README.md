@@ -1,5 +1,5 @@
-# Archie - Hugo theme
-Archie is a minimal and clean theme for hugo with a markdown-ish UI.
+# Archie Network - Hugo theme
+Archie Network is a minimal and clean theme for hugo with a markdown-ish UI that supports network visualization.
 
 Forked from [Archie)](https://github.com/athul/archie)
 
@@ -22,7 +22,7 @@ In your Hugo website directory, create a new folder named theme and clone the re
 ```bash
 $ mkdir themes
 $ cd themes
-$ git clone https://github.com/athul/archie.git
+$ git submodule add https://github.com/mackles/archie-network.git
 ```
 Edit the `config.toml` file with `theme="archie"`
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
@@ -41,8 +41,10 @@ tags: [tag names] (optional)
 ```
 
 ## Credits
-Forked from [Archie)](https://github.com/athul/archie) which itself is forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License 
+Forked from [Archie](https://github.com/athul/archie) which itself is forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License 
+
 Inspired by design of blog.jse.li
+
 
 ----
 
