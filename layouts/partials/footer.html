@@ -6,7 +6,9 @@
 	{{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/athul/archie">Based on Archie</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 {{ if not .Site.IsServer }}
-{{ template "_internal/google_analytics_async.html" . }}
+{{ $gkey := .Site.Params.Goatcounter }}
+<script data-goatcounter="{{$gkey.url}}"
+        async src="//gc.zgo.at/count.js"></script>
 {{ end }}
 
 {{- if (isset .Site.Params "social") -}}
