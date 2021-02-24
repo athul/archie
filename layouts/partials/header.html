@@ -22,7 +22,9 @@
 	
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
+
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	{{- else if (isset .Site.Params "social") -}}
 		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
@@ -33,6 +35,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 	{{- else -}}
         <link href="{{ .Site.BaseURL }}css/fonts.css" rel="stylesheet">
+		<script src="{{ .Site.BaseURL }}js/axios.min.js"></script>
 	{{ end }}
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
