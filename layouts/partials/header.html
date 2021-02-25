@@ -55,10 +55,11 @@
 	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
 	<script src="{{ . }}"></script>
 	{{- else }}
-	<script src="{{ "{{ . }}" | relURL }}"></script>
+	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 	{{- end }}
 	{{- end }}
 	{{ if .Site.Params.scrobble | default false}}
-	<script src="{{ "js/scrobble.js" | relURL }}">lbCall()</script>
+	<script src="{{ "js/scrobble.js" | relURL }}"></script>
+	<script>lbCall()</script>
 	{{ end }}
 </head>
