@@ -3,8 +3,12 @@
 		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 	</div>
 	<nav>
-		{{ range .Site.Menus.main }}
-		<a href="{{ .URL }}">{{ .Name }}</a>
+		{{ range $index, $key := .Site.Menus.main }}
+			{{ with .Params.Icon }}
+			<a href="{{ $key.URL }}" title="{{ $key.Name }}"><i data-feather="{{ . }}"></i></a>
+			{{ else }}
+			<a href="{{ .URL }}">{{ .Name }}</a>
+		{{end}}
 		{{ end }}
 	</nav>
 </header>
