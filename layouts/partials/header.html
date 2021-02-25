@@ -59,6 +59,6 @@
 	{{- end }}
 	{{- end }}
 	{{ if .Site.Params.scrobble | default false}}
-	<script>lbCall()</script>
+	<script src="{{ "js/scrobble.js" | relURL }}">lbCall()</script>
 	{{ end }}
 </head>
