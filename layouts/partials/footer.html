@@ -1,5 +1,8 @@
 <footer>
 <hr>
+{{- if .Site.Params.scrobble -}}
+<div id="lbwrapper">Follow me on <a href="https://listenbrainz.org/user/ChilledTonic">ListenBrainz</a>; I last listened to <a id="track" href="#"></a> by <a id="artist" href="#"></a>.</p></div>
+{{ end }}
 {{- range $index, $key := .Site.Params.Social -}}
 <a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>|
 {{- end -}} ⚡️
@@ -7,7 +10,7 @@
 </footer>
 {{ if not .Site.IsServer }}
 {{ $gkey := .Site.Params.Goatcounter }}
-<script data-goatcounter="{{$gkey.url}}"
+<script data-goatcounter="{{$gkey}}"
         async src="//gc.zgo.at/count.js"></script>
 {{ end }}
 
