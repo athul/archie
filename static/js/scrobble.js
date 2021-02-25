@@ -16,12 +16,8 @@ async function lbCall() {
     track = payload.track_metadata.track_name
     artist = payload.track_metadata.artist_name
     release = payload.track_metadata.release_name
-    document.getElementById("artist").innerHTML = truncateString(artist, 20)
-    document.getElementById("artist").href="https://www.deezer.com/search/"+artist+"/artist"
-    document.getElementById("track").innerHTML = truncateString(track, 15)
-    document.getElementById("track").href="https://www.deezer.com/search/"+release+"/album"
+    document.getElementById("info").innerHTML = ': <a href="https://deezer.com/search/'+release+'/album">'+truncateString(track, 15)+'</a> by <a href="https://deezer.com/search/'+artist+'/artist">'+truncateString(artist, 20)+"</a>"
 }).catch(function (error) {
-    document.getElementById("lbwrapper").innerHTML = ""
     console.log(error)
 })
 }
