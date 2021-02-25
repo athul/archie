@@ -15,8 +15,14 @@
 			{{ .Content }}
 		</section>
 		<hr>
-		<script defer src="https://cdn.commento.io/js/commento.js"></script>
-		<div id="commento"></div>
+		<script>talkyardServerUrl='{{ .Site.Params.talkyardServerUrl }}';</script>
+		<script async defer src="{{ .Site.Params.talkyardScriptUrl }}"></script>
+		<!-- You can specify a per page discussion id on the next line, if your URLs might change. -->
+		<div class="talkyard-comments" data-discussion-id="{{ .Params.discussionId }}" style="margin-top: 45px;">
+		<noscript>Please enable Javascript to view comments.</noscript>
+		<p style="margin-top: 25px; opacity: 0.9; font-size: 96%">Comments powered by
+		<a href="https://www.talkyard.io">Talkyard</a>.</p>
+		</div>
 		<div class="post-tags">
 			{{ if ne .Type "page" }}
 			{{ if gt .Params.tags 0 }}
