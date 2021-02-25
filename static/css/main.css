@@ -193,27 +193,27 @@ h6 {
 
 h1::before {
   color: var(--maincolor);
-  content: "# ";
+  content: "// ";
 }
 h2::before {
   color: var(--maincolor);
-  content: "## ";
+  content: "// ";
 }
 h3::before {
   color: var(--maincolor);
-  content: "### ";
+  content: "// ";
 }
 h4::before {
   color: var(--maincolor);
-  content: "#### ";
+  content: "// ";
 }
 h5::before {
   color: var(--maincolor);
-  content: "##### ";
+  content: "// ";
 }
 h6::before {
   color: var(--maincolor);
-  content: "###### ";
+  content: "// ";
 }
 
 /* Footer */
