@@ -1,14 +1,26 @@
 <header>
 	<div class="main">
-		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+		<div class="logo"><a href="{{ .Site.BaseURL }}">
+				<img src="/logo-big.png" alt="IfItDoesntMatchAnyMedia">
+		</a></div>
 	</div>
-	<nav>
-		{{ range $index, $key := .Site.Menus.main }}
-			{{ with .Params.Icon }}
-			<a href="{{ $key.URL }}" title="{{ $key.Name }}"><i data-feather="{{ . }}"></i></a>
-			{{ else }}
-			<a href="{{ .URL }}">{{ .Name }}</a>
-		{{end}}
-		{{ end }}
-	</nav>
+	<div class="navbox">
+		<nav>
+			{{ range $index, $key := .Site.Menus.main }}
+				{{ with .Params.Icon }}
+				<a href="{{ $key.URL }}" title="{{ $key.Name }}"><i data-feather="{{ . }}"></i></a>
+				{{ else }}
+				<a href="{{ .URL }}">{{ .Name }}</a>
+			{{end}}
+			{{ end }}
+			{{- if .Site.Params.scrobble -}}
+			<div>
+				{{- if isset .Site.Params "subtitle" -}}
+				{{ .Site.Params.Subtitle | markdownify }}
+				{{- end -}}
+			</div>
+			<div id="lbwrapper"><a href="https://listenbrainz.org/user/ChilledTonic"><i data-feather="headphones"></i>:</a> <a id="track" href="#"></a> by <a id="artist" href="#"></a>.</div>
+			{{ end }}
+		</nav>
+	</div>
 </header>
