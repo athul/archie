@@ -29,21 +29,21 @@
 		{{ end }}
 		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	{{- else if (isset .Site.Params "social") -}}
-		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+		<script src="{{ "js/feather.min.js" | relURL }}"></script>
 	{{ end }}
 	{{ if .Site.Params.useCDN | default false -}}
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 	{{- else -}}
-        <link href="{{ .Site.BaseURL }}css/fonts.css" rel="stylesheet">
+        <link href="{{ "css/fonts.css" | relURL }}" rel="stylesheet">
 		{{ if .Site.Params.scrobble | default false -}}
-		<script src="{{ .Site.BaseURL }}js/axios.min.js"></script>
+		<script src="{{ "js/axios.min.js" | relURL }}"></script>
 		{{ end }}
 	{{ end }}
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ "css/main.css" | relURL }}" />
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
-		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/dark.css" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
+		<link rel="stylesheet" type="text/css" href="{{ "css/dark.css" | relURL }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
 	{{ end }}
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
