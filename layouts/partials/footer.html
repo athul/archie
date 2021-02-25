@@ -5,8 +5,8 @@
 {{ end }}
 {{- range $index, $key := .Site.Params.Social -}}
 <a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>|
-{{- end -}} ⚡️
-	{{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/athul/archie">Based on Archie</a> | Built with <a href="https://gohugo.io">Hugo</a>
+{{- end -}} 💜
+Built with <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/athul/archie">Archie</a> | {{ with .Site.Copyright }} {{ . }} {{ dateFormat "2006" now }}{{ end }}
 </footer>
 {{ if not .Site.IsServer }}
 {{ $gkey := .Site.Params.Goatcounter }}
