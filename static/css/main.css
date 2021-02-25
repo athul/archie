@@ -44,7 +44,7 @@ blockquote {
 }
 
 a {
-  border-bottom: 3px solid var(--maincolor);
+  border-bottom: 2px solid var(--maincolor);
   color: inherit;
   text-decoration: none;
 }
@@ -69,6 +69,44 @@ ul li::before {
 img {
   border: 3px solid #ececec;
   max-width: 100%;
+}
+.logo img {
+  border: none;
+  opacity: 0.5;
+  max-width: 40%
+}
+
+.navbox {
+  text-align:right;
+  line-height: 2;
+}
+@media (max-width:720px){
+.logo img {
+  display: none;
+}
+.navbox {
+  text-align:center;
+  margin: auto;
+}
+}
+
+@media (max-width: 440px){
+  div#lbwrapper {
+    display: none;
+  }
+}
+
+.logo img:hover {
+  opacity: 1;
+}
+
+.logo a {
+  border-bottom: none;
+}
+
+.logo a:hover {
+  background-color: white;
+  color: #fff;
 }
 
 figure {
@@ -218,10 +256,6 @@ article .title {
   color: var(--callouctcolor);
 }
 
-.site-description {
-  display: flex;
-  justify-content: space-between;
-}
 .tags li::before {
   content: "🏷 ";
 }
@@ -312,4 +346,9 @@ svg {
   content: "Markdown";
   background: royalblue;
   color: whitesmoke;
+}
+
+.smalltext {
+  font-size: 11px;
+  text-align: right;
 }
