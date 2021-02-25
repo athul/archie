@@ -14,9 +14,11 @@
 		<section class="body">
 			{{ .Content }}
 		</section>
+		{{ with not .Params.disableComments }}
 		<hr>
 		<script defer src="https://cdn.commento.io/js/commento.js"></script>
-<div id="commento"></div>
+		<div id="commento"></div>
+		{{ end }}
 		<div class="post-tags">
 			{{ if ne .Type "page" }}
 			{{ if gt .Params.tags 0 }}
