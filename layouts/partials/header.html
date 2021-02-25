@@ -55,7 +55,7 @@
 	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
 	<script src="{{ . }}"></script>
 	{{- else }}
-	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+	<script src="{{ "{{ . }}" | relURL }}"></script>
 	{{- end }}
 	{{- end }}
 	{{ if .Site.Params.scrobble | default false}}
