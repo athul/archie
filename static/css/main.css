@@ -80,7 +80,7 @@ img {
   text-align:right;
   line-height: 2;
 }
-@media (max-width:720px){
+@media (max-width:760px){
 .logo img {
   display: none;
 }
@@ -256,9 +256,6 @@ article .title {
   color: var(--callouctcolor);
 }
 
-.tags li::before {
-  content: "🏷 ";
-}
 .tags a {
   border-bottom: 3px solid var(--maincolor);
 }
