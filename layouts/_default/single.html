@@ -19,11 +19,11 @@
 			{{ if ne .Type "page" }}
 			{{ if gt .Params.tags 0 }}
 			<nav class="nav tags">
-				<ul class="tags">
+
 					{{ range .Params.tags }}
-					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}"><i data-feather="tag"></i>{{ . }}</a>
 					{{ end }}
-				</ul>
+
 			</nav>
 			{{ end }}
 			{{ end }}
