@@ -93,10 +93,16 @@ img {
   max-width: 40%
 }
 
+.logo-small img {
+  border: none;
+}
+
+
 .navbox {
   text-align:right;
   line-height: 2;
 }
+
 @media (max-width:760px){
 .logo img {
   display: none;
@@ -115,6 +121,10 @@ img {
 
 .logo img:hover {
   opacity: 1;
+}
+
+.logo-small img:hover {
+  filter: invert(1);
 }
 
 .logo a {
