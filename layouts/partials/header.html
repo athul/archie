@@ -59,7 +59,7 @@
 	{{- end }}
 	{{- end }}
 	{{ if .Site.Params.scrobble | default false}}
-	<script src="{{ "js/scrobble.js" | relURL }}"></script>
-	<script>lbCall()</script>
+	<script src="{{ "js/main.js" | relURL }}"></script>
+	<script>lbCall();randomSlug()</script>
 	{{ end }}
 </head>

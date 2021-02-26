@@ -15,9 +15,7 @@
 			{{ end }}
 			{{- if .Site.Params.scrobble -}}
 			<div>
-				{{- if isset .Site.Params "subtitle" -}}
-				{{ .Site.Params.Subtitle | markdownify }}
-				{{- end -}}
+				<span id="slug"></span>
 			</div>
 			<div id="lbwrapper"><a href="https://listenbrainz.org/user/ChilledTonic"><i data-feather="headphones"></i></a><span id="info"><i class="loader" data-feather="loader"></i></span></div>
 			{{ end }}
