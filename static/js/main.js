@@ -6,7 +6,7 @@ slugs = [
     "Move slow fix things",
     "I love the taste of books!",
     "Ew gross I'm a slug",
-
+    "There is nothing wrong with your TV Set!"
 ]
 window.addEventListener('load', () => {
     index=Math.floor(Math.random()*slugs.length)
@@ -32,7 +32,7 @@ async function lbCall() {
     track = payload.track_metadata.track_name
     artist = payload.track_metadata.artist_name
     release = payload.track_metadata.release_name
-    document.getElementById("info").innerHTML = ': <a href="https://deezer.com/search/'+release+'/album">'+truncateString(track, 15)+'</a> by <a href="https://deezer.com/search/'+artist+'/artist">'+truncateString(artist, 20)+"</a>"
+    document.getElementById("info").innerHTML = ': <a title="'+track+'" href="https://deezer.com/search/'+release+'/album">'+truncateString(track, 15)+'</a> by <a title="'+artist+'" href="https://deezer.com/search/'+artist+'/artist">'+truncateString(artist, 20)+"</a>"
 }).catch(function (error) {
     console.log(error)
 })
