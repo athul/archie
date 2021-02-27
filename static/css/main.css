@@ -94,7 +94,13 @@ img {
 }
 
 .logo-small img {
+  max-width: 2%;
+  min-width: 2%;
   border: none;
+}
+
+.logo-small {
+  flex-shrink: 0;
 }
 
 
