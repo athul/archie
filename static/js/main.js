@@ -32,7 +32,7 @@ async function lbCall() {
     track = payload.track_metadata.track_name
     artist = payload.track_metadata.artist_name
     release = payload.track_metadata.release_name
-    document.getElementById("info").innerHTML = ': <a title="'+track+'" href="https://deezer.com/search/'+release+'/album">'+truncateString(track, 15)+'</a> by <a title="'+artist+'" href="https://deezer.com/search/'+artist+'/artist">'+truncateString(artist, 20)+"</a>"
+    document.getElementById("info").innerHTML = ': <a title="'+track+'" href="https://deezer.com/search/'+release+' '+artist+'/album">'+truncateString(track, 15)+'</a> by <a title="'+artist+'" href="https://deezer.com/search/'+artist+'/artist">'+truncateString(artist, 20)+"</a>"
 }).catch(function (error) {
     console.log(error)
 })
