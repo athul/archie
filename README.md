@@ -104,3 +104,8 @@ name = "Tags"
 url = "/tags"
 weight = 4
 ```
+---
+
+If you liked my work please consider supporting me on [BuymeACoffee](https://www.buymeacoffee.com/athulca)
+
+<a href="https://www.buymeacoffee.com/athulca" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="41" width="174" ></a>
