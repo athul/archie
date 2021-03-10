@@ -103,6 +103,11 @@ img {
   flex-shrink: 0;
 }
 
+.float{
+	position:fixed;
+	bottom:70px;
+	right:20px;
+}
 
 .navbox {
   text-align:right;
@@ -110,6 +115,9 @@ img {
 }
 
 @media (max-width:760px){
+.float {
+  display: none;
+}
 .logo img {
   display: none;
 }
@@ -299,6 +307,11 @@ article .title {
 svg {
   max-height: 15px;
 }
+
+applause-button svg {
+  max-height: none;
+}
+
 .soc:hover {
   color: white;
 }

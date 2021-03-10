@@ -1,5 +1,5 @@
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
@@ -26,6 +26,10 @@
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
 		{{ if .Site.Params.scrobble | default false -}}
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		{{ end }}
+		{{ if .Site.Params.clapbutton | default true -}}
+		<script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
+		<link href="{{ "css/applause.css" | relURL }}" rel="stylesheet">
 		{{ end }}
 		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	{{- else if (isset .Site.Params "social") -}}
