@@ -4,7 +4,7 @@
 		<div class="title">
 			<span style="float: right;"><applause-button  style="width: 55px; height: 55px;" color="black" url="{{ .Permalink }}" multiclap="true"></applause-button></span>
 			<h1 class="title">{{ .Title }}</h1>
-			<div class="meta">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+			<div class="meta">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{if .Params.FrenchDate }}  / <a href="https://en.wikipedia.org/wiki/French_Republican_calendar">{{ .Params.FrenchDate }}</a>{{end}} {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
 			
 		</div>
 		{{ if isset .Params "tldr" }}
