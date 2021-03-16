@@ -27,7 +27,17 @@
 			<nav class="nav tags">
 
 					{{ range .Params.tags }}
-					<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}"><i data-feather="tag"></i>{{ . }}</a>
+					<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}"><i data-feather="tag"></i><noscript>
+						<svg
+						width="24"
+						height="24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round">
+						<use xlink:href="{{ "css/feather-sprite.svg" | relURL }}#tag"/>
+						</svg></noscript>{{ . }}</a>
 					{{ end }}
 
 			</nav>

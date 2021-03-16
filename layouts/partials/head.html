@@ -8,16 +8,27 @@
 		<nav>
 			{{ range $index, $key := .Site.Menus.main }}
 				{{ with .Params.Icon }}
-				<a href="{{ $key.URL }}" title="{{ $key.Name }}"><i data-feather="{{ . }}"></i></a>
+				<a href="{{ $key.URL }}" title="{{ $key.Name }}"><i data-feather="{{ . }}"></i>
+					<noscript>
+					<svg
+					width="24"
+					height="24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round">
+					<use xlink:href="{{ "css/feather-sprite.svg" | relURL }}#{{ . }}"/>
+					</svg></noscript></a>
 				{{ else }}
 				<a href="{{ .URL }}">{{ .Name }}</a>
 			{{end}}
 			{{ end }}
 			{{- if .Site.Params.scrobble -}}
 			<div>
-				<span id="slug"></span>
+				<span id="slug"><noscript>Now NoScript friendly!</noscript></span>
 			</div>
-			<div id="lbwrapper"><a title="ListenBrainz" href="https://listenbrainz.org/user/ChilledTonic"><i data-feather="headphones"></i></a><span id="info"><i class="loader" data-feather="loader"></i></span></div>
+			<div id="lbwrapper"><a title="ListenBrainz" href="https://listenbrainz.org/user/ChilledTonic"><noscript>See what I'm listening to on ListenBrainz</noscript><i data-feather="headphones"></i></a><span id="info"><i class="loader" data-feather="loader"></i></span></div>
 			{{ end }}
 		</nav>
 	</div>
