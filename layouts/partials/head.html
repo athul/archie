@@ -8,18 +8,7 @@
 		<nav>
 			{{ range $index, $key := .Site.Menus.main }}
 				{{ with .Params.Icon }}
-				<a href="{{ $key.URL }}" title="{{ $key.Name }}"><i data-feather="{{ . }}"></i>
-					<noscript>
-					<svg
-					width="24"
-					height="24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round">
-					<use xlink:href="{{ "css/feather-sprite.svg" | relURL }}#{{ . }}"/>
-					</svg></noscript></a>
+				<a href="{{ $key.URL }}" title="{{ $key.Name }}"><i data-feather="{{ . }}"></i><noscript><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="{{ "css/feather-sprite.svg" | relURL }}#{{ . }}"/></svg></noscript></a>
 				{{ else }}
 				<a href="{{ .URL }}">{{ .Name }}</a>
 			{{end}}
