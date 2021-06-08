@@ -19,7 +19,7 @@
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
-	
+
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
@@ -35,16 +35,20 @@
 	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
         <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
 	{{ end }}
+
 	{{ $style := resources.Get "css/main.css" | fingerprint }}
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
+
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
 		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
 		<link rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
 	{{ end }}
+	
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
 		{{ range .Site.Params.customCSS }}
-		<link rel="stylesheet" type="text/css" href="{{ . | relURL }}">
+		{{ $customstyle := resources.Get . | fingerprint }}
+		<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
 		{{ end }}
 	{{- end -}}
 	{{- range .Site.Params.customJS }}

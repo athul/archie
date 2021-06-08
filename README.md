@@ -15,6 +15,7 @@ Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 - Tags
 - Auto Dark Mode(based on system theme)
 - tl:dr; frontamatter
+- Cache busting for CSS files
 
 ## Installation
 In your Hugo website directory, create a new folder named theme and clone the repo
@@ -40,10 +41,23 @@ tags: [tag names] (optional)
 ```
 
 ## Credits
-Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License 
+Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License
 Inspired by design of blog.jse.li
 
 ----
+
+## Config Options
+
+### Custom CSS
+Custom CSS files can be included though the `customcss` config parameter.
+
+Note: CSS files should be placed under the `assets` directory e.g. `assets/css/first.css`.
+
+```toml
+[params]
+	customcss = ["css/first.css", "css/second.css"]
+```
+
 
 ## Config of the Demo Site
 
