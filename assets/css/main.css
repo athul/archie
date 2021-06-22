@@ -155,6 +155,11 @@ h4::before { color: var(--maincolor); content: '#### '; }
 h5::before { color: var(--maincolor); content: '##### '; }
 h6::before { color: var(--maincolor); content: '###### '; }
 
+.meta {
+  color: #999;
+  letter-spacing: -0.5px;
+}
+
 /* Footer */
 footer {
   margin-top: 1em;
