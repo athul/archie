@@ -38,4 +38,11 @@ func main() {
 	fmt.Println(x)
 }
 ```
-
+|       Subject       |      {{subject}}     |
+|:-------------------:|:--------------------:|
+|      Hosted On      |     {{hosted_on}}    |
+|         Site        |     {{site_url}}     |
+|    Incident Time    | {{time_of_incident}} |
+| Incident Ref Number |       {{name}}       |
+|     Resolved By     |    {{resolved_by}}   |
+|   Resolution Time   |  {{resolution_time}} |

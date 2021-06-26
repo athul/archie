@@ -60,7 +60,7 @@ ul {
 ul li {
   text-indent: -2ch;
 }
-ul li::before {
+ul > li::before {
   content: '* ';
   font-weight: bold;
 }
@@ -154,6 +154,11 @@ h3::before { color: var(--maincolor); content: '### '; }
 h4::before { color: var(--maincolor); content: '#### '; }
 h5::before { color: var(--maincolor); content: '##### '; }
 h6::before { color: var(--maincolor); content: '###### '; }
+
+.meta {
+  color: #999;
+  letter-spacing: -0.5px;
+}
 
 /* Footer */
 footer {
