@@ -43,6 +43,11 @@
 		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
 		<link rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
 	{{ end }}
+
+	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "light") -}}
+		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
+		<link disabled id="dark-mode-theme" rel="stylesheet" href="{{ $darkstyle.Permalink }}">
+	{{ end }}
 	
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
