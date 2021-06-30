@@ -6,5 +6,8 @@
 		{{ range .Site.Menus.main }}
 		<a href="{{ .URL }}">{{ .Name }}</a>
 		{{ end }}
+		{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "light") -}}
+            <a id="dark-mode-toggle"><i data-feather="sun"></i></a>
+        {{ end }}
 	</nav>
 </header>
