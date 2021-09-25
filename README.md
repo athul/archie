@@ -14,6 +14,7 @@ Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 - Callouts
 - Tags
 - Auto Dark Mode(based on system theme)
+- Dark/Light Mode toggle
 - tl:dr; frontamatter
 - Cache busting for CSS files
 
@@ -75,7 +76,7 @@ pygmentscodefencesguesssyntax = true
 paginate=3 # articles per page
 
 [params]
-	mode="auto" # color-mode → light,dark or auto
+	mode="auto" # color-mode → light,dark,toggle or auto
 	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
 	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
 
