@@ -24,7 +24,7 @@
 	{{- template "_internal/twitter_cards.html" . -}}
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
 		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	{{- else if (isset .Site.Params "social") -}}
+	{{- else if or (isset .Site.Params "social") (eq .Site.Params.mode "toggle") -}}
 		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
 	{{ end }}
 	{{ if .Site.Params.useCDN | default false -}}
