@@ -1,9 +1,13 @@
 <footer>
-<hr>
-{{- range $index, $key := .Site.Params.Social -}}
-<a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>|
-{{- end -}} ⚡️
-	{{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  <div style="display:flex">
+    {{- range $index, $key := .Site.Params.Social -}}
+    <a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+    {{- end -}}
+  </div>
+  <div class="footer-info">
+    {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }} <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
 </footer>
 {{ if not .Site.IsServer }}
 {{ template "_internal/google_analytics_async.html" . }}
@@ -11,6 +15,6 @@
 
 {{- if (isset .Site.Params "social") -}}
 <script>
-      feather.replace()
+  feather.replace()
 </script>
 {{- end -}}
