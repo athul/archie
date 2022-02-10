@@ -1,19 +1,21 @@
 baseURL = "https://athul.github.io/archie/"
 languageCode = "en-us"
 title = "Archie"
-theme="archie"
+theme = "archie"
 copyright = "© Athul"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-paginate=4
+paginate = 4
+
 [params]
-	favicon="https://img.icons8.com/officel/16/000000/chevron-right.png"
-	og_image="https://raw.githubusercontent.com/athul/archie/master/images/archie-dark.png"
-	mode="auto"
-	useCDN=false
-	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
-	description = "Archie is a Minimal and Clean theme for Hugo"
+favicon = "https://img.icons8.com/officel/16/000000/chevron-right.png"
+og_image = "https://raw.githubusercontent.com/athul/archie/master/images/archie-dark.png"
+# mode = "auto"
+mode = "toggle"
+useCDN = true
+subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+description = "Archie is a Minimal and Clean theme for Hugo"
 
 [[params.social]]
 name = "GitHub"
