@@ -54,6 +54,8 @@
 	{{- range .Site.Params.customJS }}
 	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
 	<script src="{{ . }}"></script>
+	{{- else if (hasPrefix . "<script")}}
+    {{ .| safeHTML }}
 	{{- else }}
 	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 	{{- end }}
