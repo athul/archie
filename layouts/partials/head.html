@@ -10,5 +10,6 @@
         | <a id="dark-mode-toggle" onclick="toggleTheme()" href=""></a>
 		<script src="{{ .Site.BaseURL }}js/themetoggle.js"></script>
 		{{ end }}
+		{{ if .Params.katex}}{{ partial "katex.html" . }}{{ end }}
 	</nav>
 </header>
