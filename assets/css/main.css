@@ -58,10 +58,10 @@ ul {
   padding-left: 2ch;
 }
 ul li {
-  text-indent: -2ch;
+  text-indent: -0ch;
 }
 ul > li::before {
-  content: '* ';
+  content: '- ';
   font-weight: bold;
 }
 
