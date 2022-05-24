@@ -1,6 +1,6 @@
 body {
-  color: white;
-  background-color: #202124;
+  color: #fffff8;
+  background-color: #111111 ;
 }
 
 ::-moz-selection {
@@ -16,7 +16,7 @@ body {
 }
 
 hr {
-  border-top: 3px dotted blue;
+  border-top: 3px dotted rebeccapurple;
 }
 code {
   background-color: lightblue;

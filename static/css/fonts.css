@@ -1,4 +1,6 @@
 /* fira-sans-regular - latin */
+@import url(../fonts/et-book/et-book.css);
+
 @font-face {
   font-family: 'Fira Sans';
   font-style: normal;

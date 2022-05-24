@@ -7,7 +7,7 @@ slugs = [
     "I love the taste of books!",
     "Ew gross I'm a slug",
     "There is nothing wrong with your Television Set!",
-    "TV is a nickname, Nicknames are for friends - and Television is no friend of mine."
+    "Captain Toad is the Ubermensch."
 ]
 window.addEventListener('load', () => {
     index=Math.floor(Math.random()*slugs.length)

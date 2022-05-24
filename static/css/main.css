@@ -4,12 +4,12 @@
   --bordercl: rebeccapurple;
   --callouctcolor: dodgerblue;
   --hovercolor: navy;
-  --darkMaincolor: #50fa7b;
+  --darkMaincolor: rebeccapurple;
 }
 html {
   color: #232333;
-  font-family: "Roboto Mono", monospace;
-  font-size: 15px;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-size: 18px;
   line-height: 1.6em;
 }
 body {
@@ -26,7 +26,7 @@ body {
 }
 
 p {
-  font-family: "Fira Sans", sans-serif;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   line-height: 1.5;
 }
 
