@@ -1,7 +1,7 @@
 <footer>
 <hr>
 {{- range $index, $key := .Site.Params.Social -}}
-<a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i><noscript><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="{{"css/feather-sprite.svg" | relURL}}#{{$key.icon}}"/></svg></noscript></a>|
+<a class="soc" href="{{ $key.url }}" title="{{ $key.name }}" {{- if $key.auth -}}rel="me"{{- end -}}><i data-feather="{{ $key.icon }}"></i><noscript><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="{{"css/feather-sprite.svg" | relURL}}#{{$key.icon}}"/></svg></noscript></a>|
 {{- end -}}
 {{- if .Site.Params.XXIIVVWebring -}}
 <a title="Webring" href='https://webring.xxiivv.com/#random' target='_blank'><span class="logo-small"><img src='https://webring.xxiivv.com/icon.black.svg'/></span></a>|
