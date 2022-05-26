@@ -5,7 +5,7 @@
 			<span style="float: right;"><applause-button  style="width: 55px; height: 55px;" color="black" url="{{ .Permalink }}" multiclap="true"></applause-button></span>
 			<h1 class="title p-name">{{ .Title }}</h1>
 			<div class="meta">Posted on <time class="dt-published">{{ dateFormat "Jan 2, 2006" .Date }}</time>{{if .Params.FrenchDate }}  / <a href="https://en.wikipedia.org/wiki/French_Republican_calendar">{{ .Params.FrenchDate }}</a>{{end}} {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
-			<div class="meta">By <a class="p-author h-card" href="https://cannedfi.sh">Alex S.</a></div>
+			<div class="meta">By <a class="p-author h-card" href="https://cannedfi.sh">{{ .Site.Params.Writer }}</a></div>
 			
 		</div>
 		{{ if isset .Params "tldr" }}
