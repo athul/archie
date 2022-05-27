@@ -11,7 +11,7 @@
 		{{ if isset .Params "tldr" }}
 		<div class="tldr p-summary">
 			<strong>tl;dr:</strong>
-			{{ .Params.tldr }}
+			<span style="color: gray">{{ .Params.tldr }}</span>
 		</div>{{ end }}
 
 		<section class="body e-content">
