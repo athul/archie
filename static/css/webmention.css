@@ -1,4 +1,4 @@
-#webmentions {
+/* #webmentions {
     margin: 0;
     position: relative;
     z-index: 100;
@@ -11,14 +11,7 @@
     overflow-y: scroll;
     font-size: 80%;
 }
-
-#webmentions h2 {
-    font-size: medium;
-    margin: 0;
-    padding: 2px;
-    background: #ccc;
-}
-
+*/
 #webmentions .reacts img {
     margin: 3px -1ex 1px 0;
 }
@@ -59,7 +52,7 @@
     overflow: hidden;
 }
 
-#webmentions .comments li .text {
+#webmentions .text {
     color: #555;
     font-style: italic;
     text-decoration: none;
