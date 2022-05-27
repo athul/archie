@@ -17,6 +17,7 @@
 		<section class="body e-content">
 			{{ .Content }}
 		</section>
+		<div id="webmentions"></div>
 		<div class="post-tags">
 			{{ if ne .Type "page" }}
 			{{ if gt .Params.tags 0 }}
@@ -42,6 +43,5 @@
 			{{ end }}
 		</div>
 	</article>
-	<div id="webmentions"></div>
 </main>
 {{ end }}
