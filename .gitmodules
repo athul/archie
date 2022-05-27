@@ -1,3 +1,3 @@
 [submodule "static/fonts/et-book"]
 	path = static/fonts/et-book
-	url = ../edwardtufte/et-book.git
+	url = https://github.com/edwardtufte/et-book.git
