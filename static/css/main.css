@@ -45,7 +45,7 @@ blockquote {
   padding-left: 1em;
 }
 
-a {
+a :not(#reaction){
   border-bottom: 2px solid var(--maincolor);
   color: inherit;
   text-decoration: none;
