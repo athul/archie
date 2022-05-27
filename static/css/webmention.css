@@ -33,6 +33,7 @@
     position: relative;
     text-decoration: none;
     text-shadow: 0px 0px 3px white;
+    border-bottom: none;
     margin-right: 0;
     letter-spacing: -1ex;
     margin-right: 1ex;
