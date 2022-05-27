@@ -1,6 +1,5 @@
 /* Markdown */
-
-
+@import url(webmention.css);
 :root {
   --maincolor: rebeccapurple;
   --bordercl: rebeccapurple;
