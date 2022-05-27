@@ -42,6 +42,7 @@
     max-height: 1.3em;
     margin-right: -1ex;
     border-radius: 25%;
+    border-bottom: none;
 }
 
 #webmentions a.reaction sub {
