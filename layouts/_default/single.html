@@ -2,11 +2,18 @@
 <main>
 	<article class="h-entry">
 		<div class="title">
-			<span style="float: right;"><applause-button  style="width: 55px; height: 55px;" color="black" url="{{ .Permalink }}" multiclap="true"></applause-button></span>
+			<span style="float: right;">
+				<applause-button style="width: 55px; height: 55px;" color="black" url="{{ .Permalink }}"
+					multiclap="true"></applause-button>
+			</span>
 			<h1 class="title p-name">{{ .Title }}</h1>
-			<div class="meta">Posted on <time class="dt-published">{{ dateFormat "Jan 2, 2006" .Date }}</time>{{if .Params.FrenchDate }}  / <a href="https://en.wikipedia.org/wiki/French_Republican_calendar">{{ .Params.FrenchDate }}</a>{{end}} {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
-			<div class="meta">By <a class="p-author h-card" href="https://cannedfi.sh">{{ .Site.Params.Writer }}</a></div>
-			
+			<div class="meta">Posted on <time class="dt-published">{{ dateFormat "Jan 2, 2006" .Date }}</time>{{if
+				.Params.FrenchDate }} / <a href="https://en.wikipedia.org/wiki/French_Republican_calendar">{{
+					.Params.FrenchDate }}</a>{{end}} {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
+			</div>
+			<div class="meta">By <a class="p-author h-card" href="https://cannedfi.sh">{{ .Site.Params.Writer }}</a>
+			</div>
+
 		</div>
 		{{ if isset .Params "tldr" }}
 		<div class="tldr p-summary">
@@ -23,21 +30,16 @@
 			{{ if gt .Params.tags 0 }}
 			<nav class="nav tags">
 
-					{{ range .Params.tags }}
-					<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}"><i data-feather="tag"></i><noscript>
-						<svg
-						width="24"
-						height="24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<use xlink:href="{{ "css/feather-sprite.svg" | relURL }}#tag"/>
+				{{ range .Params.tags }}
+				<a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}"><i data-feather="tag"></i><noscript>
+						<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round">
+							<use xlink:href="{{ " css/feather-sprite.svg" | relURL }}#tag" />
 						</svg></noscript>{{ . }}</a>
-					{{ end }}
-					<span  style="float: right;"><a class="u-url" href="{{ .Permalink }}">permalink</a> | <a href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de/&reply={{ .permalink }}" target="_blank">comment</a></span>
-
+				{{ end }}
+				<span style="float: right;"><a class="u-url" href="{{ .Permalink }}">permalink</a> | <a
+						href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de/&reply={{ .permalink }}"
+						target="_blank">comment</a></span>
 			</nav>
 			{{ end }}
 			{{ end }}
