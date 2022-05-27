@@ -43,6 +43,7 @@
     margin-right: -1ex;
     border-radius: 25%;
     border-bottom: none;
+    border: none;
 }
 
 #webmentions a.reaction sub {

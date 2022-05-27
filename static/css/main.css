@@ -50,6 +50,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 a:hover {
   background-color: var(--hovercolor);
   color: #fff;
