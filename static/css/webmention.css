@@ -13,6 +13,8 @@
 }
 */
 #webmentions .reacts img {
+    border: none;
+    border-bottom: none;
     margin: 3px -1ex 1px 0;
 }
 
