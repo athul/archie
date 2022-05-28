@@ -101,7 +101,7 @@ A more detailed example:
     };
 
     var reactEmoji = {
-        'in-reply-to': `<i data-feather="message-square"></i>
+        'in-reply-to': '<i data-feather="message-square"></i>',
         'like-of': '❤️',
         'repost-of': '🔄',
         'bookmark-of': '⭐️',
