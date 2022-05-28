@@ -51,7 +51,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover :not(a.reaction){
   background-color: var(--hovercolor);
   color: #fff;
 }
