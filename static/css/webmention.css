@@ -11,9 +11,8 @@
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
 #webmentions .reacts img {
-    border: none;
-    border-bottom: none;
     margin: 3px -1ex 1px 0;
 }
 
@@ -39,14 +38,21 @@
 
 #webmentions a.reaction:hover {
     background-color: none;
+    background: none;
+    color: black;
 }
 
 #webmentions a.reaction img {
     max-height: 1.3em;
     margin-right: -1ex;
     border-radius: 25%;
-    border-bottom: none;
     border: none;
+}
+
+#webmentions a.reaction img:hover {
+    background-color: none;
+    background: none;
+    color: none;
 }
 
 #webmentions a.reaction sub {
