@@ -1,5 +1,6 @@
 #webmentions {
     margin: 0;
+    margin-bottom: 2em;
     position: relative;
     z-index: 100;
     line-height: 1.2em;
