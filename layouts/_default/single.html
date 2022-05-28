@@ -25,6 +25,9 @@
 			{{ .Content }}
 		</section>
 		<div id="webmentions"></div>
+		<script>
+			feather.replace()
+		</script>
 		<div class="post-tags">
 			{{ if ne .Type "page" }}
 			{{ if gt .Params.tags 0 }}
