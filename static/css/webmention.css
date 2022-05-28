@@ -1,4 +1,4 @@
-/* #webmentions {
+#webmentions {
     margin: 0;
     position: relative;
     z-index: 100;
@@ -9,9 +9,7 @@
     max-height: 20em;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-size: 80%;
 }
-*/
 #webmentions .reacts img {
     border: none;
     border-bottom: none;
