@@ -106,6 +106,14 @@ img {
   flex-shrink: 0;
 }
 
+.icon {
+  max-height: 1.3em;
+  border: none;
+  display: inline-flex;
+  position: relative;
+  top: 7px;
+}
+
 .float{
 	position:fixed;
 	bottom:70px;
