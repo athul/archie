@@ -1,0 +1,23 @@
+<style>
+    .image-gallery {overflow: auto; margin-left: -1%!important;}
+    .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 19%;}
+    .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+    .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+    .image-gallery li a img {width: 100%; display: block;}
+</style>
+
+{{ $dir := .Params.gallery_dir }}
+<ul class="image-gallery">
+{{ range (readDir (printf "assets/%s" $dir)) }}
+  {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
+  {{- $imageurl := printf "/%s/%s" $dir .Name -}}
+  {{- $imagetitle := index (split .Name ".") 0 -}}
+    <li>
+      <a href="{{ ($image.Fit "1600x1600 q50").Permalink }}" title="{{ $imagetitle }}" class="lightbox-image">
+        <img src="{{ ($image.Fill "300x300 q50").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
+        <span>{{ $imagetitle }}</span>
+      </a>
+    </li>
+  
+{{ end }}
+</ul>
