@@ -7,11 +7,21 @@
 					multiclap="true"></applause-button>
 			</span>
 			<h1 class="title p-name">{{ .Title }}</h1>
-			<div class="meta">Posted on <time class="dt-published">{{ dateFormat "Jan 2, 2006" .Date }}</time>{{if
+			<div title="Date Posted" class="meta"><i style="position:relative;top:2px" data-feather="calendar"></i><noscript>
+				<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+					stroke-linecap="round" stroke-linejoin="round">
+					<use xlink:href="{{ " css/feather-sprite.svg" | relURL }}#calendar" />
+				</svg></noscript> <time class="dt-published">{{ dateFormat "Jan 2, 2006" .Date }}</time>{{if
 				.Params.FrenchDate }} / <a href="https://en.wikipedia.org/wiki/French_Republican_calendar">{{
 					.Params.FrenchDate }}</a>{{end}} {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
 			</div>
-			<div class="meta">By <span class="h-card"><a class="p-author" rel="author" href="https://cannedfi.sh">{{ .Site.Params.Writer }}</a> <img class="icon u-photo" src="/icon.png"></img></span>
+			<div class="meta">By <span class="h-card"><a class="p-author" rel="author" href="https://cannedfi.sh">{{
+						.Site.Params.Writer }}</a> <img class="icon u-photo" src="/icon.png"></img></span><span title="Time to Read"
+					style="float:right;" class="meta"><i style="position:relative;top:2px" data-feather="watch"></i><noscript>
+						<svg style="position:relative;top:2px" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round">
+							<use xlink:href="{{ " css/feather-sprite.svg" | relURL }}#watch" />
+						</svg></noscript> {{ .ReadingTime }} minute{{ if (ne .ReadingTime 1) }}s{{ end }}</span>
 			</div>
 
 		</div>
@@ -34,7 +44,7 @@
 			<nav class="nav tags">
 
 				{{ range .Params.tags }}
-				<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}"><i data-feather="tag"></i><noscript>
+				<a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}"><i data-feather="tag"></i><noscript>
 						<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
 							stroke-linecap="round" stroke-linejoin="round">
 							<use xlink:href="{{ " css/feather-sprite.svg" | relURL }}#tag" />
