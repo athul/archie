@@ -10,7 +10,7 @@
 			<div title="Date Posted" class="meta"><i style="position:relative;top:2px" data-feather="calendar"></i><noscript>
 				<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
 					stroke-linecap="round" stroke-linejoin="round">
-					<use xlink:href="{{ " css/feather-sprite.svg" | relURL }}#calendar" />
+					<use xlink:href="{{ "css/feather-sprite.svg" | relURL }}#calendar" />
 				</svg></noscript> <time class="dt-published">{{ dateFormat "Jan 2, 2006" .Date }}</time>{{if
 				.Params.FrenchDate }} / <a href="https://en.wikipedia.org/wiki/French_Republican_calendar">{{
 					.Params.FrenchDate }}</a>{{end}} {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
@@ -20,7 +20,7 @@
 					style="float:right;" class="meta"><i style="position:relative;top:2px" data-feather="watch"></i><noscript>
 						<svg style="position:relative;top:2px" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
 							stroke-linecap="round" stroke-linejoin="round">
-							<use xlink:href="{{ " css/feather-sprite.svg" | relURL }}#watch" />
+							<use xlink:href="{{ "css/feather-sprite.svg" | relURL }}#watch" />
 						</svg></noscript> {{ .ReadingTime }} minute{{ if (ne .ReadingTime 1) }}s{{ end }}</span>
 			</div>
 
@@ -47,7 +47,7 @@
 				<a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}"><i data-feather="tag"></i><noscript>
 						<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
 							stroke-linecap="round" stroke-linejoin="round">
-							<use xlink:href="{{ " css/feather-sprite.svg" | relURL }}#tag" />
+							<use xlink:href="{{ "css/feather-sprite.svg" | relURL }}#tag" />
 						</svg></noscript>{{ . }}</a>
 				{{ end }}
 				<span style="float: right;"><a class="u-url" href="{{ .Permalink }}">permalink</a> | <a
