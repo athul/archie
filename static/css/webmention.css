@@ -22,6 +22,11 @@
     padding: 4px;
 }
 
+#webmentions .reacts {
+    position:relative;
+    margin-left: 15px;
+}
+
 #webmentions li {
     text-indent: -1em;
     padding-left: 1em;
