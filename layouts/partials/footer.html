@@ -4,7 +4,7 @@
 <a class="soc" href="{{ $key.url }}" title="{{ $key.name }}" {{- if $key.auth -}}rel="me"{{- end -}}><i data-feather="{{ $key.icon }}"></i><noscript><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="{{"css/feather-sprite.svg" | relURL}}#{{$key.icon}}"/></svg></noscript></a>|
 {{- end -}}
 💜
-Built with <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/athul/archie">Archie</a> | {{ with .Site.Copyright }} © <span class="h-card"><img class="icon u-photo" src="/icon.png"></img> <a class="p-name u-url" href="https://cannedfi.sh">{{ . }}</a></span> {{ dateFormat "2006" now }}{{ end }}
+Built with <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/athul/archie">Archie</a> | {{ with .Site.Copyright }} © <span class="h-card"><link class="icon u-photo" src="/icon.png" /><a class="p-name u-url" href="https://cannedfi.sh">{{ . }}</a></span> {{ dateFormat "2006" now }}{{ end }}
 </footer>
 {{ if not .Site.IsServer }}
 <script data-goatcounter="{{.Site.Params.Goatcounter}}count"
