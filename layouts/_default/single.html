@@ -28,9 +28,9 @@
 
 		</div>
 		{{ if isset .Params "tldr" }}
-		<div class="tldr p-summary">
+		<div class="tldr">
 			<strong>tl;dr:</strong>
-			<span style="color: gray">{{ .Params.tldr }}</span>
+			<span class="p-summary" style="color: gray">{{ .Params.tldr }}</span>
 		</div>{{ end }}
 
 		<section class="body e-content">
