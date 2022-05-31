@@ -217,9 +217,7 @@ A more detailed example:
     }
 
     function formatReactions(reacts) {
-        var html = '<h2>' + reacts.length + ' Reaction' +
-            (reacts.length > 1 ? 's' : '') +
-            '</h2><ul class="reacts">';
+        var html = '<ul class="reacts">';
 
         reacts.forEach(function (r) {
             html += reactImage(r);
