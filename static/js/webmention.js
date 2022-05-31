@@ -165,8 +165,7 @@ A more detailed example:
     }
 
     function formatComments(comments) {
-        var html = '<h2>' + comments.length + ' Response' +
-            (comments.length > 1 ? 's' : '') +
+        var html = '<h2>Webmentions'
             '</h2><ul class="comments">';
         comments.forEach(function (c) {
             html += '<li>';
