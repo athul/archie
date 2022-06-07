@@ -19,6 +19,10 @@
             <a href="{{ .URL }}">{{ .Name }}</a>
       {{end}}
       {{ end }}
+      {{ if eq .Site.Params.mode "toggle" -}}
+      | <a id="dark-mode-toggle" onclick="toggleTheme()" href=""></a>
+      <script src="{{ .Site.BaseURL }}js/themetoggle.js"></script>
+      {{ end }}
       </span>
 </footer>
 {{ if not .Site.IsServer }}
