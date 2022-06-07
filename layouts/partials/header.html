@@ -1,5 +1,5 @@
 <head>
-	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
@@ -14,56 +14,68 @@
 	{{- end -}}
 
 	{{- if isset .Site.Params "webmention" | default false -}}
-	<script src="{{ "js/webmention.js" | relURL }}" page-url="{{.Permalink}}" wordcount="10" max-webmentions="10" async></script>
+	<script src="{{ "js/webmention.js" | relURL }}" page-url="{{.Permalink}}" wordcount="10" max-webmentions="10" async>
+	</script>
 	<link rel="webmention" href="https://webmention.io/{{ .Site.Params.webmention }}/webmention" />
-    <link rel="pingback" href="https://webmention.io/{{ .Site.Params.webmention }}/xmlrpc" />
+	<link rel="pingback" href="https://webmention.io/{{ .Site.Params.webmention }}/xmlrpc" />
 	{{- end -}}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
+	<meta name="description"
+		content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+	<meta property="og:image" content="{{ .Site.Params.og_image }}" />
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
-	
+
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
 
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
-		{{ if .Site.Params.scrobble | default false -}}
-		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-		{{ end }}
-		{{ if .Site.Params.clapbutton | default true -}}
-		<script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
-		<link href="{{ "css/applause.css" | relURL }}" rel="stylesheet">
-		{{ end }}
-		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	{{- else if (isset .Site.Params "social") -}}
-		<script src="{{ "js/feather.min.js" | relURL }}"></script>
+	{{ if .Site.Params.scrobble | default false -}}
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	{{ end }}
-        <link href="{{ "css/fonts.css" | relURL }}" rel="stylesheet">
-		{{ if .Site.Params.scrobble | default false -}}
-		<script src="{{ "js/axios.min.js" | relURL }}"></script>
-		{{ end }}
+	{{ if .Site.Params.clapbutton | default true -}}
+	<script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
+	<link href="{{ "css/applause.css" | relURL }}" rel="stylesheet">
+	{{ end }}
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	{{- else if or (isset .Site.Params "social") (eq .Site.Params.mode "toggle") -}}
+	<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+	{{ end }}
+	<link href="{{ "css/fonts.css" | relURL }}" rel="stylesheet">
+	{{ if .Site.Params.scrobble | default false -}}
+	<script src="{{ "js/axios.min.js" | relURL }}"></script>
+	{{ end }}
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ "css/main.css" | relURL }}" />
-	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
-		<link rel="stylesheet" type="text/css" href="{{ "css/dark.css" | relURL }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
+	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode "toggle") -}}
+	{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
+	<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}"
+		{{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)" {{ end }}
+		{{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
 	{{ end }}
+
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
-		{{ range .Site.Params.customCSS }}
-		<link rel="stylesheet" type="text/css" href="{{ . | relURL }}">
-		{{ end }}
+	{{ range .Site.Params.customCSS }}
+	{{ $customstyle := resources.Get . | fingerprint }}
+	<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
+	{{ end }}
 	{{- end -}}
 	{{- range .Site.Params.customJS }}
 	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
 	<script src="{{ . }}"></script>
+	{{- else if (hasPrefix . "<script")}}
+	{{ .| safeHTML }}
 	{{- else }}
 	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 	{{- end }}
 	{{- end }}
 	{{ if .Site.Params.scrobble | default false}}
 	<script src="{{ "js/main.js" | relURL }}"></script>
-	<script>lbCall();randomSlug()</script>
+	<script>
+		lbCall();
+		randomSlug()
+	</script>
 	{{ end }}
 </head>

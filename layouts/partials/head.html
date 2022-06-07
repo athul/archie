@@ -13,6 +13,10 @@
 				<a href="{{ .URL }}">{{ .Name }}</a>
 			{{end}}
 			{{ end }}
+			{{ if eq .Site.Params.mode "toggle" -}}
+			| <a id="dark-mode-toggle" onclick="toggleTheme()" href=""></a>
+			<script src="{{ .Site.BaseURL }}js/themetoggle.js"></script>
+			{{ end }}
 			{{- if .Site.Params.scrobble -}}
 			<div>
 				<span id="slug"><noscript>Now NoScript friendly!</noscript></span>
