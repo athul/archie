@@ -101,13 +101,13 @@ A more detailed example:
     };
 
     var reactEmoji = {
-        'in-reply-to': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../css/feather-sprite.svg#message-square" /></svg>',
-        'like-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../css/feather-sprite.svg#heart" /></svg>',
-        'repost-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../css/feather-sprite.svg#refresh-cw" /></svg>',
-        'bookmark-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../css/feather-sprite.svg#star" /></svg>',
-        'mention-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../css/feather-sprite.svg#message-square" /></svg>',
-        'rsvp': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../css/feather-sprite.svg#calendar" /></svg>',
-        'follow-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../css/feather-sprite.svg#user-plus" /></svg>'
+        'in-reply-to': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../../css/feather-sprite.svg#message-square" /></svg>',
+        'like-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../../css/feather-sprite.svg#heart" /></svg>',
+        'repost-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../../css/feather-sprite.svg#refresh-cw" /></svg>',
+        'bookmark-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../../css/feather-sprite.svg#star" /></svg>',
+        'mention-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../../css/feather-sprite.svg#message-square" /></svg>',
+        'rsvp': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../../css/feather-sprite.svg#calendar" /></svg>',
+        'follow-of': '<svg width="24" height="24" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="../../../css/feather-sprite.svg#user-plus" /></svg>'
     };
 
     var rsvpEmoji = {
