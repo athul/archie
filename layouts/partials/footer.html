@@ -1,14 +1,28 @@
 <footer>
-<hr>
-{{- range $index, $key := .Site.Params.Social -}}
-<a class="soc" href="{{ $key.url }}" title="{{ $key.name }}" {{- if $key.auth -}}rel="me"{{- end -}}><i data-feather="{{ $key.icon }}"></i><noscript><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="{{"css/feather-sprite.svg" | relURL}}#{{$key.icon}}"/></svg></noscript></a>|
-{{- end -}}
-💜
-Built with <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/athul/archie">Archie</a> | {{ with .Site.Copyright }} © <span class="h-card"><img class="icon u-photo" style="width:0px;opacity:0;"src="/icon.png"/><a class="p-name u-url" href="https://cannedfi.sh">{{ . }}</a></span> {{ dateFormat "2006" now }}{{ end }}
+      <hr>
+      {{- range $index, $key := .Site.Params.Social -}}
+      <a class="soc" href="{{ $key.url }}" title="{{ $key.name }}" {{- if $key.auth -}}rel="me" {{- end -}}><i
+                  data-feather="{{ $key.icon }}"></i><noscript><svg width="24" height="24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <use xlink:href="{{"css/feather-sprite.svg" | relURL}}#{{$key.icon}}" /></svg></noscript></a>|
+      {{- end -}}
+      💜
+      Built with <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/athul/archie">Archie</a> |
+      {{ with .Site.Copyright }} © <span class="h-card"><img class="icon u-photo" style="width:0px;opacity:0;"
+                  src="/icon.png" /><a class="p-name u-url" href="https://cannedfi.sh">{{ . }}</a></span>
+      {{ dateFormat "2006" now }}{{ end }}
+<span style="position: relative;float: right;">
+      {{ range $index, $key := .Site.Menus.bottom }}
+            {{ with .Params.Icon }}
+            <a href="{{ $key.URL }}" title="{{ $key.Name }}"><i data-feather="{{ . }}"></i><noscript><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="{{ "css/feather-sprite.svg" | relURL }}#{{ . }}"/></svg></noscript></a>
+            {{ else }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+      {{end}}
+      {{ end }}
+      </span>
 </footer>
 {{ if not .Site.IsServer }}
-<script data-goatcounter="{{.Site.Params.Goatcounter}}count"
-        async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="{{.Site.Params.Goatcounter}}count" async src="//gc.zgo.at/count.js"></script>
 {{ end }}
 
 {{- if (isset .Site.Params "social") -}}
