@@ -171,10 +171,12 @@ footer {
 .soc {
   display: flex;
   align-items: center;
-  padding-right: 1rem;
-  margin-right: 1rem;
-  border-right: 2px solid;
   border-bottom: none;
+}
+.border {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid;
 }
 .footer-info {
   padding: var(--footer-padding);
