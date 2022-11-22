@@ -26,7 +26,7 @@ $ cd themes
 $ git clone https://github.com/athul/archie.git
 ```
 Edit the `config.toml` file with `theme="archie"`
-For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
+For more information read the official [setup guide](https://gohugo.io/installation/) of Hugo.
 
 ## Writing Posts
 Create a new `.md` file in the *content/posts* folder
