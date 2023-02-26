@@ -21,7 +21,7 @@
 			<nav class="nav tags">
 				<ul class="tags">
 					{{ range .Params.tags }}
-					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					<li><a href="{{ "tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
 					{{ end }}
 				</ul>
 			</nav>
