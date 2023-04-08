@@ -17,6 +17,7 @@ Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 - Dark/Light Mode toggle
 - tl:dr; frontamatter
 - Cache busting for CSS files
+- Disqus Comments
 
 ## Installation
 In your Hugo website directory, create a new folder named theme and clone the repo
@@ -72,6 +73,8 @@ copyright = "© Athul"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
+
+disqusShortname = "yourDisqusShortname"
 
 paginate=3 # articles per page
 
