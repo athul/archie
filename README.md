@@ -1,5 +1,3 @@
-# themu - Hugo theme
-
 ## Demo
 [Check the Demo](https://fruw.org)
 
@@ -29,11 +27,6 @@ draft: true/false (optional)
 tags: [tag names] (optional)
 ---
 ```
-
-## Credits
-Forked from [Archie Theme](https://github.com/athul/archie) and Licensed under MIT License
-
-----
 
 ## Config Options
 
@@ -108,3 +101,6 @@ name = "Tags"
 url = "/tags"
 weight = 4
 ```
+
+## Credits
+Forked from [Archie Theme](https://github.com/athul/archie) and Licensed under MIT License
