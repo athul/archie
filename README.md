@@ -1,32 +1,21 @@
-# Archie - Hugo theme
-Archie is a minimal and clean theme for hugo with a markdown-ish UI.
-
-Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
+# themu - Hugo theme
 
 ## Demo
+[Check the Demo](https://fruw.org)
 
-[Check the Demo](https://athul.github.io/archie/) hosted on GitHub Pages :smile: . You can find the source code to that in the `site` branch of this repository
-
-![](/images/theme.png)
-![](/images/archie-dark.png)
 ## Feature
 - Google Analytics Script
 - Callouts
 - Tags
-- Auto Dark Mode(based on system theme)
-- Dark/Light Mode toggle
-- tl:dr; frontamatter
 - Cache busting for CSS files
-- Disqus Comments
 
 ## Installation
-In your Hugo website directory, create a new folder named theme and clone the repo
+In your Hugo website directory, create a new folder named themes and clone the repo
 ```bash
 $ mkdir themes
-$ cd themes
-$ git clone https://github.com/athul/archie.git
+$ git submodule add https://github.com/fruworg/themu themes/themu
 ```
-Edit the `config.toml` file with `theme="archie"`
+Edit the `config.toml` file with `theme="themu"`
 For more information read the official [setup guide](https://gohugo.io/installation/) of Hugo.
 
 ## Writing Posts
@@ -36,15 +25,13 @@ Create a new `.md` file in the *content/posts* folder
 title: Title of the post
 description:
 date:
-tldr: (optional)
 draft: true/false (optional)
 tags: [tag names] (optional)
 ---
 ```
 
 ## Credits
-Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License
-Inspired by design of blog.jse.li
+Forked from [Archie Theme](https://github.com/athul/archie) and Licensed under MIT License
 
 ----
 
@@ -64,24 +51,21 @@ Note: CSS files should be placed under the `assets` directory e.g. `assets/css/f
 ## Config of the Demo Site
 
 ```toml
-baseURL = "https://athul.github.io/archie/"
+baseURL = "https://<name>.github.io"
 languageCode = "en-us"
-title = "Archie"
-theme="archie"
-copyright = "© Athul"
+title = "<name>"
+theme="themu"
 # Code Highlight
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-
-disqusShortname = "yourDisqusShortname"
 
 paginate=3 # articles per page
 
 [params]
 	mode="auto" # color-mode → light,dark,toggle or auto
 	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
-	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/fruworg)"
 	mathjax = true # enable MathJax support
 	katex = true # enable KaTeX support
 
@@ -90,17 +74,17 @@ paginate=3 # articles per page
 [[params.social]]
 name = "GitHub"
 icon = "github"
-url = "https://github.com/athul/archie"
+url = "https://github.com/<name>"
 
 [[params.social]]
 name = "Twitter"
 icon = "twitter"
-url = "https://twitter.com/athulcajay/"
+url = "https://twitter.com/<name>"
 
 [[params.social]]
 name = "GitLab"
 icon = "gitlab"
-url = "https://gitlab.com/athul/"
+url = "https://gitlab.com/<name>"
 
 # Main menu Items
 
@@ -124,8 +108,3 @@ name = "Tags"
 url = "/tags"
 weight = 4
 ```
----
-
-If you liked my work please consider supporting me on [BuymeACoffee](https://www.buymeacoffee.com/athulca)
-
-<a href="https://www.buymeacoffee.com/athulca" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="41" width="174" ></a>
