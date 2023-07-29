@@ -1,7 +1,6 @@
 /* Markdown */
 :root{
 --maincolor: red;
---bordercl:rebeccapurple;
 --callouctcolor:dodgerblue;
 --hovercolor:navy;
 --darkMaincolor: #50fa7b;
@@ -34,20 +33,16 @@ p {
 }
 
 hr {
-  border: 0;
-  border-top: 3px dotted var(--bordercl);
   margin: 1em 0;
 }
 
 blockquote {
-  border-left: 3px solid var(--bordercl);
   color: #737373;
   margin: 0;
   padding-left: 1em;
 }
 
 a {
-  border-bottom: 3px solid var(--maincolor);
   color: inherit;
   text-decoration: none;
 }
@@ -59,6 +54,7 @@ a:hover {
 
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 ul li {
@@ -233,11 +229,11 @@ justify-content: space-between;
 }
 
 .tags li::before{
-  content: "<";
+  content: "< ";
 }
 
 .tags li::after{
-  content: ">";
+  content: " >";
 }
 
 .tags a{
