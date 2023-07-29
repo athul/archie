@@ -59,11 +59,12 @@ a:hover {
 
 ul {
   list-style: none;
-  padding-left: 2ch;
 }
+
 ul li {
   text-indent: -2ch;
 }
+
 ul > li::before {
   content: '* ';
   font-weight: bold;
