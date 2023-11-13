@@ -1,36 +1,43 @@
-# Archie - Hugo theme
-Archie is a minimal and clean theme for hugo with a markdown-ish UI.
+# Jughead - A Hugo theme
 
-Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
+Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 
-## Demo
+Fork of [Archie](https://github.com/athul/archie) which is a fork of
+[Ezhil](https://github.com/vividvilla/ezhil).
 
-[Check the Demo](https://athul.github.io/archie/) hosted on GitHub Pages :smile: . You can find the source code to that in the `site` branch of this repository
+## [Demo](https://ananthb.github.io/jughead)
 
-![](/images/theme.png)
-![](/images/archie-dark.png)
+![Theme](/images/theme.png)
+![Dark mode](/images/archie-dark.png)
+
 ## Feature
-- Google Analytics Script
+
 - Callouts
 - Tags
-- Auto Dark Mode(based on system theme)
+- Auto Dark Mode (based on system theme)
 - Dark/Light Mode toggle
 - tl:dr; frontamatter
 - Cache busting for CSS files
 - Disqus Comments
 
 ## Installation
-In your Hugo website directory, create a new folder named theme and clone the repo
-```bash
-$ mkdir themes
-$ cd themes
-$ git clone https://github.com/athul/archie.git
+
+Add jughead to your hugo config files in the modules section.
+
+```toml
+...
+[module]
+[[module.imports]]
+    path = 'github.com/ananthb/jughead'
+...
 ```
-Edit the `config.toml` file with `theme="archie"`
-For more information read the official [setup guide](https://gohugo.io/installation/) of Hugo.
+
+For more information read the official [setup guide](https://gohugo.io/installation).
 
 ## Writing Posts
+
 Create a new `.md` file in the *content/posts* folder
+
 ```yml
 ---
 title: Title of the post
@@ -42,33 +49,27 @@ tags: [tag names] (optional)
 ---
 ```
 
-## Credits
-Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil) and Licensed under MIT License
-Inspired by design of blog.jse.li
-
-----
-
 ## Config Options
 
 ### Custom CSS
-Custom CSS files can be included though the `customcss` config parameter.
 
-Note: CSS files should be placed under the `assets` directory e.g. `assets/css/first.css`.
+Include your own styles by setting the `customcss` config param to
+a list of css files located in the `assets` directory e.g. `assets/css/custom.css`.
 
 ```toml
 [params]
-	customcss = ["css/first.css", "css/second.css"]
+  customcss = ["css/first.css", "css/second.css"]
 ```
 
-
-## Config of the Demo Site
+## Sample Config
 
 ```toml
-baseURL = "https://athul.github.io/archie/"
-languageCode = "en-us"
+baseURL = "https://ananthb.github.io/jughead/"
+languageCode = "en-in"
 title = "Archie"
-theme="archie"
-copyright = "© Athul"
+copyright = "© Your Name Here"
+paginate = 3
+
 # Code Highlight
 pygmentsstyle = "monokai"
 pygmentscodefences = true
@@ -76,31 +77,29 @@ pygmentscodefencesguesssyntax = true
 
 disqusShortname = "yourDisqusShortname"
 
-paginate=3 # articles per page
-
 [params]
-	mode="auto" # color-mode → light,dark,toggle or auto
-	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
-	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
-	mathjax = true # enable MathJax support
-	katex = true # enable KaTeX support
+  mode = "auto" # color-mode → light,dark,toggle or auto
+  useCDN = false # don't use CDNs for fonts and icons, instead serve them locally.
+  subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
+  mathjax = true # enable MathJax support
+  katex = true # enable KaTeX support
 
 # Social Tags
 
 [[params.social]]
 name = "GitHub"
 icon = "github"
-url = "https://github.com/athul/archie"
+url = "https://github.com/ananthb/archie"
 
 [[params.social]]
 name = "Twitter"
 icon = "twitter"
-url = "https://twitter.com/athulcajay/"
+url = "https://twitter.com/your-name-here/"
 
 [[params.social]]
 name = "GitLab"
 icon = "gitlab"
-url = "https://gitlab.com/athul/"
+url = "https://gitlab.com/ananthb/"
 
 # Main menu Items
 
@@ -124,8 +123,10 @@ name = "Tags"
 url = "/tags"
 weight = 4
 ```
----
 
-If you liked my work please consider supporting me on [BuymeACoffee](https://www.buymeacoffee.com/athulca)
+## [License](LICENSE)
 
-<a href="https://www.buymeacoffee.com/athulca" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="41" width="174" ></a>
+Fork of [archie](https://github.com/athul/archie) which is a fork of
+[Ezhil](https://github.com/vividvilla/ezhil). Inspired by the design of [blog.jse.li](blog.jse.li).
+
+Jughead is available under the terms of the MIT License.

@@ -1,30 +1,32 @@
 baseURL = "https://example.com"
-languageCode = "en-us"
-title = "Archie"
-theme="archie"
-copyright = "© Athul"
+languageCode = "en-in"
+title = "Jughead"
+copyright = "© Ananth Bhaskararaman"
+
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
+
 [params]
-	mode="auto"
-	useCDN=false
-	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+attribution = true
+mode = "auto"
+useCDN = false
+subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
 
 [[params.social]]
 name = "GitHub"
 icon = "github"
-url = "https://github.com/athul/archie"
+url = "https://github.com/ananthb/jughead"
 
 [[params.social]]
 name = "Twitter"
 icon = "twitter"
-url = "https://twitter.com/athulcajay/"
+url = "https://twitter.com/me/"
 
 [[params.social]]
 name = "GitLab"
 icon = "gitlab"
-url = "https://gitlab.com/athul/"
+url = "https://gitlab.com/ananth/"
 
 [[menu.main]]
 name = "Home"
