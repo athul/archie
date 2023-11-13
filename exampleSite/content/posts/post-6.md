@@ -21,7 +21,3 @@ description: Here is a demo of some shortcodes available in Hugo.
 ## Vimeo
 
 {{< vimeo id="146022717" >}}
-
-## Callouts
-
-{{< callout emoji="⚡️" text="I guess this works" >}}

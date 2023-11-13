@@ -10,14 +10,11 @@ Fork of [Archie](https://github.com/athul/archie) which is a fork of
 ![Theme](/images/theme.png)
 ![Dark mode](/images/archie-dark.png)
 
-## Feature
+## Features
 
-- Callouts
 - Tags
 - Auto Dark Mode (based on system theme)
 - Dark/Light Mode toggle
-- tl:dr; frontamatter
-- Cache busting for CSS files
 - Disqus Comments
 
 ## Installation
@@ -25,11 +22,9 @@ Fork of [Archie](https://github.com/athul/archie) which is a fork of
 Add jughead to your hugo config files in the modules section.
 
 ```toml
-...
 [module]
 [[module.imports]]
     path = 'github.com/ananthb/jughead'
-...
 ```
 
 For more information read the official [setup guide](https://gohugo.io/installation).

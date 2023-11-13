@@ -2,7 +2,6 @@
 :root{
 --maincolor: red;
 --bordercl:rebeccapurple;
---callouctcolor:dodgerblue;
 --hovercolor:navy;
 --darkMaincolor: #50fa7b;
 }
@@ -197,27 +196,6 @@ article .title {
   margin-bottom: 1em;
 }
 
-
-/* Callout */
-.callout {
-  background-color: var(--callouctcolor);
-  color: #fff;
-  padding: 1em;
-}
-
-.callout p {
-  font-family: 'IBM Plex Mono', monospace;
-  margin: 0;
-}
-
-.callout a {
-  border-bottom: 3px solid #fff;
-}
-
-.callout a:hover {
-  background-color: #fff;
-  color: var(--callouctcolor);
-}
 
 .site-description {
 display: flex;
