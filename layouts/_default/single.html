@@ -28,15 +28,23 @@
 			{{ end }}
 			{{ end }}
 		</div>
-		{{- $.Scratch.Set "isDisqus" true -}}
-		<!-- Check if disqus short name is given -->
-		{{ if not .Site.DisqusShortname }}
-		{{- $.Scratch.Set "isDisqus" false -}}
-		{{ end }}
 
-		{{- if eq ($.Scratch.Get "isDisqus") true -}}
-		{{- partial "disqus.html" . -}}
-		{{- end -}}
+		{{ with .Params.utterances }}
+		<script src="https://utteranc.es/client.js"
+			repo="{{ .repo }}"
+			issue-term="{{ .issueTerm | default "pathname" }}"
+			theme="{{ .theme | default "preferred-color-scheme" }}"
+			crossorigin="anonymous"
+			async>
+		</script>
+
+		<noscript>
+			No JavaScript? Read comments from the GitHub
+			<a href="https://github.com/{{ .repo }}/issues?q=is%3Aissue+is%3Aopen+{{ .Title }}">
+				issue
+			</a> directly.
+		</noscript>
+		{{ end }}
 	</article>
 </main>
 {{ end }}

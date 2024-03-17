@@ -12,7 +12,7 @@ Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 - Tags
 - Auto Dark Mode (based on system theme)
 - Dark/Light Mode toggle
-- Disqus Comments
+- GitHub Issues based comments powered by [utterances](https://utteranc.es)
 
 ## Installation
 
@@ -66,8 +66,6 @@ paginate = 3
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-
-disqusShortname = "yourDisqusShortname"
 
 [params]
   mode = "auto" # color-mode → light,dark,toggle or auto
