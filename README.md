@@ -2,9 +2,6 @@
 
 Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 
-Fork of [Archie](https://github.com/athul/archie) which is a fork of
-[Ezhil](https://github.com/vividvilla/ezhil).
-
 ## [Demo](https://ananthb.github.io/jughead)
 
 ![Theme](/images/theme.png)
@@ -122,6 +119,7 @@ weight = 4
 ## [License](LICENSE)
 
 Fork of [archie](https://github.com/athul/archie) which is a fork of
-[Ezhil](https://github.com/vividvilla/ezhil). Inspired by the design of [blog.jse.li](blog.jse.li).
+[Ezhil](https://github.com/vividvilla/ezhil).
+Inspired by [blog.jse.li](blog.jse.li).
 
 Jughead is available under the terms of the MIT License.
