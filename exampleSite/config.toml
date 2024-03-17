@@ -19,7 +19,7 @@ katex = true          # enable KaTeX support
 
 # Comments powered by utterances & GitHub issues.
 # Follow the setup instructions at https://utteranc.es.
-[[params.utterances]]
+[params.utterances]
 repo = "ananthb/jughead"
 # issueTerm = "pathname"
 # theme = "github-light"
