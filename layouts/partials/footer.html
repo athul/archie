@@ -1,7 +1,7 @@
 <footer>
-  <div style="display:flex">
+  <div class="socials">
     {{- range $index, $key := .Site.Params.Social -}}
-    <a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+    <a class="social-icon" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
     <a class="border"></a>
     {{- end -}}
   </div>
@@ -16,7 +16,9 @@
     <p>
       Commit
       {{ if $.Site.Params.github_repo }}
-      <a target="_blank" href="https://github.com/{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">{{ .AbbreviatedHash }}</a>
+      <a target="_blank" href="https://github.com/{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">
+        {{ .AbbreviatedHash }}
+      </a>
       {{ else }}
       {{ .AbbreviatedHash }}
       {{ end }}
