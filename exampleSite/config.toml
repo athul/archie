@@ -19,10 +19,10 @@ mathjax = true                        # enable MathJax support
 katex = true                          # enable KaTeX support
 
 # If enableGitInfo is true and this is set, a link to the commit will be shown in the footer.
-github_repo = "ananthb/jughead"       # Site GitHub repository
+github_repo = "ananthb/jughead"  # Site GitHub repository
 
 # Follow setup instructions at https://utteranc.es.
-utteranaces_repo = "ananthb/jughead"  # Utterances GitHub repository for comments
+utteranaces = "ananthb/jughead"  # Utterances GitHub repository for comments
 
 # Social Tags
 [[params.social]]
