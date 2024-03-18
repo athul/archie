@@ -2,6 +2,7 @@ baseURL = "https://example.com"
 languageCode = "en-in"
 title = "Jughead"
 copyright = "© Ananth Bhaskararaman"
+enableGitInfo = true
 
 # Code highlighting
 pygmentsstyle = "monokai"
@@ -10,19 +11,18 @@ pygmentscodefencesguesssyntax = true
 
 # Site parameters
 [params]
-attribution = true    # show theme attribution in the footer
-mode = "auto"         # color-mode → light,dark,toggle or auto
-useCDN = false        # don't use CDNs for fonts and icons, instead serve them locally.
+attribution = true  # show theme attribution in the footer
+mode = "auto"       # color-mode → light,dark,toggle or auto
+useCDN = false      # don't use CDNs for fonts and icons, instead serve them locally.
 subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
-mathjax = true        # enable MathJax support
-katex = true          # enable KaTeX support
+mathjax = true                        # enable MathJax support
+katex = true                          # enable KaTeX support
 
-# Comments powered by utterances & GitHub issues.
-# Follow the setup instructions at https://utteranc.es.
-[params.utterances]
-repo = "ananthb/jughead"
-# issueTerm = "pathname"
-# theme = "github-light"
+# If enableGitInfo is true and this is set, a link to the commit will be shown in the footer.
+github_repo = "ananthb/jughead"       # Site GitHub repository
+
+# Follow setup instructions at https://utteranc.es.
+utteranaces_repo = "ananthb/jughead"  # Utterances GitHub repository for comments
 
 # Social Tags
 [[params.social]]

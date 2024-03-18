@@ -6,10 +6,17 @@
     {{- end -}}
   </div>
   <div class="footer-info">
-    {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} {{ end }}
+    <p>{{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} {{ end }}</p>
     {{- if .Site.Params.Attribution -}}
-    | Built with <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/ananthb/jughead">Jughead</a>
+    <p>
+      Built with <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/ananthb/jughead">Jughead</a>
+    </p>
     {{- end -}}
+    {{ with .GitInfo }}
+    <p>
+      Commit <a target="_blank" href="https://github.com/{{ .Site.Params.github_repo }}/commit/{{ .Hash }}">{{ .AbbreviatedHash }}</a>
+    </p>
+    {{ end }}
   </div>
 </footer>
 

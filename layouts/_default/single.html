@@ -29,18 +29,18 @@
 			{{ end }}
 		</div>
 
-		{{ with .Site.Params.utterances }}
+		{{ with .Site.Params.utterances_repo }}
 		<script src="https://utteranc.es/client.js"
-			repo="{{ .repo }}"
-			issue-term="{{ .issueTerm | default "pathname" }}"
-			theme="{{ .theme | default "preferred-color-scheme" }}"
+			repo="{{ . }}"
+			issue-term="og:title"
+			theme="preferred-color-scheme"
 			crossorigin="anonymous"
 			async>
 		</script>
 
 		<noscript>
 			No JavaScript? Read comments from the GitHub
-			<a href="https://github.com/{{ .repo }}/issues?q=is%3Aissue+is%3Aopen+{{ .Title }}">
+			<a href="https://github.com/{{ . }}/issues?q=is%3Aissue+is%3Aopen+{{ .Title }}">
 				issue
 			</a> directly.
 		</noscript>
