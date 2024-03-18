@@ -22,7 +22,7 @@ katex = true                          # enable KaTeX support
 github_repo = "ananthb/jughead"  # Site GitHub repository
 
 # Follow setup instructions at https://utteranc.es.
-utteranaces = "ananthb/jughead"  # Utterances GitHub repository for comments
+utterances = "ananthb/jughead"  # Utterances GitHub repository for comments
 
 # Social Tags
 [[params.social]]
