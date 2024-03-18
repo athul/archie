@@ -15,7 +15,7 @@
     {{ with .GitInfo }}
     <p>
       Commit
-      {{ if isset $.Site.Params.github_repo }}
+      {{ if $.Site.Params.github_repo }}
       <a target="_blank" href="https://github.com/{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">{{ .AbbreviatedHash }}</a>
       {{ else }}
       {{ .AbbreviatedHash }}
