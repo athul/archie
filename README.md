@@ -29,6 +29,9 @@ $ git clone https://github.com/athul/archie.git
 Edit the `config.toml` file with `theme="archie"`
 For more information read the official [setup guide](https://gohugo.io/installation/) of Hugo.
 
+If you encounter any issues with Google Analytics, update Hugo to v0.125.0 or
+later and make sure your using the latest version of the theme.
+
 ## Writing Posts
 Create a new `.md` file in the *content/posts* folder
 ```yml
