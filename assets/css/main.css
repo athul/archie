@@ -14,7 +14,15 @@ html {
 }
 body{
   display: block;
-  margin: 8px;
+}
+.pattern {
+  pointer-events: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e5e5f7;
+  opacity: 0.08;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 18px ), repeating-linear-gradient( #18f0cf, #444cf7 );
 }
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
