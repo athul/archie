@@ -171,14 +171,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2em;
 }
 
-h1::before,
+h1::before {
+  color: var(--maincolor);
+  content: '# ';
+}
+
 h2::before,
 h3::before,
 h4::before,
 h5::before,
 h6::before {
   color: var(--maincolor);
-  content: '# ';
+  content: '## ';
 }
 
 .meta {
