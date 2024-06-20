@@ -4,7 +4,7 @@
 	<body>
 		<div class="content">
 			{{ partial "head.html" . }}
-			
+
 			<main class="list">
 				<div class="site-description">
 					{{- if isset .Site.Params "subtitle" -}}
@@ -16,7 +16,7 @@
 				{{ range $paginator.Pages }}
 				<section class="list-item">
 					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
-					<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+					<time>{{ dateFormat "Jan 2, 2006" .Date }} <span class="reading-time-label">⏲ {{ .ReadingTime }} min.</span>{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
 					<br>{{ template "partials/pagedescription.html" . }}
 					<a class="readmore" href="{{ .RelPermalink }}">Read more ⟶</a>
 				</section>
@@ -25,6 +25,6 @@
 			</main>
 			{{ partial "footer.html" . }}
 		</div>
-		
+
 	</body>
 </html>

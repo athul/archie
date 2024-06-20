@@ -1,8 +1,8 @@
 /* Markdown */
 :root{
---maincolor: red;
---bordercl:rebeccapurple;
---hovercolor:navy;
+--maincolor: blue;
+--bordercl: rebeccapurple;
+--hovercolor: navy;
 --darkMaincolor: #50fa7b;
 }
 html {
@@ -215,6 +215,14 @@ justify-content: space-between;
 }
 .soc:hover{
   color: white;
+}
+.reading-time-label {
+    color: var(--bordercl);
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-left: 6px;
+    background-color: #ececec;
 }
 .draft-label{
     color: var(--bordercl);

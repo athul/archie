@@ -107,6 +107,10 @@ a:hover {
 .soc:hover {
   color: black;
 }
+.reading-time-label {
+  color: var(--darkMaincolor);
+  background-color: #1e4e81;
+}
 .draft-label {
   color: var(--darkMaincolor);
   background-color: blue;
@@ -133,7 +137,7 @@ a:hover {
 .highlight pre code[class*='language-json']::before{
   content: 'json';
   background: dodgerblue;
-   color: #000000 
+   color: #000000
 }
 .highlight pre code[class*='language-python']::before,
 .highlight pre code[class*='language-py']::before {
