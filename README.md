@@ -41,6 +41,20 @@ tags: [tag names] (optional)
 ---
 ```
 
+Add `mermaid = true` to the front matter to enable mermaid diagrams.
+
+Embed mermaid diagrams using the mermaid shortcode.
+
+```md
+{{< mermaid >}}
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+{{< /mermaid >}}
+```
+
 ## Config Options
 
 ### Custom CSS
