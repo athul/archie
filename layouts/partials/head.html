@@ -89,6 +89,11 @@
 			</script>
 	{{ end }}
 
+	<!-- MermaidJS -->
+	{{ if (.Params.mermaid) }}
+	{{ partial "mermaid.html" }}
+	{{ end }}
+
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
 		{{ range .Site.Params.customCSS }}
