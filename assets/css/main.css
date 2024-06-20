@@ -213,9 +213,6 @@ justify-content: space-between;
   color:white;
   background-color: var(--hovercolor);
 }
-svg{
-  max-height: 15px;
-}
 .soc:hover{
   color: white;
 }
