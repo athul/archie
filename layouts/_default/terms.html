@@ -1,5 +1,5 @@
 {{ define "main" }}
-<h1 class="page-title">Tags</h1>
+<h1 class="page-title">{{ .Data.Plural | title }}</h1>
 
 {{ $biggest := 1 }}
 {{ $smallest := 1 }}
