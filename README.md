@@ -72,7 +72,7 @@ a list of css files located in the `assets` directory e.g. `assets/css/custom.cs
 ```toml
 baseURL = "https://ananthb.github.io/jughead/"
 languageCode = "en-in"
-title = "Archie"
+title = "Jughead"
 copyright = "© Your Name Here"
 paginate = 3
 
@@ -93,7 +93,7 @@ pygmentscodefencesguesssyntax = true
 [[params.social]]
 name = "GitHub"
 icon = "github"
-url = "https://github.com/ananthb/archie"
+url = "https://github.com/ananthb/jughead"
 
 [[params.social]]
 name = "Twitter"
