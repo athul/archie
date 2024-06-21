@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ if isset .Data "Term" }}
-<h1>{{ .Data.Singular }} "{{ .Data.Term }}"</h1>
+<h1>{{ .Data.Singular | title }} "{{ .Data.Term }}"</h1>
 {{ else }}
 <h1 class="page-title">Articles</h1>
 {{ end }}
