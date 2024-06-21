@@ -3,9 +3,15 @@
   src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
 ></script>
 <script>
-  var config = {
+  let theme = 'default';
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // dark mode
+    theme = 'dark';
+  }
+  const config = {
     startOnLoad: true,
     align:'center',
+    theme: theme,
   };
   mermaid.initialize(config);
 </script>
