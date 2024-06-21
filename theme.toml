@@ -6,6 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/ananthb/jughead/blob/main/LICENSE"
 description = "Jughead is a minimal and clean theme for hugo with a markdown-ish UI."
 homepage = "https://github.com/ananthb/jughead"
+demosite = "https://ananthb.github.io/jughead/"
 tags = [
   "blog",
   "simple",
@@ -22,3 +23,8 @@ min_version = "0.41"
 [author]
 name = "Ananth Bhaskararaman"
 homepage = "https://github.com/ananthb"
+
+[original]
+  name = "Archie"
+  homepage = "https://athul.github.io/archie"
+  repo = "https://github.com/athul/archie"
