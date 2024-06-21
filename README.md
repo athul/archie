@@ -4,7 +4,7 @@ Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 
 ## [Demo](https://ananthb.github.io/jughead)
 
-![Theme](/images/screenshot-default.png)
+![Theme](/images/screenshot.png)
 ![Dark mode](/images/screenshot-dark.png)
 
 ## Features
