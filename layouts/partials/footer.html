@@ -1,34 +1,46 @@
 <footer>
   <div class="socials">
     {{- range $index, $key := .Site.Params.Social -}}
-    <a class="social-icon" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
-    <a class="border"></a>
+      <a
+        class="social-icon"
+        href="{{ $key.url }}"
+        rel="me"
+        title="{{ $key.name }}"
+        ><i data-feather="{{ $key.icon }}"></i
+      ></a>
+      <a class="border"></a>
     {{- end -}}
   </div>
   <div class="footer-info">
-    <p>{{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} {{ end }}</p>
-    {{- if .Site.Params.Attribution -}}
     <p>
-      Built with <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/ananthb/jughead">Jughead</a>
+      {{ dateFormat "2006" now }} {{ with .Site.Copyright }}{{ . }}{{ end }}
     </p>
+    {{- if .Site.Params.Attribution -}}
+      <p>
+        Built with <a href="https://gohugo.io">Hugo</a> &
+        <a href="https://github.com/ananthb/jughead">Jughead</a>
+      </p>
     {{- end -}}
     {{ with .GitInfo }}
-    <p>
-      Commit
-      {{ if $.Site.Params.github_repo }}
-      <a target="_blank" href="https://github.com/{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">
-        {{ .AbbreviatedHash }}
-      </a>
-      {{ else }}
-      {{ .AbbreviatedHash }}
-      {{ end }}
-    </p>
+      <p>
+        Commit
+        {{ if $.Site.Params.github_repo }}
+          <a
+            target="_blank"
+            href="https://github.com/{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}"
+          >
+            {{ .AbbreviatedHash }}
+          </a>
+        {{ else }}
+          {{ .AbbreviatedHash }}
+        {{ end }}
+      </p>
     {{ end }}
   </div>
 </footer>
 
 {{- if (isset .Site.Params "social") -}}
-<script>
-  feather.replace()
-</script>
+  <script>
+    feather.replace();
+  </script>
 {{- end -}}

@@ -1,17 +1,25 @@
 {{ define "main" }}
-{{ if isset .Data "Term" }}
-<h1>{{ .Data.Singular | title }} "{{ .Data.Term }}"</h1>
-{{ else }}
-<h1 class="page-title">Articles</h1>
-{{ end }}
+  {{ if isset .Data "Term" }}
+    <h1>{{ .Data.Singular | title }} "{{ .Data.Term }}"</h1>
+  {{ else }}
+    <h1 class="page-title">Articles</h1>
+  {{ end }}
 
-<ul class="posts">
-	{{- range .Data.Pages -}}
-		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
-		<li class="post">
-			<a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }} <span class="reading-time-label">⏲ {{ .ReadingTime }} min.</span>{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
-		</li>
-		{{- end -}}
-	{{- end -}}
-</ul>
+
+  <ul class="posts">
+    {{- range .Data.Pages -}}
+      {{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+        <li class="post">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span class="meta"
+            >{{ dateFormat "Jan 2, 2006" .Date }}
+            <span class="reading-time-label">⏲ {{ .ReadingTime }} min.</span
+            >{{ if .Draft }}
+              <span class="draft-label">DRAFT</span>
+            {{ end }}</span
+          >
+        </li>
+      {{- end -}}
+    {{- end -}}
+  </ul>
 {{ end }}

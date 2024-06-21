@@ -3,14 +3,17 @@
   src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
 ></script>
 <script>
-  let theme = 'default';
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  let theme = "default";
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
     // dark mode
-    theme = 'dark';
+    theme = "dark";
   }
   const config = {
     startOnLoad: true,
-    align:'center',
+    align: "center",
     theme: theme,
   };
   mermaid.initialize(config);
