@@ -25,6 +25,6 @@ name = "Ananth Bhaskararaman"
 homepage = "https://github.com/ananthb"
 
 [original]
-  name = "Archie"
-  homepage = "https://athul.github.io/archie"
-  repo = "https://github.com/athul/archie"
+name = "Archie"
+homepage = "https://athul.github.io/archie"
+repo = "https://github.com/athul/archie"
