@@ -19,8 +19,8 @@
             <h1 class="title">
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h1>
-            <time
-              >{{ dateFormat "Jan 2, 2006" .Date }}
+            <span class="meta"
+              ><time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
               <span class="reading-time-label">⏲ {{ .ReadingTime }} min.</span
               >{{ if .Draft }}
                 <span class="draft-label">DRAFT</span>

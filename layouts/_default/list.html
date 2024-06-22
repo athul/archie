@@ -12,7 +12,7 @@
         <li class="post">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           <span class="meta"
-            >{{ dateFormat "Jan 2, 2006" .Date }}
+            ><time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
             <span class="reading-time-label">⏲ {{ .ReadingTime }} min.</span
             >{{ if .Draft }}
               <span class="draft-label">DRAFT</span>

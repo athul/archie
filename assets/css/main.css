@@ -156,7 +156,7 @@ h5::before { color: var(--maincolor); content: '##### '; }
 h6::before { color: var(--maincolor); content: '###### '; }
 
 .meta {
-  color: #999;
+  color: #585858;
   letter-spacing: -0.5px;
 }
 
@@ -187,10 +187,6 @@ footer {
 /* Common */
 .title h1 {
   margin-bottom: 0;
-}
-
-time {
-  color: grey;
 }
 
 /* Posts */

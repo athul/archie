@@ -96,6 +96,10 @@ a:hover {
   text-decoration: none !important;
 }
 
+.meta {
+  color: #acacac;
+}
+
 .header nav,
 .footer {
   border-color: #333;
