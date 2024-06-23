@@ -21,7 +21,7 @@ Add jughead to your hugo config files in the modules section.
 ```toml
 [module]
 [[module.imports]]
-    path = 'github.com/ananthb/jughead'
+path = 'github.com/ananthb/jughead'
 ```
 
 For more information read the official [setup guide](https://gohugo.io/installation).
@@ -64,7 +64,7 @@ a list of css files located in the `assets` directory e.g. `assets/css/custom.cs
 
 ```toml
 [params]
-  customcss = ["css/first.css", "css/second.css"]
+customcss = ["css/first.css", "css/second.css"]
 ```
 
 ## Sample Config
@@ -82,11 +82,11 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-  mode = "auto" # color-mode → light,dark,toggle or auto
-  useCDN = false # don't use CDNs for fonts and icons, instead serve them locally.
-  subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
-  mathjax = true # enable MathJax support
-  katex = true # enable KaTeX support
+mode = "auto"   # color-mode → light,dark,toggle or auto
+useCDN = false  # don't use CDNs for fonts and icons, instead serve them locally.
+subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
+mathjax = true  # enable MathJax support
+katex = true    # enable KaTeX support
 
 # Social Tags
 
