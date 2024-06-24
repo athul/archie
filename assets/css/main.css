@@ -14,7 +14,6 @@ html {
 }
 body{
   display: block;
-  margin: 8px;
 }
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
