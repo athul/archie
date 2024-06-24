@@ -1,19 +1,28 @@
 /* Markdown */
 :root{
---maincolor: red;
---bordercl:rebeccapurple;
+--maincolor: #1bb364;
+--bordercl:navy;
 --callouctcolor:dodgerblue;
 --hovercolor:navy;
 --darkMaincolor: #50fa7b;
 }
 html {
   color: #232333;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'IBM Plex Mono Regular', monospace;
   font-size: 15px;
   line-height: 1.6em;
 }
 body{
   display: block;
+}
+.pattern {
+  pointer-events: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e5e5f7;
+  opacity: 0.08;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 18px ), repeating-linear-gradient( #18f0cf, #444cf7 );
 }
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -148,7 +157,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 h3 {
@@ -193,7 +202,7 @@ h6::before {
 footer {
   display: flex;
   align-items: center;
-  border-top: 0.4rem dotted var(--bordercl);
+  border-top: 0.4rem dashed var(--bordercl);
   padding: 2rem 0rem;
   margin-top: 2rem;
 }
@@ -234,7 +243,7 @@ article .title {
 }
 
 .callout p {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
 }
 
