@@ -40,23 +40,24 @@
   <!-- Twitter Cards: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards -->
   {{- template "_internal/twitter_cards.html" . -}}
 
-  {{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  {{- else if or (isset .Site.Params "social") (eq .Site.Params.mode "toggle") -}}
-  <script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+  <!-- Feather Icons -->
+  {{- if or (isset .Site.Params "social") (eq .Site.Params.mode "toggle") -}}
+  {{ $js := resources.Get "js/feather.js" }}
+  {{ if hugo.IsProduction }}
+  {{ $js := $js | minify | fingerprint "sha512" }}
+  <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+  {{ else }}
+  <script src="{{ $js.Permalink }}"></script>
   {{ end }}
-  {{ if .Site.Params.useCDN | default false -}}
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" />
-  {{- else -}}
+  {{ end }}
+
+  <!-- Fonts -->
   {{ $fontstyle := resources.Get "css/fonts.css" }}
   {{ if hugo.IsProduction }}
   {{ $css := $fontstyle | minify | fingerprint "sha512" }}
   <link href="{{ $css.Permalink }}" rel="stylesheet" integrity="{{ $css.Data.Integrity }}" />
   {{ else }}
   <link href="{{ $fontstyle.Permalink }}" rel="stylesheet" />
-  {{ end }}
   {{ end }}
 
   {{ $mainStyle := resources.Get "css/main.css" }}
@@ -101,20 +102,4 @@
   {{ if (.Params.mermaid) }}
   {{ partial "mermaid.html" }}
   {{ end }}
-
-
-  <!-- Custom CSS style get applied last -->
-  {{- if isset .Site.Params "customcss" }}
-  {{ range .Site.Params.customCSS }}
-  {{ $customstyle := resources.Get . | fingerprint }}
-  <link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}" />
-  {{ end }}
-  {{- end -}}
-  {{- range .Site.Params.customJS }}
-  {{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
-  <script src="{{ . }}"></script>
-  {{- else if (hasPrefix . "<script") }} {{ .| safeHTML }} {{- else }} <script src="{{ $.Site.BaseURL }}{{ . }}">
-  </script>
-    {{- end }}
-    {{- end }}
 </head>

@@ -9,8 +9,8 @@ Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 
 ## Features
 
-- Auto Dark Mode (based on system theme)
-- GitHub Issues based comments powered by [utterances](https://utteranc.es)
+- Auto Dark Mode (based on system theme) with (optional) manual toggle
+- Comments powered by [utterances](https://utteranc.es)
 - MermaidJS, MathJax, & KaTeX support
 
 ## Installation
@@ -54,19 +54,7 @@ katex: true
 ---
 ```
 
-## Config Options
-
-### Custom CSS
-
-Include your own styles by setting the `customcss` config param to
-a list of css files located in the `assets` directory e.g. `assets/css/custom.css`.
-
-```toml
-[params]
-customcss = ["css/first.css", "css/second.css"]
-```
-
-## Sample Config
+## Sample Config File
 
 ```toml
 baseURL = "https://ananthb.github.io/jughead/"
@@ -84,8 +72,6 @@ pygmentscodefencesguesssyntax = true
 mode = "auto"   # color-mode → light,dark,toggle or auto
 useCDN = false  # don't use CDNs for fonts and icons, instead serve them locally.
 subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
-mathjax = true  # enable MathJax support
-katex = true    # enable KaTeX support
 
 # Social Tags
 

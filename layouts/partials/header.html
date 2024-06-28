@@ -4,11 +4,17 @@
   </div>
   <nav>
     {{ range .Site.Menus.main }}
-      <a href="{{ .URL }}">{{ .Name }}</a>
+    <a href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
     {{ if eq .Site.Params.mode "toggle" -}}
-      | <span id="dark-mode-toggle" onclick="toggleTheme()"></span>
-      <script src="{{ .Site.BaseURL }}js/themetoggle.js"></script>
+    | <a id="dark-mode-toggle" onclick="toggleTheme()"></a>
+    {{ $toggle := resources.Get "js/themetoggle.js" }}
+    {{ if hugo.IsProduction }}
+    {{ $js := $toggle | minify | fingerprint "sha512" }}
+    <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+    {{ else }}
+    <script src="{{ $toggle.Permalink }}"></script>
+    {{ end }}
     {{ end }}
   </nav>
 </header>

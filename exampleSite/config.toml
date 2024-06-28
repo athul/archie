@@ -12,8 +12,7 @@ pygmentscodefencesguesssyntax = true
 # Site parameters
 [params]
 attribution = true  # show theme attribution in the footer
-mode = "auto"       # color-mode → light,dark,toggle or auto
-useCDN = false      # don't use CDNs for fonts and icons, instead serve them locally.
+mode = "toggle"       # color-mode → light,dark,toggle or auto
 subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
 
 # If enableGitInfo is true and this is set, a link to the commit will be shown in the footer.
