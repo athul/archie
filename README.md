@@ -11,8 +11,7 @@ Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 
 - Auto Dark Mode (based on system theme)
 - GitHub Issues based comments powered by [utterances](https://utteranc.es)
-- Mermaid diagrams support
-- MathJax and KaTeX support
+- MermaidJS, MathJax, & KaTeX support
 
 ## Installation
 
@@ -41,18 +40,18 @@ tags: [tag names] (optional)
 ---
 ```
 
-Add `mermaid = true` to the front matter to enable mermaid diagrams.
+Toggle MermaidJS, MathJax, and KaTeX support in your post frontmatter.
+Set `mermaid` to `true` to enable MermaidJS support,
+`mathjax` to `true` to enable MathJax support,
+and `katex` to `true` to enable KaTeX support.
 
-Embed mermaid diagrams using the mermaid shortcode.
-
-```md
-{{< mermaid >}}
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-{{< /mermaid >}}
+```yml
+---
+title: Diagrams & Equations
+mermaid: true
+mathjax: true
+katex: true
+---
 ```
 
 ## Config Options
