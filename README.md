@@ -17,6 +17,7 @@ Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 - Dark/Light Mode toggle
 - tl:dr; frontamatter
 - Cache busting for CSS files
+- Disqus Comments
 
 ## Installation
 In your Hugo website directory, create a new folder named theme and clone the repo
@@ -26,7 +27,10 @@ $ cd themes
 $ git clone https://github.com/athul/archie.git
 ```
 Edit the `config.toml` file with `theme="archie"`
-For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
+For more information read the official [setup guide](https://gohugo.io/installation/) of Hugo.
+
+If you encounter any issues with Google Analytics, update Hugo to v0.125.0 or
+later and make sure your using the latest version of the theme.
 
 ## Writing Posts
 Create a new `.md` file in the *content/posts* folder
@@ -73,12 +77,16 @@ pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+disqusShortname = "yourDisqusShortname"
+
 paginate=3 # articles per page
 
 [params]
 	mode="auto" # color-mode → light,dark,toggle or auto
 	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
 	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+	mathjax = true # enable MathJax support
+	katex = true # enable KaTeX support
 
 # Social Tags
 

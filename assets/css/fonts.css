@@ -1,5 +1,6 @@
 /* fira-sans-regular - latin */
 @font-face {
+  font-display: swap;
   font-family: 'Fira Sans';
   font-style: normal;
   font-weight: 400;
@@ -12,10 +13,11 @@
        url('../fonts/fira-sans-v10-latin-regular.svg#FiraSans') format('svg'); /* Legacy iOS */
 }
 /* roboto-mono-regular - latin */
-@font-face {  
+@font-face {
+  font-display: swap;
   font-family: 'Roboto Mono';
   font-style: normal;
-  font-weight: 400;  
+  font-weight: 400;
   src: url('../fonts/roboto-mono-v12-latin-regular.eot'); /* IE9 Compat Modes */
   src: url('../fonts/roboto-mono-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('../fonts/roboto-mono-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
@@ -25,6 +27,7 @@
 }
 /* ibm-plex-mono-500italic - latin */
 @font-face {
+  font-display: swap;
   font-family: 'IBM Plex Mono';
   font-style: italic;
   font-weight: 500;

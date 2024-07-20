@@ -1,0 +1,7 @@
+<div class="description">
+	{{ if isset .Params "description" }}
+	{{ .Description }}
+	{{ else }}
+	{{ .Summary }}&hellip;
+	{{ end }}
+</div>

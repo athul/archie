@@ -138,6 +138,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 1em 0;
+  line-height: 2.5em;
 }
 
 header .main {
@@ -188,6 +189,11 @@ footer {
   margin-right: 1rem;
   border-right: 2px solid;
   border-bottom: none;
+}
+.border {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid;
 }
 .footer-info {
   padding: var(--footer-padding);

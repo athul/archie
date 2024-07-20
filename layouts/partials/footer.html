@@ -1,7 +1,8 @@
 <footer>
   <div style="display:flex">
     {{- range $index, $key := .Site.Params.Social -}}
-    <a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+    <a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+    <a class="border"></a>
     {{- end -}}
   </div>
   <div class="footer-info">
@@ -9,6 +10,7 @@
   </div>
 </footer>
 {{ if not .Site.IsServer }}
+{{ template "_internal/google_analytics.html" . }}
 {{ end }}
 
 {{- if (isset .Site.Params "social") -}}
