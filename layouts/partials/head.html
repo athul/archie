@@ -1,6 +1,6 @@
 <header>
 	<div class="main">
-		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+		<a href="{{ absURL "/" }}">{{ .Site.Title }}</a>
 	</div>
 	<nav>
 		{{ range .Site.Menus.main }}
@@ -8,7 +8,7 @@
 		{{ end }}
 		{{ if eq .Site.Params.mode "toggle" -}}
         | <span id="dark-mode-toggle" onclick="toggleTheme()"></span>
-		<script src="{{ .Site.BaseURL }}js/themetoggle.js"></script>
+		<script src="{{ absURL "js/themetoggle.js" }}"></script>
 		{{ end }}
 	</nav>
 </header>
