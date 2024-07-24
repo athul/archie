@@ -30,7 +30,7 @@
 		</div>
 		{{- $.Scratch.Set "isDisqus" true -}}
 		<!-- Check if disqus short name is given -->
-		{{ if not .Site.DisqusShortname }}
+		{{ if not .Site.Config.Services.Disqus.Shortname }}
 		{{- $.Scratch.Set "isDisqus" false -}}
 		{{ end }}
 
