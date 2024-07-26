@@ -6,14 +6,14 @@
     {{ range .Site.Menus.main }}
     <a href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
-    {{ if eq .Site.Params.mode "toggle" -}}
-    | <a id="dark-mode-toggle" onclick="toggleTheme()"></a>
+    {{ if and (ne .Site.Params.mode "light") (ne .Site.Params.mode "dark") -}}
+    | <a title="Toggle Colour Schemes" id="colour-scheme-toggle"></a>
     {{- $toggle := resources.Get "js/themetoggle.js" -}}
     {{- if hugo.IsProduction -}}
     {{- $js := $toggle | minify | fingerprint "sha512" -}}
-    <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+    <script type="module" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     {{- else -}}
-    <script src="{{ $toggle.Permalink }}"></script>
+    <script type="module" src="{{ $toggle.Permalink }}"></script>
     {{- end -}}
     {{- end -}}
   </nav>

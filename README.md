@@ -91,7 +91,9 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-mode = "auto"   # color-mode → light,dark,toggle or auto
+# Set to light or dark to force either theme.
+# Leave unset for automatic theme detection and a toggle in the header.
+# colourScheme = "light"
 subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
 
 # Social Tags

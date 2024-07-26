@@ -11,8 +11,10 @@ pygmentscodefencesguesssyntax = true
 
 # Site parameters
 [params]
-attribution = true  # show theme attribution in the footer
-mode = "toggle"       # color-mode → light,dark,toggle or auto
+# Set to light or dark to force either theme.
+# Leave unset for automatic theme detection and a toggle in the header.
+# colourScheme = "light"
+attribution = true    # show theme attribution in the footer
 subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
 
 # If enableGitInfo is true and this is set, a link to the commit will be shown in the footer.

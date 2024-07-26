@@ -3,6 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   {{- $title := ( .Title ) -}}
   {{- $siteTitle := ( .Site.Title ) -}}
+ 
   {{- if .IsHome -}}
   <title>{{ $siteTitle }} | Home</title>
   {{- else -}}
@@ -13,19 +14,16 @@
   <link rel="icon" type="image/png" href="{{ .Site.Params.favicon }}" />
   {{- end -}}
 
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="{{ with .Description }}
-      {{ . }}
-    {{ else }}
-      {{ if .IsPage }}
-        {{ .Summary }}
-      {{ else }}
-        {{ with .Site.Params.description }}{{ . }}{{ end }}
-      {{ end }}
-
-    {{ end }}
-    " />
+  <meta name="description"
+    content="{{- with .Description -}}{{ . }}{{- else -}}
+    {{- if .IsPage -}}
+    {{ .Summary }}
+    {{- else -}}
+    {{- with .Site.Params.description -}}{{ . }}{{- end -}}
+    {{- end -}}
+    {{- end -}}"
+  />
 
   {{- with .OutputFormats.Get "rss" -}}
   {{ printf `
@@ -40,8 +38,10 @@
   <!-- Twitter Cards: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards -->
   {{- template "_internal/twitter_cards.html" . -}}
 
+  {{- $autoColourScheme := and (ne .Site.Params.colourScheme "light") (ne .Site.Params.colourScheme "dark") -}}
+
   <!-- Feather Icons -->
-  {{- if or (isset .Site.Params "social") (eq .Site.Params.mode "toggle") -}}
+  {{- if or (isset .Site.Params "social") $autoColourScheme -}}
   {{- $js := resources.Get "js/feather.js" -}}
   {{- if hugo.IsProduction -}}
   {{- $js := $js | minify | fingerprint "sha512" -}}
@@ -52,43 +52,39 @@
   {{- end -}}
 
   {{- $mainStyle := resources.Get "css/main.css" -}}
-  {{- $darkStyle := resources.Get "css/dark.css" -}}
-  {{- $includeDarkStyle := or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode
-  "toggle")
-  -}}
-
   {{- if hugo.IsProduction -}}
   {{- $css := $mainStyle | minify | fingerprint "sha512" -}}
   <link rel="stylesheet" type="text/css" media="screen" href="{{ $css.Permalink }}"
     integrity="{{ $css.Data.Integrity }}" />
-  {{- if $includeDarkStyle }}
-  {{- $dcss := $darkStyle | minify | fingerprint "sha512" -}}
-  <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $dcss.Permalink }}"
-    integrity="{{ $dcss.Data.Integrity }}" {{ if eq .Site.Params.mode "auto" }} media="(prefers-color-scheme: dark)" {{
-    end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
-  {{- end -}}
   {{- else -}}
   <link rel="stylesheet" type="text/css" media="screen" href="{{ $mainStyle.Permalink }}" />
-  {{- if $includeDarkStyle -}}
-  {{- $darkStyle := resources.Get "css/dark.css" -}}
-  <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkStyle.Permalink }}" {{ if eq
-    .Site.Params.mode "auto" }} media="(prefers-color-scheme: dark)" {{ end }} {{ if eq .Site.Params.mode "toggle"
-    }}disabled{{ end }} />
-  {{- end -}}
   {{- end -}}
 
+  <!-- Dark Mode
+    If mode is not light or dark, load dark.css with media query.
+    JavaScript takes care of toggling scheme based on user preferences.
+  -->
+  {{- if $autoColourScheme -}}
+  {{- $darkStyle := resources.Get "css/dark.css" -}}
+  {{- if hugo.IsProduction -}}
+  {{- $dcss := $darkStyle | minify | fingerprint "sha512" -}}
+  <link id="dark-mode-style" rel="stylesheet" type="text/css" href="{{ $dcss.Permalink }}"
+    integrity="{{ $dcss.Data.Integrity }}" media="(prefers-color-scheme: dark)" />
+  {{- else -}}
+  <link id="dark-mode-style" rel="stylesheet" type="text/css" href="{{ $darkStyle.Permalink }}"
+    media="(prefers-color-scheme: dark)" />
+  {{- end -}}
+  {{- end -}}
 
   <!-- Mathjax support -->
   {{- if (.Params.mathjax) -}}
   {{- partial "mathjax.html" -}}
   {{- end }}
 
-
   <!-- KaTeX support -->
   {{- if (.Params.katex) -}}
   {{- partial "katex.html" -}}
   {{- end }}
-
 
   <!-- MermaidJS -->
   {{- if (.Params.mermaid) -}}
