@@ -8,7 +8,7 @@
 
 html {
   color: #232333;
-  font-family: 'Roboto Mono', monospace;
+  font-family: monospace;
   font-size: 15px;
   line-height: 1.6em;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 p {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: sans-serif;
   line-height: 1.5;
 }
 

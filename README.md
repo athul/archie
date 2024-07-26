@@ -13,8 +13,8 @@ I forked [archie](https://github.com/athul/archie) mainly to tweak
 the colour palette and contrast for better accessibility.
 
 Down the line, I added comments powered by [utterances](https://utteranc.es),
-[MermaidJS](https://mermaid-js.github.io/mermaid/) diagram rendering, and
-fixed minor alignment issues.
+[MermaidJS](https://mermaid.js.org) diagram rendering,
+reading time indicators, and fixed minor alignment issues.
 
 Hugo Pipes takes care of minifying and bundling CSS and JS files.
 I've removed the option of loading some assets from a CDN.
@@ -29,9 +29,11 @@ with how it work under the hood.
 
 ## Features
 
-- Auto Dark Mode (based on system theme) with (optional) manual toggle
+- Reading time indicators
 - Comments powered by [utterances](https://utteranc.es)
-- MermaidJS, MathJax, & KaTeX support
+- [MermaidJS](https://mermaid.js.org) diagrams
+- [MathJax](https://www.mathjax.org) & [KaTeX](https://katex.org) rendering
+- Auto Dark Mode (based on system theme) with (optional) manual toggle
 
 ## Installation
 
@@ -136,6 +138,7 @@ weight = 4
 
 Fork of [archie](https://github.com/athul/archie) which is a fork of
 [Ezhil](https://github.com/vividvilla/ezhil).
+
 Inspired by [blog.jse.li](blog.jse.li).
 
 Jughead is available under the terms of the MIT License.

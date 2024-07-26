@@ -27,7 +27,7 @@
     {{ end }}
     " />
 
-  {{ with .OutputFormats.Get "rss" -}}
+  {{- with .OutputFormats.Get "rss" -}}
   {{ printf `
   <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
@@ -42,64 +42,56 @@
 
   <!-- Feather Icons -->
   {{- if or (isset .Site.Params "social") (eq .Site.Params.mode "toggle") -}}
-  {{ $js := resources.Get "js/feather.js" }}
-  {{ if hugo.IsProduction }}
-  {{ $js := $js | minify | fingerprint "sha512" }}
+  {{- $js := resources.Get "js/feather.js" -}}
+  {{- if hugo.IsProduction -}}
+  {{- $js := $js | minify | fingerprint "sha512" -}}
   <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-  {{ else }}
+  {{- else -}}
   <script src="{{ $js.Permalink }}"></script>
-  {{ end }}
-  {{ end }}
+  {{- end -}}
+  {{- end -}}
 
-  <!-- Fonts -->
-  {{ $fontstyle := resources.Get "css/fonts.css" }}
-  {{ if hugo.IsProduction }}
-  {{ $css := $fontstyle | minify | fingerprint "sha512" }}
-  <link href="{{ $css.Permalink }}" rel="stylesheet" integrity="{{ $css.Data.Integrity }}" />
-  {{ else }}
-  <link href="{{ $fontstyle.Permalink }}" rel="stylesheet" />
-  {{ end }}
+  {{- $mainStyle := resources.Get "css/main.css" -}}
+  {{- $darkStyle := resources.Get "css/dark.css" -}}
+  {{- $includeDarkStyle := or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode
+  "toggle")
+  -}}
 
-  {{ $mainStyle := resources.Get "css/main.css" }}
-  {{ $darkStyle := resources.Get "css/dark.css" }}
-  {{ $includeDarkStyle := or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode "toggle")
-  }}
-
-  {{ if hugo.IsProduction }}
-  {{ $css := $mainStyle | minify | fingerprint "sha512" }}
+  {{- if hugo.IsProduction -}}
+  {{- $css := $mainStyle | minify | fingerprint "sha512" -}}
   <link rel="stylesheet" type="text/css" media="screen" href="{{ $css.Permalink }}"
     integrity="{{ $css.Data.Integrity }}" />
-  {{ if $includeDarkStyle }}
-  {{ $dcss := $darkStyle | minify | fingerprint "sha512" }}
+  {{- if $includeDarkStyle }}
+  {{- $dcss := $darkStyle | minify | fingerprint "sha512" -}}
   <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $dcss.Permalink }}"
     integrity="{{ $dcss.Data.Integrity }}" {{ if eq .Site.Params.mode "auto" }} media="(prefers-color-scheme: dark)" {{
     end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
-  {{ end }}
-  {{ else }}
+  {{- end -}}
+  {{- else -}}
   <link rel="stylesheet" type="text/css" media="screen" href="{{ $mainStyle.Permalink }}" />
-  {{ if $includeDarkStyle }}
-  {{ $darkStyle := resources.Get "css/dark.css" }}
+  {{- if $includeDarkStyle -}}
+  {{- $darkStyle := resources.Get "css/dark.css" -}}
   <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkStyle.Permalink }}" {{ if eq
     .Site.Params.mode "auto" }} media="(prefers-color-scheme: dark)" {{ end }} {{ if eq .Site.Params.mode "toggle"
     }}disabled{{ end }} />
-  {{ end }}
-  {{ end }}
+  {{- end -}}
+  {{- end -}}
 
 
   <!-- Mathjax support -->
-  {{ if (.Params.mathjax) }}
-  {{ partial "mathjax.html" }}
-  {{ end }}
+  {{- if (.Params.mathjax) -}}
+  {{- partial "mathjax.html" -}}
+  {{- end }}
 
 
   <!-- KaTeX support -->
-  {{ if (.Params.katex) }}
-  {{ partial "katex.html" }}
-  {{ end }}
+  {{- if (.Params.katex) -}}
+  {{- partial "katex.html" -}}
+  {{- end }}
 
 
   <!-- MermaidJS -->
-  {{ if (.Params.mermaid) }}
-  {{ partial "mermaid.html" }}
-  {{ end }}
+  {{- if (.Params.mermaid) -}}
+  {{- partial "mermaid.html" -}}
+  {{- end -}}
 </head>
