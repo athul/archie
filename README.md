@@ -7,6 +7,26 @@ Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 ![Theme](https://raw.githubusercontent.com/ananthb/jughead/main/images/screenshot.png)
 ![Dark mode](https://raw.githubusercontent.com/ananthb/jughead/main/images/screenshot-dark.png)
 
+## Why Jughead?
+
+I forked [archie](https://github.com/athul/archie) mainly to tweak
+the colour palette and contrast for better accessibility.
+
+Down the line, I added comments powered by [utterances](https://utteranc.es),
+[MermaidJS](https://mermaid-js.github.io/mermaid/) diagram rendering, and
+fixed minor alignment issues.
+
+Hugo Pipes takes care of minifying and bundling CSS and JS files.
+I've removed the option of loading some assets from a CDN.
+I trimmed down the available configuration options for a more opinionated
+setup that works out of the box.
+
+There's some preliminary support for internationalisation, but I have a lot
+more to do before I can ship that feature.
+
+I'm also looking to go a different direction visually, now that I'm happy
+with how it work under the hood.
+
 ## Features
 
 - Auto Dark Mode (based on system theme) with (optional) manual toggle
@@ -70,7 +90,6 @@ pygmentscodefencesguesssyntax = true
 
 [params]
 mode = "auto"   # color-mode → light,dark,toggle or auto
-useCDN = false  # don't use CDNs for fonts and icons, instead serve them locally.
 subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
 
 # Social Tags
