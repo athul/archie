@@ -9,16 +9,16 @@
     {{ if and (ne .Site.Params.mode "light") (ne .Site.Params.mode "dark") -}}
     | <a title="Toggle Colour Schemes" id="colour-scheme-toggle">
       <svg class="feather is-hidden" id="colour-scheme-toggle-sunrise">
-        <use href="../feather-icons/feather-sprite.svg#sunrise"></use>
+        <use href="{{ absURL "feather-icons/feather-sprite.svg" }}#sunrise"></use>
       </svg>
       <svg class="feather is-hidden" id="colour-scheme-toggle-sunset">
-        <use href="../feather-icons/feather-sprite.svg#sunset"></use>
+        <use href="{{ absURL "feather-icons/feather-sprite.svg" }}#sunset"></use>
       </svg>
       <svg class="feather is-hidden" id="colour-scheme-toggle-sun">
-        <use href="../feather-icons/feather-sprite.svg#sun"></use>
+        <use href="{{ absURL "feather-icons/feather-sprite.svg" }}#sun"></use>
       </svg>
       <svg class="feather is-hidden" id="colour-scheme-toggle-moon">
-        <use href="../feather-icons/feather-sprite.svg#moon"></use>
+        <use href="{{ absURL "feather-icons/feather-sprite.svg" }}#moon"></use>
       </svg>
     </a>
     {{- $toggle := resources.Get "js/themetoggle.js" -}}

@@ -1,0 +1,7 @@
+<svg class="feather{{ with .Get "class"}} {{ . }}{{ end }}" id="colour-scheme-toggle-sunrise">
+  {{- with .Get "name" -}}
+  <use href="{{ absURL "feather-icons/feather-sprite.svg"}}#{{ . }}</use>
+  {{- else -}}
+    {{- errorf "The %q shortcode requires a 'name' argument. See %s." .Name .Position -}}
+  {{- end -}}">
+</svg>
