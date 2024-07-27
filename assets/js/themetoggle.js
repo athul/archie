@@ -38,36 +38,36 @@ function setTheme(mode) {
 }
 
 function showIcon(icon) {
-    const iconSunrise = document.getElementById("colour-scheme-toggle-sunrise");
-    const iconSunset = document.getElementById("colour-scheme-toggle-sunset");
-    const iconSun = document.getElementById("colour-scheme-toggle-sun");
-    const iconMoon = document.getElementById("colour-scheme-toggle-moon");
+    const iconAutoLight = document.getElementById("colour-scheme-auto-light");
+    const iconAutoDark = document.getElementById("colour-scheme-auto-dark");
+    const iconLight = document.getElementById("colour-scheme-light");
+    const iconDark = document.getElementById("colour-scheme-dark");
 
     const isHidden = "is-hidden";
     switch (icon) {
         case "sunrise":
-            iconSunrise.classList.remove(isHidden);
-            iconSunset.classList.add(isHidden);
-            iconSun.classList.add(isHidden);
-            iconMoon.classList.add(isHidden);
+            iconAutoLight.classList.remove(isHidden);
+            iconAutoDark.classList.add(isHidden);
+            iconLight.classList.add(isHidden);
+            iconDark.classList.add(isHidden);
             break;
         case "sunset":
-            iconSunrise.classList.add(isHidden);
-            iconSunset.classList.remove(isHidden);
-            iconSun.classList.add(isHidden);
-            iconMoon.classList.add(isHidden);
+            iconAutoLight.classList.add(isHidden);
+            iconAutoDark.classList.remove(isHidden);
+            iconLight.classList.add(isHidden);
+            iconDark.classList.add(isHidden);
             break;
         case "sun":
-            iconSunrise.classList.add(isHidden);
-            iconSunset.classList.add(isHidden);
-            iconSun.classList.remove(isHidden);
-            iconMoon.classList.add(isHidden);
+            iconAutoLight.classList.add(isHidden);
+            iconAutoDark.classList.add(isHidden);
+            iconLight.classList.remove(isHidden);
+            iconDark.classList.add(isHidden);
             break;
         case "moon":
-            iconSunrise.classList.add(isHidden);
-            iconSunset.classList.add(isHidden);
-            iconSun.classList.add(isHidden);
-            iconMoon.classList.remove(isHidden);
+            iconAutoLight.classList.add(isHidden);
+            iconAutoDark.classList.add(isHidden);
+            iconLight.classList.add(isHidden);
+            iconDark.classList.remove(isHidden);
             break;
     }
 }

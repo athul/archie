@@ -56,8 +56,13 @@ a:hover {
   color: #fff;
 }
 
-#colour-scheme-toggle svg {
+#colour-scheme-toggle .feather {
   max-height: 15px;
+}
+
+#colour-scheme-toggle .description {
+  font-size: 10px;
+  text-transform: uppercase;
 }
 
 ul {
