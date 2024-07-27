@@ -30,10 +30,8 @@
   <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 
-
   <!-- Open Graph: https://ogp.me/ -->
   {{- template "_internal/opengraph.html" . -}}
-
 
   <!-- Twitter Cards: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards -->
   {{- template "_internal/twitter_cards.html" . -}}
@@ -42,7 +40,7 @@
 
   <!-- Feather Icons -->
   {{- if or (isset .Site.Params "social") $autoColourScheme -}}
-  <link rel="preload" href="{{ absURL "/feather-icons/feather-sprite.svg" }}" as="image" />
+  <link rel="preload" href="{{ absURL "feather-icons/feather-sprite.svg" }}" as="image" />
   {{- end -}}
 
   {{- $mainStyle := resources.Get "css/main.css" -}}
