@@ -9,17 +9,29 @@ Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 
 ## Why Jughead?
 
-I forked [archie](https://github.com/athul/archie) mainly to tweak
+I initially forked [archie](https://github.com/athul/archie) to tweak
 the colour palette and contrast for better accessibility.
 
-Down the line, I added comments powered by [utterances](https://utteranc.es),
+I added comments powered by [utterances](https://utteranc.es),
 [MermaidJS](https://mermaid.js.org) diagram rendering,
 reading time indicators, and fixed minor alignment issues.
 
-Hugo Pipes takes care of minifying and bundling CSS and JS files.
-I've removed the option of loading some assets from a CDN.
-I trimmed down the available configuration options for a more opinionated
+Then, Hugo Pipes took care of minifying and bundling CSS and JS files.
+I removed the option of loading some assets from a CDN.
+I also trimmed down the available configuration options for a more opinionated
 setup that works out of the box.
+
+### Performance
+
+![Pagespeed Insights](https://raw.githubusercontent.com/ananthb/jughead/main/images/pagespeed-insights.png)
+
+Jughead scores well on [Google Pagespeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+More importantly, it loads fast in most network conditions.
+
+It also preloads assets, minifies assets, and follows best practices
+for speed and accessibility.
+
+### Roadmap
 
 There's some preliminary support for internationalisation, but I have a lot
 more to do before I can ship that feature.
