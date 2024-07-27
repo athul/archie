@@ -162,9 +162,6 @@ weight = 4
 
 ## [License](LICENSE)
 
-Fork of [archie](https://github.com/athul/archie) which is a fork of
-[Ezhil](https://github.com/vividvilla/ezhil).
-
-Inspired by [blog.jse.li](blog.jse.li).
+Fork of [archie](https://github.com/athul/archie).
 
 Jughead is available under the terms of the MIT License.
