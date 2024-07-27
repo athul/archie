@@ -29,13 +29,13 @@ setup that works out of the box.
 
 ### Performance
 
+Jughead scores well on [Google PageSpeed Insights](https://pagespeed.web.dev/analysis/https-ananthb-github-io-jughead/wkzm8d6q3x?form_factor=mobile).
+
 <details>
 
-<summary>
-Jughead scores well on [Google Pagespeed Insights](https://pagespeed.web.dev/analysis/https-ananthb-github-io-jughead/wkzm8d6q3x?form_factor=mobile).
-</summary>
+<summary>PageSpeed Insights</summary>
 
-![Pagespeed Insights](https://raw.githubusercontent.com/ananthb/jughead/main/images/pagespeed-insights.png)
+![PageSpeed Insights](https://raw.githubusercontent.com/ananthb/jughead/main/images/pagespeed-insights.png)
 
 </details>
 
