@@ -42,21 +42,16 @@ icon = "linkedin"
 url = "https://www.linkedin.com/in/ananth-bhaskararaman-2b4227316"
 
 [[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
 name = "Posts"
 url = "/posts"
-weight = 2
+weight = 1
 
 [[menu.main]]
 name = "About"
 url = "/about"
-weight = 3
+weight = 2
 
 [[menu.main]]
 name = "Tags"
 url = "/tags"
-weight = 4
+weight = 3
