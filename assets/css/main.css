@@ -107,6 +107,17 @@ figure h4::before {
   content: '↳ ';
 }
 
+/* Feather icons */
+.feather {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
 /* Code blocks */
 code {
   background-color: #f1f1f1;

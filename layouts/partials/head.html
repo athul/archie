@@ -42,13 +42,7 @@
 
   <!-- Feather Icons -->
   {{- if or (isset .Site.Params "social") $autoColourScheme -}}
-  {{- $js := resources.Get "js/feather.js" -}}
-  {{- if hugo.IsProduction -}}
-  {{- $js := $js | minify | fingerprint "sha512" -}}
-  <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-  {{- else -}}
-  <script src="{{ $js.Permalink }}"></script>
-  {{- end -}}
+  <link rel="preload" href="{{ absURL "/feather-icons/feather-sprite.svg" }}" as="image" />
   {{- end -}}
 
   {{- $mainStyle := resources.Get "css/main.css" -}}

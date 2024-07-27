@@ -6,8 +6,11 @@
         href="{{ $key.url }}"
         rel="me"
         title="{{ $key.name }}"
-        ><i data-feather="{{ $key.icon }}"></i
-      ></a>
+        >
+        <svg class="feather">
+          <use href="{{ absURL "/feather-icons/feather-sprite.svg" }}#{{ $key.icon }}"></use>
+        </svg>
+      </a>
       <a class="border"></a>
     {{- end -}}
   </div>

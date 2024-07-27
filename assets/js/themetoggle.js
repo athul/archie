@@ -4,10 +4,10 @@ const itemTheme = "theme-storage";
 const themeLight = "light";
 const themeDark = "dark";
 
-const iconSunrise = `<i data-feather="sunrise"></i>`;
-const iconSunset = `<i data-feather="sunset"></i>`;
-const iconDark = `<i data-feather="moon"></i>`;
-const iconLight = `<i data-feather="sun"></i>`;
+const iconSunrise = `<svg class="feather"><use href="../feather-icons/feather-sprite.svg#sunrise"></use></svg>`;
+const iconSunset = `<svg class="feather"><use href="../feather-icons/feather-sprite.svg#sunset"></use></svg>`;
+const iconSun = `<svg class="feather"><use href="../feather-icons/feather-sprite.svg#sun"></use></svg>`;
+const iconMoon = `<svg class="feather"><use href="../feather-icons/feather-sprite.svg#moon"></use></svg>`;
 
 const idToggle = "colour-scheme-toggle";
 
@@ -23,7 +23,6 @@ function setTheme(mode) {
         e.matches ?
             modeToggle.innerHTML = iconSunset :
             modeToggle.innerHTML = iconSunrise;
-        feather.replace();
     }
 
     window.matchMedia(queryPrefersDark).removeEventListener("change", sunriseOrSunset);
@@ -38,14 +37,12 @@ function setTheme(mode) {
         localStorage.removeItem(itemTheme);
     } else {
         mode === themeDark ?
-            modeToggle.innerHTML = iconDark :
-            modeToggle.innerHTML = iconLight;
+            modeToggle.innerHTML = iconMoon :
+            modeToggle.innerHTML = iconSun;
         modeStyle.disabled = mode === themeLight;
         modeStyle.removeAttribute("media");
         localStorage.setItem(itemTheme, mode);
     }
-
-    feather.replace();
 }
 
 /**
