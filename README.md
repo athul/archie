@@ -4,8 +4,14 @@ Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 
 ## [Demo](https://ananthb.github.io/jughead)
 
+<details>
+
+<summary>Screenshots</summary>
+
 ![Theme](https://raw.githubusercontent.com/ananthb/jughead/main/images/screenshot.png)
 ![Dark mode](https://raw.githubusercontent.com/ananthb/jughead/main/images/screenshot-dark.png)
+
+</details>
 
 ## Why Jughead?
 
@@ -23,13 +29,19 @@ setup that works out of the box.
 
 ### Performance
 
+<details>
+
+<summary>
+Jughead scores well on [Google Pagespeed Insights](https://pagespeed.web.dev/analysis/https-ananthb-github-io-jughead/wkzm8d6q3x?form_factor=mobile).
+</summary>
+
 ![Pagespeed Insights](https://raw.githubusercontent.com/ananthb/jughead/main/images/pagespeed-insights.png)
 
-Jughead scores well on [Google Pagespeed Insights](https://developers.google.com/speed/pagespeed/insights/).
-More importantly, it loads fast in most network conditions.
+</details>
 
-It also preloads assets, minifies assets, and follows best practices
-for speed and accessibility.
+It preloads important assets, loads JavaScript deferred, and
+doesn't load external fonts.
+It follows best practices for web performance and accessibility.
 
 ### Roadmap
 
