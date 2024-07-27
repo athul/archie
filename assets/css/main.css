@@ -118,6 +118,10 @@ figure h4::before {
   fill: none;
 }
 
+.is-hidden {
+  display: none;
+}
+
 /* Code blocks */
 code {
   background-color: #f1f1f1;
@@ -248,7 +252,6 @@ footer {
 article .title {
   margin-bottom: 1em;
 }
-
 
 .site-description {
   display: flex;
