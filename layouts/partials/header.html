@@ -8,25 +8,25 @@
     {{ end }}
     {{ if and (ne .Site.Params.mode "light") (ne .Site.Params.mode "dark") -}}
     | <a href="#" title="Toggle colour schemes" id="colour-scheme-toggle">
-      <span class="is-hidden" id="colour-scheme-auto-light">
+      <span class="colour-scheme-icon is-hidden" id="colour-scheme-auto-light">
         <svg class="feather">
           <use href="{{ absURL "feather-icons/feather-sprite.svg" }}#sunrise"></use>
         </svg>
         <span class="description">Light (auto)</span>
       </span>
-      <span class="is-hidden" id="colour-scheme-auto-dark">
+      <span class="colour-scheme-icon is-hidden" id="colour-scheme-auto-dark">
         <svg class="feather" id="colour-scheme-toggle-sunset">
           <use href="{{ absURL "feather-icons/feather-sprite.svg" }}#sunset"></use>
         </svg>
         <span class="description">Dark (auto)</span>
       </span>
-      <span class="is-hidden" id="colour-scheme-light">
+      <span class="colour-scheme-icon is-hidden" id="colour-scheme-light">
         <svg class="feather">
           <use href="{{ absURL "feather-icons/feather-sprite.svg" }}#sun"></use>
         </svg>
         <span class="description">Light</span>
       </span>
-      <span class="is-hidden" id="colour-scheme-dark">
+      <span class="colour-scheme-icon is-hidden" id="colour-scheme-dark">
         <svg class="feather" id="colour-scheme-toggle-moon">
           <use href="{{ absURL "feather-icons/feather-sprite.svg" }}#moon"></use>
         </svg>

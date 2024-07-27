@@ -60,7 +60,12 @@ a:hover {
   max-height: 15px;
 }
 
-#colour-scheme-toggle .description {
+.colour-scheme-icon {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.colour-scheme-icon>.description {
   font-size: 10px;
   text-transform: uppercase;
 }
