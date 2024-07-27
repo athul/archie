@@ -25,7 +25,7 @@ There's some preliminary support for internationalisation, but I have a lot
 more to do before I can ship that feature.
 
 I'm also looking to go a different direction visually, now that I'm happy
-with how it work under the hood.
+with how it works under the hood.
 
 ## Features
 
