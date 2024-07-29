@@ -13,46 +13,22 @@ Jughead is a minimal and clean theme for hugo with a markdown-ish UI.
 
 </details>
 
-## Why a fork?
+## Roadmap
 
-I forked [archie](https://github.com/athul/archie) to tweak
-the colour palette and fix contrast for better accessibility.
+I forked [archie](https://github.com/athul/archie) to make minor changes.
+The project soon snowballed into something bigger.
 
-I added [utterances](https://utteranc.es) for comments,
-[MermaidJS](https://mermaid.js.org) for diagram rendering,
-reading time indicators, and fixed minor alignment issues.
+Here's a list of changes I've made and plan to make:
 
-I also switched all asset loading to use Hugo Pipes for better performance.
-I removed the option of loading some assets from a CDN.
-I also trimmed down the available configuration options for a more opinionated
-setup that works out of the box.
-
-I also upheaved colour scheme handling and simplified it
-for developers and users.
-
-### Performance
-
-Jughead scores well on [Google PageSpeed Insights](https://pagespeed.web.dev/analysis/https-ananthb-github-io-jughead/wkzm8d6q3x?form_factor=mobile).
-
-<details>
-
-<summary>PageSpeed Insights</summary>
-
-![PageSpeed Insights](https://raw.githubusercontent.com/ananthb/jughead/main/images/pagespeed-insights.png)
-
-</details>
-
-It preloads important assets, loads JavaScript deferred, and
-doesn't load external fonts.
-It follows best practices for web performance and accessibility.
-
-### Roadmap
-
-There's some preliminary support for internationalisation, but I have a lot
-more to do before I can ship that feature.
-
-I'm also looking to go a different direction visually, now that I'm happy
-with how it works under the hood.
+- [X] Fixed colour contrast
+- [X] Added reading time indicators
+- [X] Comments with [utterances](https://utteranc.es)
+- [X] [MermaidJS](https://mermaid.js.org) support
+- [X] Added auto dark mode
+- [X] Simplified configuration
+- [X] Improved [performance](https://pagespeed.web.dev/analysis/https-ananthb-github-io-jughead/wkzm8d6q3x?form_factor=mobile)
+- [] i18n support
+- [] Improved visual design
 
 ## Features
 

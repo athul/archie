@@ -11,9 +11,9 @@
           {{- end -}}
         </div>
         {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-        {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
+        {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) 3 }}
         {{ range $paginator.Pages }}
-        <section class="list-item">
+        <article class="list-item">
           <h1 class="title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h1>
@@ -24,10 +24,9 @@
             <span class="draft-label">DRAFT</span>
             {{ end }}
           </span>
-          <br />
           {{ template "partials/pagedescription.html" . }}
           <a class="readmore" href="{{ .RelPermalink }}">Read more ⟶</a>
-        </section>
+        </article>
         {{ end }}
         {{ template "partials/paginator.html" . }}
       </main>
