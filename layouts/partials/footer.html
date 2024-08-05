@@ -1,7 +1,11 @@
 <footer>
   <div style="display:flex">
     {{- range $index, $key := .Site.Params.Social -}}
-    <a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+    {{- if hasPrefix $key.icon "simple:" -}}
+    <a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i class="si si-{{ substr $key.icon 7 }}"></i></a>
+    {{- else -}}
+    <a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}">{{ template "feathericon" (dict "Icon" $key.icon "UseCDN" .Site.Params.useCDN) }}</a>
+    {{- end -}}
     <a class="border"></a>
     {{- end -}}
   </div>
@@ -13,9 +17,3 @@
 {{ if not hugo.IsServer }}
 {{ template "_internal/google_analytics.html" . }}
 {{ end }}
-
-{{- if (isset .Site.Params "social") -}}
-<script>
-  feather.replace()
-</script>
-{{- end -}}
