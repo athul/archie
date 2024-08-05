@@ -161,6 +161,15 @@ h6::before { color: var(--maincolor); content: '###### '; }
   letter-spacing: -0.5px;
 }
 
+.toc {
+  background-color: #ececec;
+  color: #232333;
+  padding: 10px;
+  padding-bottom: 0;
+  border-radius: 5px;
+  display: inline-block;
+}
+
 /* Footer */
 footer {
   display: flex;
