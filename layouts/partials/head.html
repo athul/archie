@@ -1,3 +1,13 @@
+{{- define "feathericon" -}}
+  {{- $featherURL := "https://unpkg.com/feather-icons@4.29.2/dist/feather-sprite.svg" -}}
+  {{ if not (.UseCDN | default false) -}}
+    {{- $featherURL = (resources.Get "svg/feather-sprite.svg" | fingerprint).RelPermalink -}}
+  {{- end -}}
+<svg class="feather">
+   <use href="{{ printf "%s#%s" $featherURL .Icon }}" />
+</svg>
+{{- end -}}
+
 <header>
 	<div class="main">
 		<a href="{{ absURL "/" }}">{{ .Site.Title }}</a>
@@ -7,7 +17,7 @@
 		<a href="{{ .URL }}">{{ .Name }}</a>
 		{{ end }}
 		{{ if eq .Site.Params.mode "toggle" -}}
-        | <span id="dark-mode-toggle" onclick="toggleTheme()"></span>
+	| <span id="dark-mode-toggle" onclick="toggleTheme()">{{template "feathericon" (dict "UseCDN" .Site.Params.useCDN "Icon" "sun") }}</span>
 		<script src="{{ absURL "js/themetoggle.js" }}"></script>
 		{{ end }}
 	</nav>
