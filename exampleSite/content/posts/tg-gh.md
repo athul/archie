@@ -252,7 +252,7 @@ branding:
   icon: 'repeat'  
   color: 'green'
 ```
-Here we're defining the Input variables to be loaded for the action in GitHub's runtime environemt. All these `default` data are taken from the response of the webhooks which are send by GitHub when a trigger event is occured. You can find out more in the [Action Documentation Here](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context).
+Here we're defining the Input variables to be loaded for the action in GitHub's runtime environment. All these `default` data are taken from the response of the webhooks which are send by GitHub when a trigger event is occurred. You can find out more in the [Action Documentation Here](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context).
 
 ```yml
 runs:
@@ -380,4 +380,4 @@ bot.sendMessage(chatid,output,{parse_mode : "Markdown"})
 
 ------
 
-You can try out many different items using actions and this is just a sample action to get you started. Maybe sending Cat GIFs if the build succeded on the pull request or sending a welcome message to a first time contributor. You imagination is the limit😄 and **Never Stop being ⚡️**
+You can try out many different items using actions and this is just a sample action to get you started. Maybe sending Cat GIFs if the build succeeded on the pull request or sending a welcome message to a first time contributor. You imagination is the limit😄 and **Never Stop being ⚡️**
