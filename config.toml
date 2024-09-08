@@ -1,7 +1,7 @@
-baseURL = "https://athul.github.io/archie/"
+baseURL = "https://ljw4.github.io/blog/"
 languageCode = "en-us"
-title = "Archie"
-theme = "archie"
+title = "Junwei"
+theme = "Junwei"
 copyright = "© Athul"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
