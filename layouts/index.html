@@ -1,36 +1,37 @@
 <!doctype html>
-<html lang="{{ .Site.Language.Lang | default "en" }}">
-  {{ partial "head.html" . }}
-  <body>
-    <div class="content">
-      {{ partial "header.html" . }}
-      <main class="list">
-        <div class="site-description">
-          {{- if isset .Site.Params "subtitle" -}}
-          <p>{{ .Site.Params.Subtitle | markdownify }}</p>
-          {{- end -}}
-        </div>
-        {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-        {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) 3 }}
-        {{ range $paginator.Pages }}
-        <article class="list-item">
-          <h1 class="title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h1>
-          <span class="meta">
-            <time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
-            <span class="reading-time-label">⏲ {{ .ReadingTime }} min.</span>
-            {{ if .Draft }}
-            <span class="draft-label">DRAFT</span>
-            {{ end }}
-          </span>
-          {{ template "partials/pagedescription.html" . }}
-          <a class="readmore" href="{{ .RelPermalink }}">Read more ⟶</a>
-        </article>
-        {{ end }}
-        {{ template "partials/paginator.html" . }}
-      </main>
-      {{ partial "footer.html" . }}
-    </div>
-  </body>
+<html lang="{{ .Site.Language.Lang | default " en" }}">
+{{ partial "head.html" . }}
+
+<body>
+  <div class="content">
+    {{ partial "header.html" . }}
+    <main class="list">
+      <div class="site-description">
+        {{- if isset .Site.Params "subtitle" -}}
+        <p>{{ .Site.Params.Subtitle | markdownify }}</p>
+        {{- end -}}
+      </div>
+      {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+      {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) 3 }}
+      {{ range $paginator.Pages }}
+      <article class="list-item">
+        <h1 class="title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h1>
+        <span class="meta">
+          <time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
+          <span class="reading-time-label">⏲ {{ .ReadingTime }} min.</span>
+          {{ if .Draft }}
+          <span class="draft-label">Draft</span>
+          {{ end }}
+        </span>
+        {{ template "partials/pagedescription.html" . }}
+      </article>
+      {{ end }}
+      {{ template "partials/paginator.html" . }}
+    </main>
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+
 </html>

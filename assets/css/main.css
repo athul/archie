@@ -297,6 +297,7 @@ article .title {
 .draft-label {
   color: var(--bordercl);
   text-decoration: none;
+  text-transform: uppercase;
   padding: 2px 4px;
   border-radius: 4px;
   margin-left: 6px;
