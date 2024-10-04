@@ -4,6 +4,11 @@ const itemTheme = "theme-storage";
 const themeLight = "light";
 const themeDark = "dark";
 
+const iconSunrise = "sunrise";
+const iconSunset = "sunset";
+const iconSun = "sun";
+const iconMoon = "moon";
+
 /**
  * Set the theme based on the mode.
  * If mode is null, the theme depends on the device colour scheme.
@@ -13,24 +18,24 @@ function setTheme(mode) {
 
     const sunriseOrSunset = e => {
         e.matches ?
-            showIcon("sunset") :
-            showIcon("sunrise");
+            showIcon(iconSunset) :
+            showIcon(iconSunrise);
     }
 
     window.matchMedia(queryPrefersDark).removeEventListener("change", sunriseOrSunset);
 
     if (mode === null) {
         window.matchMedia(queryPrefersDark).matches ?
-            showIcon("sunset") :
-            showIcon("sunrise");
+            showIcon(iconSunset) :
+            showIcon(iconSunrise);
         window.matchMedia(queryPrefersDark).addEventListener("change", sunriseOrSunset);
         modeStyle.media = queryPrefersDark;
         modeStyle.disabled = false;
         localStorage.removeItem(itemTheme);
     } else {
         mode === themeDark ?
-            showIcon("moon") :
-            showIcon("sun");
+            showIcon(iconMoon) :
+            showIcon(iconSun);
         modeStyle.disabled = mode === themeLight;
         modeStyle.removeAttribute("media");
         localStorage.setItem(itemTheme, mode);
@@ -45,25 +50,25 @@ function showIcon(icon) {
 
     const isHidden = "is-hidden";
     switch (icon) {
-        case "sunrise":
+        case iconSunrise:
             iconAutoLight.classList.remove(isHidden);
             iconAutoDark.classList.add(isHidden);
             iconLight.classList.add(isHidden);
             iconDark.classList.add(isHidden);
             break;
-        case "sunset":
+        case iconSunset:
             iconAutoLight.classList.add(isHidden);
             iconAutoDark.classList.remove(isHidden);
             iconLight.classList.add(isHidden);
             iconDark.classList.add(isHidden);
             break;
-        case "sun":
+        case iconSun:
             iconAutoLight.classList.add(isHidden);
             iconAutoDark.classList.add(isHidden);
             iconLight.classList.remove(isHidden);
             iconDark.classList.add(isHidden);
             break;
-        case "moon":
+        case iconMoon:
             iconAutoLight.classList.add(isHidden);
             iconAutoDark.classList.add(isHidden);
             iconLight.classList.add(isHidden);
