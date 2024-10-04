@@ -1,12 +1,15 @@
-body {
-  color: white;
-  background-color: #202124;
+:root {
+  /* Dark mode */
+  --darkMaincolor: #50fa7b;
+  --darkSecondaryColor: #8be9fd;
+  --darkBackgroundColor: #282a36;
+  --darkBorderColor: #44475a;
+  --darkHoverColor: #bd93f9;
 }
 
-::-moz-selection {
-  background: blue;
-  color: #fff;
-  text-shadow: none;
+body {
+  color: var(--darkMaincolor);
+  background-color: var(--darkBackgroundColor);
 }
 
 ::selection {
