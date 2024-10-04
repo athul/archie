@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   {{- $title := ( .Title ) -}}
   {{- $siteTitle := ( .Site.Title ) -}}
- 
+
   {{- if .IsHome -}}
   <title>{{ $siteTitle }} | Home</title>
   {{- else -}}
@@ -15,15 +15,13 @@
   {{- end -}}
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="{{- with .Description -}}{{ . }}{{- else -}}
+  <meta name="description" content="{{- with .Description -}}{{ . }}{{- else -}}
     {{- if .IsPage -}}
     {{ .Summary }}
     {{- else -}}
     {{- with .Site.Params.description -}}{{ . }}{{- end -}}
     {{- end -}}
-    {{- end -}}"
-  />
+    {{- end -}}" />
 
   {{- with .OutputFormats.Get "rss" -}}
   {{ printf `
@@ -40,7 +38,7 @@
 
   <!-- Feather Icons -->
   {{- if or (isset .Site.Params "social") $autoColourScheme -}}
-  <link rel="preload" href="{{ absURL "feather-icons/feather-sprite.svg" }}" as="image" />
+  <link rel="preload" href="{{ absURL " feather-icons/feather-sprite.svg" }}" as="image" />
   {{- end -}}
 
   {{- $mainStyle := resources.Get "css/main.css" -}}
@@ -82,4 +80,5 @@
   {{- if (.Params.mermaid) -}}
   {{- partial "mermaid.html" -}}
   {{- end -}}
+
 </head>

@@ -10,11 +10,13 @@
   {{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
   <li class="post">
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{ if .Draft }}
     <span class="meta">
+      <time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
+      <span class="reading-time-label">⏲ {{ .ReadingTime }} min.</span>
+      {{ if .Draft }}
       <span class="draft-label">DRAFT</span>
+      {{ end }}
     </span>
-    {{ end }}
   </li>
   {{- end -}}
   {{- end -}}
