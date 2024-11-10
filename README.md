@@ -16,6 +16,7 @@ Forked from [Ezhil Theme](https://github.com/vividvilla/ezhil)
 - Auto Dark Mode(based on system theme)
 - Dark/Light Mode toggle
 - tl:dr; frontamatter
+- Table of contents
 - Cache busting for CSS files
 - Disqus Comments
 
@@ -42,6 +43,7 @@ date:
 tldr: (optional)
 draft: true/false (optional)
 tags: [tag names] (optional)
+toc: true/false (optional)
 ---
 ```
 
