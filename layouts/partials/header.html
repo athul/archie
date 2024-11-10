@@ -25,7 +25,7 @@
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
 		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	{{- else if or (isset .Site.Params "social") (eq .Site.Params.mode "toggle") -}}
-		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+		<script src="{{ absURL "js/feather.min.js" }}"></script>
 	{{ end }}
 	{{ if .Site.Params.useCDN | default false -}}
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
 		<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 		</script>
-	
+
 		<!-- inline Mathjax -->
 		<script type="text/x-mathjax-config">
 		MathJax.Hub.Config({
@@ -71,7 +71,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
 		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
 		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-		
+
 		<!-- inline KaTeX -->
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
@@ -84,7 +84,7 @@
 			});
 			</script>
 	{{ end }}
-	
+
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
 		{{ range .Site.Params.customCSS }}
@@ -98,7 +98,7 @@
 	{{- else if (hasPrefix . "<script")}}
     {{ .| safeHTML }}
 	{{- else }}
-	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+	<script src="{{ absURL . }}"></script>
 	{{- end }}
 	{{- end }}
 </head>

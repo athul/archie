@@ -3,6 +3,7 @@ title: Telegram Bot for  GitHub Actions
 date: "2020-04-01"
 description: Make a Telegram bot with Node.js and use it with GitHub Actions for sending notifications to you about the repo.
 tldr: Making GitHub Actions with Js Code
+toc: true
 ---
 ## Telegram
 [Telegram](https://telegram.org/) is a cloud-based mobile and desktop messaging app with a focus on security and speed. It is free to use and extensively hackable. It also has a good bot support system. The API is also easy to implement and has many wrappers for building bots with the API.
