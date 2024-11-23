@@ -67,6 +67,11 @@ h6::before {
   content: "###### ";
 }
 
+.toc {
+  background-color: #272822;
+  color: white;
+}
+
 a {
   border-bottom: 3px solid var(--darkMaincolor);
   color: inherit;

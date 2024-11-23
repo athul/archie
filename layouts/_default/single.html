@@ -4,13 +4,19 @@
 		<div class="title">
 			<h1 class="title">{{ .Title }}</h1>
 			{{ if isset .Params "date" }}
-			<div class="meta">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+      <div class="meta">Posted on {{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
 			{{ end }}
 		</div>
 		{{ if isset .Params "tldr" }}
 		<div class="tldr">
 			<strong>tl;dr:</strong>
 			{{ .Params.tldr }}
+		</div>{{ end }}
+
+		{{ if isset .Params "toc" }}
+		<div class="toc">
+		<strong>Table of contents:</strong>
+		{{ .TableOfContents }}
 		</div>{{ end }}
 
 		<section class="body">
@@ -32,7 +38,7 @@
 		</div>
 		{{- $.Scratch.Set "isDisqus" true -}}
 		<!-- Check if disqus short name is given -->
-		{{ if not .Site.DisqusShortname }}
+		{{ if not .Site.Config.Services.Disqus.Shortname }}
 		{{- $.Scratch.Set "isDisqus" false -}}
 		{{ end }}
 
