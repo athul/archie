@@ -38,7 +38,7 @@ description: Here is a demo of all shortcodes available in Hugo.
 
 ### Alert
 
-{{< callout type="alert" text="This is a alert callout." >}}
+{{< callout type="alert" text="This is an alert callout." >}}
 
 ### Custom
 
