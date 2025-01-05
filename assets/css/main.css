@@ -228,6 +228,34 @@ article .title {
   color: var(--callouctcolor);
 }
 
+.callout-alert {
+  color: #000000;
+  background-color: transparent;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #ff6347;
+}
+
+.callout-custom {
+  color: #000000;
+}
+
+.callout-tip {
+  color: #000000;
+  background-color: transparent;
+  border-width: 3px;
+  border-style: solid;
+  border-color: dodgerblue;
+}
+
+.callout-warning {
+  color: #000000;
+  background-color: transparent;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #ffd700;
+}
+
 .site-description {
 display: flex;
 justify-content: space-between;

@@ -162,3 +162,31 @@ a:hover {
   background: royalblue;
   color: whitesmoke ;
 }
+
+.callout-alert {
+  color: #ffffff;
+  background-color: transparent;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #ff6347;
+}
+
+.callout-custom {
+  color: #ffffff;
+}
+
+.callout-tip {
+  color: #ffffff;
+  background-color: transparent;
+  border-width: 3px;
+  border-style: solid;
+  border-color: dodgerblue;
+}
+
+.callout-warning {
+  color: #ffffff;
+  background-color: transparent;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #ffd700;
+}
