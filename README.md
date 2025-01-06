@@ -65,6 +65,45 @@ Note: CSS files should be placed under the `assets` directory e.g. `assets/css/f
 	customcss = ["css/first.css", "css/second.css"]
 ```
 
+### Callouts
+
+There are five different types of callout, including this themes original callout and a custom one as well. These callouts are compatible with both light and dark theme modes. 
+
+![Screenshot from 2025-01-04 19-22-43](https://github.com/user-attachments/assets/bcaf7c3c-2339-449f-8bcb-8a2906d7ddcf)
+
+
+#### Original
+
+This steup is to ensure backwards compatibility for previous callouts.
+
+```markdown                                                                                                                                                                                                    
+{{< callout emoji="⚡️" text="Original callout." >}}
+```
+
+#### Alert
+```markdown
+{{< callout type="alert" text="This is an alert callout." >}}
+```
+
+#### Custom
+
+This include the ability to set your own callout emoji, title, and css style element.
+
+```markdown
+{{< callout type="custom" emoji="⚡️" title="Custom callout" text="This is custom text for a custom callout." style="background-color: transparent; border: 3px solid #d340e0;" >}}
+```
+
+#### Tip
+
+```markdown
+{{< callout type="tip" text="This is a tip callout." >}}
+```
+
+#### Warning
+
+```markdown
+{{< callout type="warning" text="This is a warning callout." >}}
+```
 
 ## Config of the Demo Site
 
