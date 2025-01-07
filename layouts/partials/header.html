@@ -48,16 +48,16 @@
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode "toggle") -}}
 		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
 		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
-	{{ end }}
+	{{- end -}}
 
 	<!-- Mathjax support -->
-	{{ if .Site.Params.mathjax | default false }}
+	{{- if .Site.Params.mathjax | default false -}}
 		<script type="text/javascript"
 		{{ if .Site.Params.useCDN | default false -}}
 		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 		{{- else -}}
 		src="{{ absURL "js/MathJax.js" }}">
-		{{ end }}
+		{{- end -}}
 		</script>
 		<!-- inline Mathjax -->
 		<script type="text/x-mathjax-config">
@@ -73,10 +73,10 @@
 			}
 		});
 		</script>
-	{{ end }}
+	{{- end -}}
 
 	<!-- KaTeX support -->
-	{{ if .Site.Params.katex | default false }}
+	{{- if .Site.Params.katex | default false -}}
 		{{ if .Site.Params.useCDN | default false -}}
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
 		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
@@ -97,7 +97,7 @@
 					});
 			});
 		</script>
-	{{ end }}
+	{{- end -}}
 
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
