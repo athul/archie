@@ -161,13 +161,29 @@ h6::before { color: var(--maincolor); content: '###### '; }
   letter-spacing: -0.5px;
 }
 
+.post-container {
+  align-items: flex-start;
+  display: flex;
+  gap: 20px;
+}
+
+.post-content {
+  flex: 3;
+  min-width: 0;
+}
+
 .toc {
   background-color: #ececec;
-  color: #232333;
-  padding: 10px;
-  padding-bottom: 0;
   border-radius: 5px;
-  display: inline-block;
+  color: #232333;
+  flex: 0 0 auto;
+  height: auto;
+  margin-left: 20px;
+  max-width: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  position: sticky;
+  top: 20px;
 }
 
 /* Footer */
