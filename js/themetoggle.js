@@ -1,13 +1,12 @@
 function setTheme(mode) {
     localStorage.setItem("theme-storage", mode);
+    var e = document.querySelector("#dark-mode-toggle > .feather > use")
     if (mode === "dark") {
         document.getElementById("darkModeStyle").disabled=false;
-        document.getElementById("dark-mode-toggle").innerHTML = "<i data-feather=\"sun\"></i>";
-        feather.replace()
+	e.href.baseVal = e.href.baseVal.replace(/#.*$/, "#sun")
     } else if (mode === "light") {
         document.getElementById("darkModeStyle").disabled=true;
-        document.getElementById("dark-mode-toggle").innerHTML = "<i data-feather=\"moon\"></i>";
-        feather.replace()
+	e.href.baseVal = e.href.baseVal.replace(/#.*$/, "#moon")
     }
 }
 

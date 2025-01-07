@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Space on Archie</title><link>https://athul.github.io/archie/tags/space/</link><description>Recent content in Space on Archie</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Athul</copyright><lastBuildDate>Sun, 18 Mar 2018 12:13:30 +0530</lastBuildDate><atom:link href="https://athul.github.io/archie/tags/space/index.xml" rel="self" type="application/rss+xml"/><item><title>Fearlessness: How to Stop Running from Space</title><link>https://athul.github.io/archie/posts/post-2/</link><pubDate>Sun, 18 Mar 2018 12:13:30 +0530</pubDate><guid>https://athul.github.io/archie/posts/post-2/</guid><description>We spend our days filling in every available space, cramming in more tasks, responding to messages, checking social media and online sites, watching videos.
-We are afraid of empty space in our lives.
-The result is often a continual busyness, constant distraction and avoidance, lack of focus, lack of satisfaction with our lives.
-We run from silence. We run from the spaces between tasks and appointments. We run from solitude and stillness.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Space on Archie</title>
+    <link>https://athul.github.io/archie/tags/space/</link>
+    <description>Recent content in Space on Archie</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© Athul</copyright>
+    <lastBuildDate>Sun, 18 Mar 2018 12:13:30 +0530</lastBuildDate>
+    <atom:link href="https://athul.github.io/archie/tags/space/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fearlessness: How to Stop Running from Space</title>
+      <link>https://athul.github.io/archie/posts/post-2/</link>
+      <pubDate>Sun, 18 Mar 2018 12:13:30 +0530</pubDate>
+      <guid>https://athul.github.io/archie/posts/post-2/</guid>
+      <description>&lt;p&gt;We spend our days filling in every available space, cramming in more tasks, responding to messages, checking social media and online sites, watching videos.&lt;/p&gt;&#xA;&lt;p&gt;We are afraid of empty space in our lives.&lt;/p&gt;&#xA;&lt;p&gt;The result is often a continual busyness, constant distraction and avoidance, lack of focus, lack of satisfaction with our lives.&lt;/p&gt;&#xA;&lt;p&gt;We run from silence. We run from the spaces between tasks and appointments. We run from solitude and stillness. We try to fill every second with activity, with something useful, as if silence and space are not valuable.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

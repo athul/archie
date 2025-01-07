@@ -1,26 +1,165 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Syntax Higlighters - Archie</title><link rel=icon type=image/png href=https://img.icons8.com/officel/16/000000/chevron-right.png><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Syntax Highlighting Examples"><meta property="og:image" content="https://raw.githubusercontent.com/athul/archie/master/images/archie-dark.png"><meta property="og:title" content="Syntax Higlighters"><meta property="og:description" content="Syntax Highlighting Examples"><meta property="og:type" content="article"><meta property="og:url" content="https://athul.github.io/archie/posts/langs/"><meta property="article:published_time" content="2020-06-23T00:00:00+00:00"><meta property="article:modified_time" content="2020-06-23T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Syntax Higlighters"><meta name=twitter:description content="Syntax Highlighting Examples"><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://athul.github.io/archie/css/main.2f9b5946627215dc1ae7fa5f82bfc9cfcab000329136befeea5733f21e77d68f.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://athul.github.io/archie/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css disabled></head><body><div class=content><header><div class=main><a href=https://athul.github.io/archie/>Archie</a></div><nav><a href=/archie/>Home</a>
-<a href=/archie/posts>All posts</a>
-<a href=/archie/about>About</a>
-<a href=/archie/tags>Tags</a>
-| <a id=dark-mode-toggle onclick=toggleTheme() href></a><script src=https://athul.github.io/archie/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>Syntax Higlighters</h1><div class=meta>Posted on Jun 23, 2020</div></div><section class=body><h2 id=python>Python</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sum</span>(a,b):
-    <span style=color:#66d9ef>return</span> a<span style=color:#f92672>+</span>b
-<span style=color:#66d9ef>print</span>(f<span style=color:#e6db74>&#39;The Sum of 4 and 5 is {sum(4,5)}&#39;</span>)
-</code></pre></div><h2 id=javascript>JavaScript</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>sum</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>a</span>,<span style=color:#a6e22e>b</span>)=&gt;{
-    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>a</span><span style=color:#f92672>+</span><span style=color:#a6e22e>b</span>
-}
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>sum</span>(<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>5</span>))
-</code></pre></div><h2 id=go>Go</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+<!DOCTYPE html>
+<html><head lang="en">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Syntax Higlighters - Archie</title><link rel="icon" type="image/png" href=https://img.icons8.com/officel/16/000000/chevron-right.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Syntax Highlighting Examples" />
+	<meta property="og:image" content="https://raw.githubusercontent.com/athul/archie/master/images/archie-dark.png"/>
+	<meta property="og:url" content="https://athul.github.io/archie/posts/langs/">
+  <meta property="og:site_name" content="Archie">
+  <meta property="og:title" content="Syntax Higlighters">
+  <meta property="og:description" content="Syntax Highlighting Examples">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-06-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-06-23T00:00:00+00:00">
+    <meta property="article:tag" content="Code">
 
-<span style=color:#f92672>import</span> (
-	<span style=color:#e6db74>&#34;fmt&#34;</span>
-)
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Syntax Higlighters">
+  <meta name="twitter:description" content="Syntax Highlighting Examples">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>addition</span>(<span style=color:#a6e22e>a</span> <span style=color:#66d9ef>int</span>, <span style=color:#a6e22e>b</span> <span style=color:#66d9ef>int</span>) <span style=color:#66d9ef>int</span> {
-	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>b</span>
-}
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
-	<span style=color:#a6e22e>x</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>addition</span>(<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>)
-	<span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>x</span>)
-}
-</code></pre></div><table><thead><tr><th align=center>Subject</th><th align=center>{{subject}}</th></tr></thead><tbody><tr><td align=center>Hosted On</td><td align=center>{{hosted_on}}</td></tr><tr><td align=center>Site</td><td align=center>{{site_url}}</td></tr><tr><td align=center>Incident Time</td><td align=center>{{time_of_incident}}</td></tr><tr><td align=center>Incident Ref Number</td><td align=center>{{name}}</td></tr><tr><td align=center>Resolved By</td><td align=center>{{resolved_by}}</td></tr><tr><td align=center>Resolution Time</td><td align=center>{{resolution_time}}</td></tr></tbody></table></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/archie/tags/code>Code</a></li></ul></nav></div></article></main><footer><hr><a class=soc href=https://github.com/athul/archie title=GitHub><i data-feather=github></i></a>|<a class=soc href=https://github.com/athulcajay/ title=Twitter><i data-feather=twitter></i></a>|<a class=soc href=https://gitlab.com/athul/ title=GitLab><i data-feather=gitlab></i></a>|⚡️
-2022 © Athul | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></footer><script>feather.replace()</script></div></body></html>
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://athul.github.io/archie/css/main.c22e64da35e445cd3a96d981295dfc54ca491431c66067010070194b83d05d30.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://athul.github.io/archie/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css"  disabled />
+	
+
+	
+	
+
+	
+	
+
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://athul.github.io/">Archie</a>
+	</div>
+	<nav>
+		
+		<a href="/archie/">Home</a>
+		
+		<a href="/archie/posts">All posts</a>
+		
+		<a href="/archie/about">About</a>
+		
+		<a href="/archie/tags">Tags</a>
+		
+		| <span id="dark-mode-toggle" onclick="toggleTheme()"><svg class="feather">
+   <use href="https://unpkg.com/feather-icons@4.29.2/dist/feather-sprite.svg#sun" />
+</svg></span>
+		<script src="https://athul.github.io/archie/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Syntax Higlighters</h1>
+			<div class="meta">Posted on Jun 23, 2020</div>
+		</div>
+		
+
+		
+
+		<section class="body">
+			<h2 id="python">Python</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum</span>(a,b):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>b
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;The Sum of 4 and 5 is </span><span style="color:#e6db74">{</span>sum(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><h2 id="javascript">JavaScript</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>)=&gt;{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">+</span><span style="color:#a6e22e">b</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sum</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>))
+</span></span></code></pre></div><h2 id="go">Go</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">addition</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">addition</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">x</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Subject</th>
+          <th style="text-align: center">{{subject}}</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Hosted On</td>
+          <td style="text-align: center">{{hosted_on}}</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Site</td>
+          <td style="text-align: center">{{site_url}}</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Incident Time</td>
+          <td style="text-align: center">{{time_of_incident}}</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Incident Ref Number</td>
+          <td style="text-align: center">{{name}}</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Resolved By</td>
+          <td style="text-align: center">{{resolved_by}}</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Resolution Time</td>
+          <td style="text-align: center">{{resolution_time}}</td>
+      </tr>
+  </tbody>
+</table>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/code">Code</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+		</article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/athul/archie" rel="me" title="GitHub"><svg class="feather">
+   <use href="/archie/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+</svg></a><a class="border"></a><a class="soc" href="https://github.com/athulcajay/" rel="me" title="Twitter"><svg class="feather">
+   <use href="/archie/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#twitter" />
+</svg></a><a class="border"></a><a class="soc" href="https://gitlab.com/athul/" rel="me" title="GitLab"><svg class="feather">
+   <use href="/archie/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#gitlab" />
+</svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2025  © Athul |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+
+</div>
+    </body>
+</html>
