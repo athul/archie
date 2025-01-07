@@ -45,11 +45,14 @@
 	{{ end }}
 
 	<!-- Mathjax support -->
-	{{ with .Site.Params.mathjax }}
+	{{ if .Site.Params.mathjax | default false }}
 		<script type="text/javascript"
+		{{ if .Site.Params.useCDN | default false -}}
 		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		{{- else -}}
+		src="{{ absURL "js/MathJax.js" }}">
+		{{ end }}
 		</script>
-
 		<!-- inline Mathjax -->
 		<script type="text/x-mathjax-config">
 		MathJax.Hub.Config({
@@ -67,11 +70,16 @@
 	{{ end }}
 
 	<!-- KaTeX support -->
-	{{ with .Site.Params.katex }}
+	{{ if .Site.Params.katex | default false }}
+		{{ if .Site.Params.useCDN | default false -}}
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
 		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
 		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-
+		{{- else -}}
+		<link rel="stylesheet" href="{{ absURL "katex/katex.min.css" }} ">
+		<script defer src="{{ absURL "katex/katex.min.js" }}"></script>
+		<script defer src="{{ absURL "katex/auto-render.min.js" }}" onload="renderMathInElement(document.body);"></script>
+		{{ end -}}
 		<!-- inline KaTeX -->
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
@@ -82,7 +90,7 @@
 							]
 					});
 			});
-			</script>
+		</script>
 	{{ end }}
 
 	<!-- Custom CSS style get applied last -->
