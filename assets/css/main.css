@@ -5,6 +5,7 @@
 --callouctcolor:dodgerblue;
 --hovercolor:navy;
 --darkMaincolor: #50fa7b;
+--vibrantBlue: #3178C6;
 }
 html {
   color: #232333;
@@ -366,6 +367,11 @@ color: royalblue ;
 content: 'Markdown';
 background: royalblue;
 color: whitesmoke ;
+}
+.highlight pre code[class*='language-ts']::before{
+  content: 'TS';
+  background: var(--vibrantBlue);
+  color: #fff;
 }
 
 /* table */
