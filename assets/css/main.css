@@ -5,7 +5,6 @@
 --callouctcolor:dodgerblue;
 --hovercolor:navy;
 --darkMaincolor: #50fa7b;
---vibrantBlue: #3178C6;
 }
 html {
   color: #232333;
@@ -370,7 +369,7 @@ color: whitesmoke ;
 }
 .highlight pre code[class*='language-ts']::before{
   content: 'TS';
-  background: var(--vibrantBlue);
+  background: #3178C6;
   color: #fff;
 }
 
