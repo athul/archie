@@ -32,7 +32,7 @@
       </div>
 
       <!-- TOC -->
-      {{ if isset .Params "toc" }}
+      {{ if and (isset .Params "toc") (.Params.toc) }}
       <div class="toc">
         <strong>Table of contents:</strong>
         {{ .TableOfContents }}
