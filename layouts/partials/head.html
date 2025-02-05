@@ -16,6 +16,12 @@
 		{{ range .Site.Menus.main }}
 		<a href="{{ .URL }}">{{ .Name }}</a>
 		{{ end }}
+
+		<div id="in_posts" style="display: none;">
+			<span>|</span>
+			<a href="javascript:function_display_toc()" id="head_toc_switch">Hide TOC</a>
+		</div>
+		
 		{{ if eq .Site.Params.mode "toggle" -}}
 	| <span id="dark-mode-toggle" onclick="toggleTheme()">{{template "feathericon" (dict "UseCDN" .Site.Params.useCDN "Icon" "sun") }}</span>
 		<script src="{{ absURL "js/themetoggle.js" }}"></script>
