@@ -33,10 +33,36 @@
 
       <!-- TOC -->
       {{ if isset .Params "toc" }}
-      <div class="toc">
+      <div class="toc" id="post-toc">
         <strong>Table of contents:</strong>
         {{ .TableOfContents }}
       </div>
+
+      <script>
+        let toc_ = document.getElementById("post-toc")
+        let button_ = document.getElementById("head_toc_switch")
+        let toc_preference = localStorage.getItem("toc_preference")
+  
+        if (toc_preference == "hide") {
+          toc_.style.display = "none"
+          button_.innerText = "Show Toc"
+        }
+  
+        function function_display_toc() {
+          
+          if (toc_.style.display == "none") {
+            toc_.style.display = ""
+            button_.innerText = "Hide Toc"
+            localStorage.setItem("toc_preference", "show")
+          } else {
+            toc_.style.display = "none"
+            button_.innerText = "Show Toc"
+            localStorage.setItem("toc_preference", "hide")
+          }
+        }
+  
+        document.getElementById("in_posts").style.display = "inline"
+      </script>
       {{ end }}
     </div>
 

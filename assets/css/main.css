@@ -174,7 +174,8 @@ h6::before { color: var(--maincolor); content: '###### '; }
 
 .toc {
   background-color: #ececec;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  opacity: 0.20;
   color: #232333;
   flex: 0 0 auto;
   height: auto;
@@ -184,6 +185,11 @@ h6::before { color: var(--maincolor); content: '###### '; }
   padding: 10px;
   position: sticky;
   top: 20px;
+  transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.toc:hover {
+  opacity: 1;
 }
 
 /* Footer */
