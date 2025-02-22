@@ -49,6 +49,21 @@
     {{- if eq ($.Scratch.Get "isDisqus") true -}}
     {{- partial "disqus.html" . -}}
     {{- end -}}
+
+    <!-- Twikoo -->
+    {{ $pagePath := .File.Path }}
+    {{ $disableComments := .Site.Params.disableComments | default slice }}
+    {{ if not (in $disableComments $pagePath) }}
+    <div id="tcomment"></div>
+    <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.min.js"></script>
+    <script>
+      twikoo.init({
+        envId: '{{ .Site.Params.twikoo.envId }}',
+        el: '#tcomment',
+      })
+    </script>
+    {{ end }}
+
   </article>
 </main>
 {{ end }}

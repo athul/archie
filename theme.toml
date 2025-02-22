@@ -9,7 +9,13 @@ homepage = "https://github.com/athul/archie"
 tags = ["blog","simple","responsive","minimal","tags","personal","clean","shortcodes"]
 features = ["blog", "Clean and minimal", "Responsive", "Syntax highlighting",]
 min_version = "0.41"
+disableComments = ["about.md"]
 
 [author]
   name = "Athul Cyriac Ajay"
   homepage = "https://github.com/athul"
+
+# Comments
+
+[twikoo]
+    envId = "your-env-id"
