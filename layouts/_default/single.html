@@ -7,6 +7,7 @@
         <div class="title">
           <h1 class="title">{{ .Title }}</h1>
           <div class="meta">Posted on {{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+          <p>阅读&ensp;| <span class="post-date">共{{ .WordCount  }}字</span>，阅读约<span class="more-meta"> {{ .ReadingTime  }} 分钟</span></p>
         </div>
         {{ if isset .Params "tldr" }}
         <div class="tldr">
