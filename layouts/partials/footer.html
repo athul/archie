@@ -6,7 +6,6 @@
 	{{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/mackles/archie-network">Archie Network Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 {{ if not .Site.IsServer }}
-{{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
 
 {{- if (isset .Site.Params "social") -}}
