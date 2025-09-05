@@ -132,6 +132,10 @@ table tr:nth-child(even) {
 }
 
 /* Navigation toggle in dark mode */
+.nav-toggle {
+  color: var(--color-text-dark, #ffffff);
+}
+
 .nav-toggle:hover,
 .nav-toggle:focus {
   background-color: var(--color-primary-dark, #50fa7b);

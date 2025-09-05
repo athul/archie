@@ -565,6 +565,8 @@ svg {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Draft label */
@@ -738,6 +740,11 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.nav-toggle {
+  /* Ensure icon is always visible */
+  color: var(--color-text, #232333);
 }
 
 .nav-toggle:hover,
