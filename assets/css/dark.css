@@ -1,192 +1,173 @@
+/* Dark theme overrides */
 body {
-  color: white;
-  background-color: #202124;
+  color: var(--color-text-dark, #ffffff);
+  background-color: var(--color-background-dark, #202124);
 }
 
 ::-moz-selection {
-  background: blue;
-  color: #fff;
+  background: var(--color-primary-dark, #50fa7b);
+  color: #000000;
   text-shadow: none;
 }
 
 ::selection {
-  background: red;
-  color: #fff;
+  background: var(--color-primary-dark, #50fa7b);
+  color: #000000;
   text-shadow: none;
 }
 
 hr {
-  border-top: 3px dotted blue;
-}
-code {
-  background-color: lightblue;
-  color: black;
-  text-decoration: bold;
-  padding: 0.1em 0.2em;
-}
-pre {
-  background-color: #272822;
-  line-height: 1.4;
-  overflow-x: auto;
-  padding: 1em;
-}
-blockquote {
-  border-color: blue;
+  border-block-start: 3px dotted var(--color-border-dark, #0066ff);
 }
 
+code {
+  background-color: var(--color-background-code-dark, #3a3a3a);
+  color: var(--color-text-dark, #ffffff);
+}
+
+pre {
+  background-color: var(--color-background-pre-dark, #272822);
+  border-color: var(--color-border-dark, #0066ff);
+}
+
+blockquote {
+  border-color: var(--color-border-dark, #0066ff);
+  color: var(--color-text-muted-dark, #dddddd);
+}
+
+/* Headings */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: #ddd;
+  color: var(--color-text-muted-dark, #dddddd);
 }
-h1::before {
-  color: var(--darkMaincolor);
-  content: "# ";
-}
-h2::before {
-  color: var(--darkMaincolor);
-  content: "## ";
-}
-h3::before {
-  color: var(--darkMaincolor);
-  content: "### ";
-}
-h4::before {
-  color: var(--darkMaincolor);
-  content: "#### ";
-}
-h5::before {
-  color: var(--darkMaincolor);
-  content: "##### ";
-}
-h6::before {
-  color: var(--darkMaincolor);
-  content: "###### ";
-}
+
+h1::before { color: var(--color-primary-dark, #50fa7b); }
+h2::before { color: var(--color-primary-dark, #50fa7b); }
+h3::before { color: var(--color-primary-dark, #50fa7b); }
+h4::before { color: var(--color-primary-dark, #50fa7b); }
+h5::before { color: var(--color-primary-dark, #50fa7b); }
+h6::before { color: var(--color-primary-dark, #50fa7b); }
 
 .toc {
-  background-color: #272822;
-  color: white;
+  background-color: var(--color-background-toc-dark, #272822);
+  color: var(--color-text-dark, #ffffff);
+  border-color: var(--color-border-dark, #0066ff);
 }
 
+/* Links */
 a {
-  border-bottom: 3px solid var(--darkMaincolor);
+  border-block-end: 3px solid var(--color-primary-dark, #50fa7b);
   color: inherit;
 }
-a:hover {
-  background-color: var(--darkMaincolor);
-  color: black;
+
+a:hover,
+a:focus {
+  background-color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  outline-color: var(--color-primary-dark, #50fa7b);
 }
 
 .site-description a {
-  color: #ddd;
-}
-.site-description a:hover {
-  color: black;
+  color: var(--color-text-muted-dark, #dddddd);
 }
 
-.tags a {
-  border-bottom: 3px solid var(--darkMaincolor);
+.site-description a:hover,
+.site-description a:focus {
+  color: #000000;
 }
-.tags a:hover {
-  background-color: var(--darkMaincolor);
-  color: black;
+
+/* Tags */
+.tags a {
+  border-block-end: 3px solid var(--color-primary-dark, #50fa7b);
+}
+
+.tags a:hover,
+.tags a:focus {
+  background-color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
 }
 
 .site-title a {
-  color: white;
+  color: var(--color-text-dark, #ffffff);
   text-decoration: none !important;
 }
 
 .header nav,
-.footer {
-  border-color: #333;
+footer {
+  border-color: var(--color-border-dark, #0066ff);
 }
 
 .highlight {
-  background-color: #333;
+  background-color: var(--color-background-pre-dark, #272822);
 }
-.soc:hover {
-  color: black;
+
+.soc:hover,
+.soc:focus {
+  color: var(--color-primary-dark, #50fa7b);
 }
+
 .draft-label {
-  color: var(--darkMaincolor);
-  background-color: blue;
+  color: var(--color-text-dark, #ffffff);
+  background-color: var(--color-background-draft-dark, #0066ff);
 }
-.highlight pre code[class=language-javaScript]::before,
-.highlight pre code[class="language-js"]::before {
-  content: "js";
-  background: #f7df1e;
-  color: black;
+
+/* Tables in dark mode */
+table th {
+  background-color: var(--color-background-pre-dark, #272822);
+  color: var(--color-text-dark, #ffffff);
+  border-color: var(--color-border-dark, #0066ff);
 }
-.highlight pre code[class*='language-yml']::before,
-.highlight pre code[class*='language-yaml']::before {
-  content: 'yaml';
-  background: #f71e6a;
-  color: white;
+
+table td {
+  border-color: var(--color-border-dark, #0066ff);
+  color: var(--color-text-dark, #ffffff);
 }
-.highlight pre code[class*='language-shell']::before,
-.highlight pre code[class*='language-bash']::before,
-.highlight pre code[class*='language-sh']::before {
-  content: 'shell';
-  background: green;
-  color:white
+
+table tr:nth-child(even) {
+  background-color: var(--color-background-code-dark, #3a3a3a);
 }
-.highlight pre code[class*='language-json']::before{
-  content: 'json';
-  background: dodgerblue;
-   color: #000000 
+
+/* Navigation toggle in dark mode */
+.nav-toggle {
+  color: var(--color-text-dark, #ffffff);
 }
-.highlight pre code[class*='language-python']::before,
-.highlight pre code[class*='language-py']::before {
-  content: 'py';
-  background: blue;
-  color: yellow ;
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+  background-color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  outline-color: var(--color-primary-dark, #50fa7b);
 }
-.highlight pre code[class*='language-css']::before{
-  content: 'css';
-  background: cyan;
-  color: black ;
-}
-.highlight pre code[class*='language-go']::before{
-  content: 'Go';
-  background: cyan;
-  color: royalblue ;
-}
-.highlight pre code[class*='language-md']::before,
-.highlight pre code[class*='language-md']::before{
-  content: 'Markdown';
-  background: royalblue;
-  color: whitesmoke ;
+/* Language badges inherit from main.css - no duplicates needed */
+
+/* Callouts in dark mode */
+.callout {
+  background-color: var(--color-background-pre-dark, #272822);
+  color: var(--color-text-dark, #ffffff);
 }
 
 .callout-alert {
-  color: #ffffff;
-  background-color: transparent;
-  border-width: 3px;
-  border-style: solid;
-  border-color: #ff6347;
-}
-
-.callout-custom {
-  color: #ffffff;
+  color: #f8d7da;
+  background-color: #2d1b1d;
+  border-color: #842029;
 }
 
 .callout-tip {
-  color: #ffffff;
-  background-color: transparent;
-  border-width: 3px;
-  border-style: solid;
-  border-color: dodgerblue;
+  color: #d1ecf1;
+  background-color: #0c2428;
+  border-color: #0f5132;
 }
 
 .callout-warning {
-  color: #ffffff;
-  background-color: transparent;
-  border-width: 3px;
-  border-style: solid;
-  border-color: #ffd700;
+  color: #fff3cd;
+  background-color: #332701;
+  border-color: #997404;
+}
+
+.callout-custom {
+  color: var(--color-text-dark, #ffffff);
 }
