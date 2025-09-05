@@ -26,8 +26,8 @@ Heading 1 Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://athul.github.io/archie/css/main.e5be0b244cfea0385bf04425148e0847f227ebc587eb7cf8ce8e2532d66a9248.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://athul.github.io/archie/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css"  disabled />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://athul.github.io/archie/css/main.569aea9076764dcebcbe658228f8ec1036801b206ce871fc2f5e3ee014de0370.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://athul.github.io/archie/css/dark.478e7f2b9cf8d87be42edfd9fe1810beab1331847df94b1b430478b309f28282.css"  disabled />
 </head>
 <body>
         <div class="content"><header>
@@ -44,9 +44,17 @@ Heading 1 Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et 
 		
 		<a href="/archie/tags">Tags</a>
 		
-		| <span id="dark-mode-toggle" onclick="toggleTheme()"><svg class="feather">
-   <use href="https://unpkg.com/feather-icons@4.29.2/dist/feather-sprite.svg#sun" />
-</svg></span>
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
 		<script src="https://athul.github.io/archie/js/themetoggle.js"></script>
 		
 	</nav>
@@ -91,18 +99,16 @@ Heading 1 Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et 
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setCookie</span>(<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Cookie</span>, <span style="color:#a6e22e">w</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#66d9ef">error</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Get write interface registered using `Acquire` method in handlers.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">wr</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">w</span>.(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Get write interface registered using `Acquire` method in handlers.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">wr</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">w</span>.(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>)
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">SetCookie</span>(<span style="color:#a6e22e">wr</span>, <span style="color:#a6e22e">cookie</span>)
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This is blockquote, Will make it <em>better now</em></p>
 <blockquote>
-<p>&lsquo;I want to do with you what spring does with the cherry trees.&rsquo; <!-- raw HTML omitted -->cited ~Pablo Neruda<!-- raw HTML omitted -->*</p>
-</blockquote>
+<p>&lsquo;I want to do with you what spring does with the cherry trees.&rsquo; <!-- raw HTML omitted -->cited ~Pablo Neruda<!-- raw HTML omitted -->*</p></blockquote>
 <blockquote>
-<p>Et harum quidem <em>rerum facilis</em> est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit</p>
-</blockquote>
+<p>Et harum quidem <em>rerum facilis</em> est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit</p></blockquote>
 <p>Unordered list</p>
 <ul>
 <li>Red</li>
@@ -132,12 +138,12 @@ Heading 1 Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et 
 </main>
 <footer>
   <div style="display:flex"><a class="soc" href="https://github.com/athul/archie" rel="me" title="GitHub"><svg class="feather">
-   <use href="/archie/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
-</svg></a><a class="border"></a><a class="soc" href="https://github.com/athulcajay/" rel="me" title="Twitter"><svg class="feather">
-   <use href="/archie/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#twitter" />
-</svg></a><a class="border"></a><a class="soc" href="https://gitlab.com/athul/" rel="me" title="GitLab"><svg class="feather">
-   <use href="/archie/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#gitlab" />
-</svg></a><a class="border"></a></div>
+       <use href="/archie/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a><a class="soc" href="https://github.com/athulcajay/" rel="me" title="Twitter"><svg class="feather">
+       <use href="/archie/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#twitter" />
+    </svg></a><a class="border"></a><a class="soc" href="https://gitlab.com/athul/" rel="me" title="GitLab"><svg class="feather">
+       <use href="/archie/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#gitlab" />
+    </svg></a><a class="border"></a></div>
   <div class="footer-info">
     2025  © Athul |  <a
       href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>

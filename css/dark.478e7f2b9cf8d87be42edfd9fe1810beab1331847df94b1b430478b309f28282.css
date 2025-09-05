@@ -1,0 +1,173 @@
+/* Dark theme overrides */
+body {
+  color: var(--color-text-dark, #ffffff);
+  background-color: var(--color-background-dark, #202124);
+}
+
+::-moz-selection {
+  background: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  text-shadow: none;
+}
+
+hr {
+  border-block-start: 3px dotted var(--color-border-dark, #0066ff);
+}
+
+code {
+  background-color: var(--color-background-code-dark, #3a3a3a);
+  color: var(--color-text-dark, #ffffff);
+}
+
+pre {
+  background-color: var(--color-background-pre-dark, #272822);
+  border-color: var(--color-border-dark, #0066ff);
+}
+
+blockquote {
+  border-color: var(--color-border-dark, #0066ff);
+  color: var(--color-text-muted-dark, #dddddd);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-muted-dark, #dddddd);
+}
+
+h1::before { color: var(--color-primary-dark, #50fa7b); }
+h2::before { color: var(--color-primary-dark, #50fa7b); }
+h3::before { color: var(--color-primary-dark, #50fa7b); }
+h4::before { color: var(--color-primary-dark, #50fa7b); }
+h5::before { color: var(--color-primary-dark, #50fa7b); }
+h6::before { color: var(--color-primary-dark, #50fa7b); }
+
+.toc {
+  background-color: var(--color-background-toc-dark, #272822);
+  color: var(--color-text-dark, #ffffff);
+  border-color: var(--color-border-dark, #0066ff);
+}
+
+/* Links */
+a {
+  border-block-end: 3px solid var(--color-primary-dark, #50fa7b);
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  background-color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  outline-color: var(--color-primary-dark, #50fa7b);
+}
+
+.site-description a {
+  color: var(--color-text-muted-dark, #dddddd);
+}
+
+.site-description a:hover,
+.site-description a:focus {
+  color: #000000;
+}
+
+/* Tags */
+.tags a {
+  border-block-end: 3px solid var(--color-primary-dark, #50fa7b);
+}
+
+.tags a:hover,
+.tags a:focus {
+  background-color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+}
+
+.site-title a {
+  color: var(--color-text-dark, #ffffff);
+  text-decoration: none !important;
+}
+
+.header nav,
+footer {
+  border-color: var(--color-border-dark, #0066ff);
+}
+
+.highlight {
+  background-color: var(--color-background-pre-dark, #272822);
+}
+
+.soc:hover,
+.soc:focus {
+  color: var(--color-primary-dark, #50fa7b);
+}
+
+.draft-label {
+  color: var(--color-text-dark, #ffffff);
+  background-color: var(--color-background-draft-dark, #0066ff);
+}
+
+/* Tables in dark mode */
+table th {
+  background-color: var(--color-background-pre-dark, #272822);
+  color: var(--color-text-dark, #ffffff);
+  border-color: var(--color-border-dark, #0066ff);
+}
+
+table td {
+  border-color: var(--color-border-dark, #0066ff);
+  color: var(--color-text-dark, #ffffff);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--color-background-code-dark, #3a3a3a);
+}
+
+/* Navigation toggle in dark mode */
+.nav-toggle {
+  color: var(--color-text-dark, #ffffff);
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+  background-color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  outline-color: var(--color-primary-dark, #50fa7b);
+}
+/* Language badges inherit from main.css - no duplicates needed */
+
+/* Callouts in dark mode */
+.callout {
+  background-color: var(--color-background-pre-dark, #272822);
+  color: var(--color-text-dark, #ffffff);
+}
+
+.callout-alert {
+  color: #f8d7da;
+  background-color: #2d1b1d;
+  border-color: #842029;
+}
+
+.callout-tip {
+  color: #d1ecf1;
+  background-color: #0c2428;
+  border-color: #0f5132;
+}
+
+.callout-warning {
+  color: #fff3cd;
+  background-color: #332701;
+  border-color: #997404;
+}
+
+.callout-custom {
+  color: var(--color-text-dark, #ffffff);
+}
