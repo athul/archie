@@ -17,7 +17,7 @@
 		<a href="{{ .URL }}">{{ .Name }}</a>
 		{{ end }}
 		{{ if eq .Site.Params.mode "toggle" -}}
-		<span id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">{{template "feathericon" (dict "UseCDN" .Site.Params.useCDN "Icon" "sun") }}</span>
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button">{{template "feathericon" (dict "UseCDN" .Site.Params.useCDN "Icon" "sun") }}</button>
 		<script src="{{ absURL "js/themetoggle.js" }}"></script>
 		{{ end }}
 	</nav>

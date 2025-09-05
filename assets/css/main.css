@@ -83,8 +83,14 @@ p {
   /* Fallback for older browsers */
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  /* Modern logical properties */
-  margin-block: 0.5em;
+}
+
+@supports (margin-block: 0.5em) {
+  p {
+    margin-top: unset;
+    margin-bottom: unset;
+    margin-block: 0.5em;
+  }
 }
 
 hr {
@@ -93,21 +99,34 @@ hr {
   border-top: 3px dotted var(--color-border, #663399);
   margin-top: 1em;
   margin-bottom: 1em;
-  /* Modern logical properties */
-  border-block-start: 3px dotted var(--color-border, #663399);
-  margin-block: 1em;
+}
+
+@supports (border-block-start: 3px dotted var(--color-border, #663399)) {
+  hr {
+    border-top: unset;
+    margin-top: unset;
+    margin-bottom: unset;
+    border-block-start: 3px dotted var(--color-border, #663399);
+    margin-block: 1em;
+  }
 }
 
 blockquote {
   /* Fallback for older browsers */
   border-left: 3px solid var(--color-border, #663399);
   padding-left: 1em;
-  /* Modern logical properties */
-  border-inline-start: 3px solid var(--color-border, #663399);
-  padding-inline-start: 1em;
   color: var(--color-text-muted, #737373);
   margin: 0;
   font-style: italic;
+}
+
+@supports (border-inline-start: 3px solid var(--color-border, #663399)) {
+  blockquote {
+    border-left: unset;
+    padding-left: unset;
+    border-inline-start: 3px solid var(--color-border, #663399);
+    padding-inline-start: 1em;
+  }
 }
 
 /* Links */
@@ -303,17 +322,25 @@ h6::before { color: var(--color-primary, #dc143c); content: '###### '; }
   flex-wrap: wrap;
   gap: 1.25rem;
   align-items: flex-start;
-  /* CSS Grid for modern browsers */
-  display: grid;
-  grid-template-columns: 1fr;
+}
+
+@supports (display: grid) {
+  .post-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 @media screen and (min-width: 60em) {
   .post-container {
     /* Flexbox fallback */
     flex-wrap: nowrap;
-    /* CSS Grid for modern browsers */
-    grid-template-columns: 1fr auto;
+  }
+  
+  @supports (display: grid) {
+    .post-container {
+      grid-template-columns: 1fr auto;
+    }
   }
 }
 
@@ -694,12 +721,23 @@ nav {
 }
 
 .nav-toggle {
-  cursor: pointer;
-  padding: 0.5rem;
+  /* Reset button styles */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   border: none;
   background: none;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  
+  /* Custom styling */
+  padding: 0.5rem;
   border-radius: 4px;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-toggle:hover,
@@ -708,6 +746,14 @@ nav {
   color: #ffffff;
   outline: 2px solid var(--color-primary, #dc143c);
   outline-offset: 2px;
+}
+
+.nav-toggle:focus {
+  outline-style: solid;
+}
+
+.nav-toggle:active {
+  transform: scale(0.95);
 }
 
 /* Media queries for responsive design */
