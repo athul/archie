@@ -1,11 +1,35 @@
 {{- define "feathericon" -}}
-  {{- $featherURL := "https://unpkg.com/feather-icons@4.29.2/dist/feather-sprite.svg" -}}
-  {{ if not (.UseCDN | default false) -}}
-    {{- $featherURL = (resources.Get "svg/feather-sprite.svg" | fingerprint).RelPermalink -}}
+  {{- if eq .Icon "sun" -}}
+    <svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  {{- else if eq .Icon "moon" -}}
+    <svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  {{- else -}}
+    <!-- Fallback for other icons - use sprite method -->
+    {{- $featherURL := "https://unpkg.com/feather-icons@4.29.2/dist/feather-sprite.svg" -}}
+    {{- if not (.UseCDN | default false) -}}
+      {{- $svgResource := resources.Get "svg/feather-sprite.svg" -}}
+      {{- if $svgResource -}}
+        {{- $featherURL = ($svgResource | fingerprint).RelPermalink -}}
+      {{- else -}}
+        {{- $featherURL = (absURL "svg/feather-sprite.svg") -}}
+      {{- end -}}
+    {{- end -}}
+    <svg class="feather">
+       <use href="{{ printf "%s#%s" $featherURL .Icon }}" />
+    </svg>
   {{- end -}}
-<svg class="feather">
-   <use href="{{ printf "%s#%s" $featherURL .Icon }}" />
-</svg>
 {{- end -}}
 
 <header>
@@ -17,7 +41,7 @@
 		<a href="{{ .URL }}">{{ .Name }}</a>
 		{{ end }}
 		{{ if eq .Site.Params.mode "toggle" -}}
-	| <span id="dark-mode-toggle" onclick="toggleTheme()">{{template "feathericon" (dict "UseCDN" .Site.Params.useCDN "Icon" "sun") }}</span>
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button">{{template "feathericon" (dict "UseCDN" .Site.Params.useCDN "Icon" "sun") }}</button>
 		<script src="{{ absURL "js/themetoggle.js" }}"></script>
 		{{ end }}
 	</nav>
