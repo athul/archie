@@ -525,6 +525,7 @@ article .title {
 
 .tags li::before {
   content: "🏷 ";
+  margin-inline-start: 2rem;
 }
 
 .tags a {

@@ -13,7 +13,7 @@
 		{{ range $key, $value := .Data.Terms.ByCount }}
 		{{ $size := (add (mul (div $value.Count $biggest) (sub $max $min)) $min) }}
 		{{ $size := (cond (eq $biggest $smallest) $min $size) }}
-		<li><a style="font-size: {{ $size }}rem;" href="{{ $.Site.LanguagePrefix | absURL }}{{ $data.Plural }}/{{ $value.Name | urlize }}/">{{ $value.Name }}</a></li>
+		<li><a style="font-size: {{ $size }}rem;" href="{{ $.Site.LanguagePrefix | absURL }}{{ $data.Plural }}/{{ $value.Name | urlize }}/">{{ $value.Name }} ({{ $value.Count }})</a></li>
 		{{ end }}
 	</ul>
 </div>
