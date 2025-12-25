@@ -1,4 +1,0 @@
-+++
-author = "Hugo Authors"
-+++
-
