@@ -38,7 +38,7 @@
 	</div>
 	<nav>
 		{{ range .Site.Menus.main }}
-		<a href="{{ .URL }}">{{ .Name }}</a>
+		<a href="{{ .URL }}">{{ printf "menu.%s" .Name | i18n | default .Name }}</a>
 		{{ end }}
 		{{ if eq .Site.Params.mode "toggle" -}}
 		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button">{{template "feathericon" (dict "UseCDN" .Site.Params.useCDN "Icon" "sun") }}</button>

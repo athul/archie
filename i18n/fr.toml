@@ -1,0 +1,26 @@
+readmore = "Lire la suite ⟶"
+draft = "BROUILLON"
+
+[paginator]
+    prev = "Précédent"
+    next = "Suivant"
+
+[footer]
+    theme_description = "Thème custom basé sur"
+    built_with = "Construit avec"
+
+[header]
+    home = "Accueil"
+
+[term]
+    listed_tags = "Posts taggés"
+    all_article = "Tous les articles"
+
+[list]
+    listed_tags = "Posts taggés"
+    all_article = "Tous les articles"
+
+[single]
+    posted_on = "Posté le"
+    tldr = "Résumé"
+    toc = "Sommaire"

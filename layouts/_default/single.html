@@ -6,11 +6,11 @@
       <div class="post-content">
         <div class="title">
           <h1 class="title">{{ .Title }}</h1>
-          <div class="meta">Posted on {{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+          <div class="meta">{{ i18n "single.posted_on"  }} {{ .Date | time.Format ":date_medium" }}{{ if .Draft }} <span class="draft-label">{{ i18n "draft" }}</span> {{ end }}</div>
         </div>
         {{ if isset .Params "tldr" }}
         <div class="tldr">
-          <strong>tl;dr:</strong>
+          <strong>{{ i18n "single.tldr" }}:</strong>
           {{ .Params.tldr }}
         </div>{{ end }}
         <section class="body">
@@ -34,7 +34,7 @@
       <!-- TOC -->
       {{ if and (isset .Params "toc") (.Params.toc) }}
       <div class="toc">
-        <strong>Table of contents:</strong>
+        <strong>{{ i18n "single.toc" }}</strong>
         {{ .TableOfContents }}
       </div>
       {{ end }}

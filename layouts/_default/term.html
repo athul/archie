@@ -1,17 +1,19 @@
-{{ define "main" }}
-{{ if isset .Data "Term" }}
-<h1>Entries tagged - "{{ .Data.Term }}"</h1>
+{{ define "main" }} {{ if isset .Data "Term" }}
+<h1>{{ i18n "term.listed_tags" }} - "{{ .Data.Term }}"</h1>
 {{ else }}
-<h1 class="page-title">All articles</h1>
+<h1 class="page-title">{{ i18n "term.all_article" }}</h1>
 {{ end }}
 
 <ul class="posts">
-	{{- range .Data.Pages -}}
-		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
-		<li class="post">
-			<a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
-		</li>
-		{{- end -}}
-	{{- end -}}
+  {{- range .Data.Pages -}} {{- if (not (in (.Site.Params.excludedTypes |
+  default (slice "page")) .Type)) -}}
+  <li class="post">
+    <a href="{{ .RelPermalink }}">{{.Title}}</a>
+    <span class="meta"
+      >{{ .Date | time.Format ":date_medium" }}{{ if .Draft }}
+      <span class="draft-label">{{ i18n "draft" }}</span> {{ end }}</span
+    >
+  </li>
+  {{- end -}} {{- end -}}
 </ul>
 {{ end }}

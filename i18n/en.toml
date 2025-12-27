@@ -1,0 +1,26 @@
+readmore = "Read more ⟶"
+draft = "DRAFT"
+
+[paginator]
+    prev = "Prev"
+    next = "Next"
+
+[footer]
+    theme_description = "Custom theme based on"
+    built_with = "Built with"
+
+[header]
+    home = "Home"
+
+[term]
+    listed_tags = "Entries tagged"
+    all_article = "All articles"
+
+[list]
+    listed_tags = "Entries tagged"
+    all_article = "All articles"
+
+[single]
+    posted_on = "Posted on"
+    tldr = "tl;dr"
+    toc = "Table of contents"
