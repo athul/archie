@@ -16,6 +16,9 @@ draft = "DRAFT"
     listed_tags = "Entries tagged"
     all_article = "All articles"
 
+[terms]
+    all_tags = "All tags"
+
 [list]
     listed_tags = "Entries tagged"
     all_article = "All articles"

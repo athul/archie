@@ -12,6 +12,9 @@ draft = "BROUILLON"
 [header]
     home = "Accueil"
 
+[terms]
+    all_tags = "Tous les tags"
+
 [term]
     listed_tags = "Posts taggés"
     all_article = "Tous les articles"
