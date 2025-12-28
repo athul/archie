@@ -108,6 +108,8 @@ footer {
 .soc:hover,
 .soc:focus {
   color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  outline-color: var(--color-primary-dark, #50fa7b);
 }
 
 .draft-label {
