@@ -417,7 +417,7 @@ footer {
 
 .soc:hover,
 .soc:focus {
-  color: var(--color-primary, #dc143c);
+  color: #ffffff;
   outline: 2px solid var(--color-primary, #dc143c);
   outline-offset: 2px;
 }
