@@ -80,6 +80,11 @@ a:focus {
   color: #000000;
 }
 
+/* Lists */
+ul > li::before {
+  color: var(--color-primary-dark, #50fa7b);
+}
+
 /* Tags */
 .tags a {
   border-block-end: 3px solid var(--color-primary-dark, #50fa7b);
