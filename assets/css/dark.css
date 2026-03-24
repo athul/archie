@@ -172,3 +172,29 @@ table tr:nth-child(even) {
 .callout-custom {
   color: var(--color-text-dark, #ffffff);
 }
+
+/* Search in dark mode */
+.search-panel,
+.search-result-card {
+  background-color: var(--color-background-pre-dark, #272822);
+  border-color: var(--color-border-dark, #0066ff);
+}
+
+.search-input,
+kbd {
+  background-color: var(--color-background-code-dark, #3a3a3a);
+  border-color: var(--color-border-dark, #0066ff);
+  color: var(--color-text-dark, #ffffff);
+}
+
+.search-input:focus {
+  outline-color: var(--color-primary-dark, #50fa7b);
+}
+
+.search-status-error {
+  color: var(--color-primary-dark, #50fa7b);
+}
+
+.search-tag {
+  border-color: var(--color-primary-dark, #50fa7b);
+}

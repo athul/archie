@@ -760,6 +760,133 @@ nav {
   outline-style: solid;
 }
 
+/* Search */
+.search-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.search-intro {
+  margin-block-start: -0.5rem;
+}
+
+.search-panel {
+  border: 1px solid var(--color-border, #663399);
+  border-radius: var(--border-radius, 5px);
+  background-color: var(--color-background-pre, #ececec);
+  padding: 1rem;
+}
+
+.search-label {
+  display: block;
+  font-weight: bold;
+  margin-block-end: 0.5rem;
+}
+
+.search-input {
+  inline-size: 100%;
+  border: 1px solid var(--color-border, #663399);
+  border-radius: 4px;
+  background-color: var(--color-background, #ffffff);
+  color: var(--color-text, #232333);
+  font: inherit;
+  padding: 0.75rem 0.9rem;
+}
+
+.search-input:focus {
+  outline: 2px solid var(--color-primary, #dc143c);
+  outline-offset: 2px;
+}
+
+.search-hint {
+  color: var(--color-text-muted, #737373);
+  font-size: 0.95em;
+  margin-block: 0.75rem 0;
+}
+
+kbd {
+  border: 1px solid var(--color-border, #663399);
+  border-radius: 4px;
+  background-color: var(--color-background, #ffffff);
+  font-size: 0.9em;
+  padding: 0.1rem 0.35rem;
+}
+
+.search-status {
+  margin-block: 1rem 0;
+}
+
+.search-status-empty,
+.search-status-error {
+  color: var(--color-text-muted, #737373);
+}
+
+.search-status-error {
+  color: var(--color-primary, #dc143c);
+}
+
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin-block: 1rem 0;
+}
+
+.search-results li {
+  text-indent: 0;
+}
+
+.search-results > li::before,
+.search-tag-list > li::before {
+  content: none;
+}
+
+.search-result + .search-result {
+  margin-block-start: 1rem;
+}
+
+.search-result-card {
+  border: 1px solid var(--color-border, #663399);
+  border-radius: var(--border-radius, 5px);
+  background-color: var(--color-background, #ffffff);
+  padding: 1rem;
+}
+
+.search-result-title {
+  margin-block: 0 0.35rem;
+}
+
+.search-result-meta {
+  color: var(--color-text-muted, #737373);
+  font-size: 0.95em;
+  margin-block: 0;
+}
+
+.search-result-snippet {
+  margin-block: 0.75rem 0;
+}
+
+.search-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin-block: 0.75rem 0;
+}
+
+.search-tag-list li {
+  text-indent: 0;
+}
+
+.search-tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-primary, #dc143c);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.9em;
+}
+
 .nav-toggle:active {
   transform: scale(0.95);
 }
