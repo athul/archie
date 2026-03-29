@@ -14,16 +14,36 @@
         return;
     }
 
-    function normalizeText(value) {
-        var normalized = (value || "").toLowerCase();
+    var combiningMarkPattern = createRegex("\\p{M}+", "gu", /[\u0300-\u036f]+/g);
+    var nonSearchCharacterPattern = createRegex(
+        "[^\\p{L}\\p{N}\\s]+",
+        "gu",
+        /[\u0000-\u002f\u003a-\u0040\u005b-\u0060\u007b-\u007f]+/g
+    );
+
+    function createRegex(pattern, flags, fallback) {
+        try {
+            return new RegExp(pattern, flags);
+        } catch (error) {
+            return fallback;
+        }
+    }
+
+    function normalizeSearchText(value) {
+        var normalized = value || "";
 
         if (typeof normalized.normalize === "function") {
             normalized = normalized.normalize("NFKD");
         }
 
         return normalized
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/[^a-z0-9\s]/g, " ")
+            .toLowerCase()
+            .replace(combiningMarkPattern, "")
+            .replace(nonSearchCharacterPattern, " ");
+    }
+
+    function normalizeText(value) {
+        return normalizeSearchText(value)
             .replace(/\s+/g, " ")
             .trim();
     }
@@ -31,6 +51,31 @@
     function tokenizeQuery(value) {
         var normalized = normalizeText(value);
         return normalized ? normalized.split(" ") : [];
+    }
+
+    function createSearchTextIndex(value) {
+        var source = value || "";
+        var normalized = "";
+        var indexMap = [];
+        var sourceIndex = 0;
+
+        // Keep a lookup back to the original text so snippets can anchor near normalized matches.
+        Array.from(source).forEach(function (character) {
+            var searchableCharacter = normalizeSearchText(character);
+
+            normalized += searchableCharacter;
+
+            for (var index = 0; index < searchableCharacter.length; index += 1) {
+                indexMap.push(sourceIndex);
+            }
+
+            sourceIndex += character.length;
+        });
+
+        return {
+            text: normalized,
+            indexMap: indexMap
+        };
     }
 
     function buildSearchEntry(entry) {
@@ -65,13 +110,14 @@
             return previewSource.slice(0, 180);
         }
 
-        var loweredSource = previewSource.toLowerCase();
+        var indexedSource = createSearchTextIndex(previewSource);
         var startIndex = -1;
 
         for (var index = 0; index < tokens.length; index += 1) {
-            startIndex = loweredSource.indexOf(tokens[index]);
+            var normalizedIndex = indexedSource.text.indexOf(tokens[index]);
 
-            if (startIndex !== -1) {
+            if (normalizedIndex !== -1) {
+                startIndex = indexedSource.indexMap[normalizedIndex];
                 break;
             }
         }

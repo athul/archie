@@ -192,7 +192,7 @@ kbd {
 }
 
 .search-status-error {
-  color: var(--color-primary-dark, #50fa7b);
+  color: var(--color-error-dark, #ff7b72);
 }
 
 .search-tag {

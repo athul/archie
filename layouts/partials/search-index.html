@@ -2,6 +2,9 @@
 {{- $mainSections := .Site.Params.mainSections | default (slice) -}}
 {{- $useMainSections := gt (len $mainSections) 0 -}}
 {{- $currentPage := .RelPermalink -}}
+{{- with .OutputFormats.Get "html" -}}
+  {{- $currentPage = .RelPermalink -}}
+{{- end -}}
 
 {{- range .Site.RegularPages.ByDate.Reverse -}}
   {{- $page := . -}}
