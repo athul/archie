@@ -45,3 +45,8 @@ weight = 3
 name = "Tags"
 url = "/tags"
 weight = 4
+
+[[menu.main]]
+name = "Search"
+url = "/search/"
+weight = 5

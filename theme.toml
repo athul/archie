@@ -7,7 +7,7 @@ licenselink = "https://github.com/athul/archie/blob/master/LICENSE"
 description = "Archie is a minimal and clean theme for hugo with a markdown-ish UI."
 homepage = "https://github.com/athul/archie"
 tags = ["blog","simple","responsive","minimal","tags","personal","clean","shortcodes"]
-features = ["blog", "Clean and minimal", "Responsive", "Syntax highlighting",]
+features = ["blog", "Clean and minimal", "Responsive", "Syntax highlighting", "Search"]
 min_version = "0.41"
 
 [author]

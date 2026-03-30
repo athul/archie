@@ -1,0 +1,45 @@
+{{ define "main" }}
+<main>
+  <article class="search-page">
+    <div class="title">
+      <h1 class="title">{{ .Title }}</h1>
+    </div>
+
+    {{ with .Content }}
+    <section class="body search-intro">
+      {{ . }}
+    </section>
+    {{ end }}
+
+    <section
+      class="search-panel"
+      data-search-root
+      {{ with .OutputFormats.Get "json" }}data-search-index-url="{{ .RelPermalink }}"{{ end }}>
+      <label class="search-label" for="search-query">Find entries</label>
+      <input
+        id="search-query"
+        class="search-input"
+        data-search-input
+        type="search"
+        name="q"
+        autocomplete="off"
+        spellcheck="false"
+        aria-controls="search-results"
+        aria-describedby="search-help search-status"
+        placeholder="Search by title, tag, or content">
+      <p id="search-help" class="search-hint">
+        Search across your indexed content. Press <kbd>/</kbd> to focus the field.
+      </p>
+      <p id="search-status" class="search-status" data-search-status aria-live="polite">
+        Loading search index...
+      </p>
+      <ul id="search-results" class="search-results" data-search-results></ul>
+    </section>
+
+    <noscript>
+      <p class="search-status search-status-error">Search requires JavaScript to load the index and filter results.</p>
+    </noscript>
+  </article>
+</main>
+<script defer src="{{ absURL "js/search.js" }}"></script>
+{{ end }}

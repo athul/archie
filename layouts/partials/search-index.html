@@ -1,0 +1,37 @@
+{{- $index := slice -}}
+{{- $mainSections := .Site.Params.mainSections | default (slice) -}}
+{{- $useMainSections := gt (len $mainSections) 0 -}}
+{{- $currentPage := .RelPermalink -}}
+{{- with .OutputFormats.Get "html" -}}
+  {{- $currentPage = .RelPermalink -}}
+{{- end -}}
+
+{{- range .Site.RegularPages.ByDate.Reverse -}}
+  {{- $page := . -}}
+  {{- $includePage := true -}}
+
+  {{- if $useMainSections -}}
+    {{- $includePage = in $mainSections $page.Type -}}
+  {{- end -}}
+
+  {{- if and $includePage (ne $page.RelPermalink $currentPage) (ne $page.Params.hidden true) -}}
+    {{- $description := $page.Description | default "" | plainify | replaceRE "\\s+" " " -}}
+    {{- $summary := $page.Summary | default "" | plainify | replaceRE "\\s+" " " -}}
+    {{- $content := $page.Plain | default "" | replaceRE "\\s+" " " -}}
+    {{- $section := $page.Section | default "" -}}
+    {{- $tags := $page.Params.tags | default (slice) -}}
+    {{- $index = $index | append (dict
+      "title" $page.Title
+      "permalink" $page.RelPermalink
+      "date" ($page.Date.Format "2006-01-02T15:04:05Z07:00")
+      "displayDate" (dateFormat ":date_medium" $page.Date)
+      "section" $section
+      "tags" $tags
+      "description" $description
+      "summary" $summary
+      "content" $content
+    ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $index | jsonify -}}
