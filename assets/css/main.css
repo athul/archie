@@ -152,21 +152,25 @@ a:focus {
   outline-style: solid;
 }
 
-/* Lists */
-ul {
+/* Lists (post body) */
+.post-content .body ul {
   list-style: none;
-  /* Fallback for older browsers */
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+
+.post-content .body ul li {
+  position: relative;
   padding-left: 2ch;
-  /* Modern logical properties */
   padding-inline-start: 2ch;
+  text-indent: 0;
 }
 
-ul li {
-  text-indent: -2ch;
-}
-
-ul > li::before {
+.post-content .body ul > li::before {
   content: '* ';
+  position: absolute;
+  left: 0;
+  inset-inline-start: 0;
   font-weight: bold;
   color: var(--color-primary, #dc143c);
 }
