@@ -6,7 +6,6 @@ copyright = "© Athul"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-
 [params]
 	mode="auto"
 	useCDN=false
@@ -46,8 +45,3 @@ weight = 3
 name = "Tags"
 url = "/tags"
 weight = 4
-
-[[menu.main]]
-name = "Search"
-url = "/search/"
-weight = 5
